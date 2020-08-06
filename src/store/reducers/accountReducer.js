@@ -6,7 +6,10 @@ export default function accountReducer(state = initialState.account, action) {
       let newIsMaster = false;
       if (
         action.payload === 'paulazhu@college.harvard.edu' ||
-        action.payload === 'collegekeyfoundation@gmail.com' ||
+        action.payload === 'reachpaulazhu@gmail.com' ||
+        action.payload === 'tech.collegearch@gmail.com' ||
+        action.payload === 'team.collegearch@gmail.com' ||
+        action.payload === 'programming.collegearch@gmail.com' ||
         action.payload === 'snalani731@gmail.com' ||
         action.payload === 'llin1@college.harvard.edu' ||
         action.payload === 'lindalin2812@gmail.com'

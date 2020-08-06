@@ -8,19 +8,11 @@
 
 export const executiveTeam = [
   {
-    name: 'Jacky Huang',
+    name: 'Lucas Leanza',
     team: 'Executive Team',
     position: 'President',
     text:
-      "Jacky, part of Harvard's Class of 2024, was inspired by his mentorship with Lucas to model a one-on-one system to help underrepresented students. He comes from an comprehensive marketing and outreach background and is in charge of the broad logistical aspects of the organization.",
-    image: '',
-  },
-  {
-    name: 'Lucas Leanza',
-    team: 'Executive Team',
-    position: 'Vice-President',
-    text:
-      "Lucas, part of Stanford's Class of 2023, is in charge of the organization's broad logistical, outreach, coding and optimization aspects. With a background in educational non-profits, Lucas worked with Jacky last year to create the groundwork for the foundation.",
+      "Lucas, part of Stanford's Class of 2023, is in charge of the organization's broad logistical, outreach, coding and optimization aspects. With a background in educational non-profits, Lucas worked to create the groundwork for the organization.",
     image: '',
   },
 ];
@@ -103,7 +95,7 @@ export const recruitmentDirectors = [
     name: 'Natalie Winter',
     position: 'Hawaii Region Director',
     text:
-      "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of the College Key Foundation.",
+      "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of the College ARCH.",
     image: '',
   },
 ];

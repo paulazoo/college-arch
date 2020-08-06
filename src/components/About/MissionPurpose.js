@@ -134,7 +134,7 @@ function MissionPurpose(props) {
                 >
                   <Grid item className={classes.teamNameContainer}>
                     <Typography className={classes.teamName}>
-                      Here at the College Key Foundation, we strive to...
+                      Here at College ARCH, we strive to...
                     </Typography>
                   </Grid>
                 </Grid>

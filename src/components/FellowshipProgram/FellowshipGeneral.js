@@ -39,7 +39,7 @@ function FellowshipGeneral(props) {
           </strong>
         </p>
         <p>
-          The College Key Foundation's summer fellowship is a 4-week FREE
+          The College ARCH's summer fellowship is a 4-week FREE
           program where fellows attend two virtual workshops (over zoom) each
           week to learn about the college application process, get paired with a
           college mentor (from Harvard, Yale, Princeton, MIT, and other
@@ -95,7 +95,7 @@ function FellowshipGeneral(props) {
           the current circumstances.
         </p>
         <p>DEADLINE TO SUBMIT YOUR APPLICATION: June 30 @ 11:59 PM, EST</p>
-        <p>FOLLOW US ON INSTAGRAM @collegekeyfoundation TO RECEIVE UPDATES!</p>
+        <p>FOLLOW US ON INSTAGRAM @collegearch TO RECEIVE UPDATES!</p>
         <br />
       </Typography>
     </>

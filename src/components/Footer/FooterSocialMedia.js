@@ -52,7 +52,7 @@ function FooterSocialMedia() {
           <IconButton
             size='small'
             target='_blank'
-            href='https://www.instagram.com/collegekeyfoundation/'
+            href='https://www.instagram.com/collegearch/'
           >
             <Icon>
               <img src={WhiteInstagramSvg} width={24} height={24} />
@@ -74,7 +74,7 @@ function FooterSocialMedia() {
           <IconButton
             size='small'
             target='_blank'
-            href='https://www.facebook.com/College-Key-Foundation-113328083738629'
+            href='https://www.facebook.com/College-Arch-113328083738629'
           >
             <Icon>
               <img src={WhiteFacebookSvg} width={24} height={24} />

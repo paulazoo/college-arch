@@ -67,8 +67,8 @@ function TermsContent(props) {
             <strong>Last updated July 15, 2020</strong>
           </p>
           <p id='66835df9-c05a-495d-9634-7d74dcac9d04' className={classes.p}>
-            Thank you for choosing to be part of our community at College Key
-            Foundation [uhhh what r we again? 501c3? Something else? not sure...
+            Thank you for choosing to be part of our community at College
+            ARCH [uhhh what r we again? 501c3? Something else? not sure...
             :/]. (“
             <strong>Organization [not sure how to refer to us tbh]</strong>
             ”, “ 
@@ -85,14 +85,14 @@ function TermsContent(props) {
 {' '}
             <Link
               style={{ color: 'black' }}
-              href='mailto:collegekeyfoundation@gmail.com'
+              href='mailto:contact.collegearch@gmail.com'
             >
-              collegekeyfoundation@gmail.com
+              contact.collegearch@gmail.com
             </Link>
             .
           </p>
           <p id='3187c025-d13c-4098-a5af-f54ebae8c420' className={classes.p}>
-            When you visit our website collegekeyfoundation.org and use our
+            When you visit our website collegearch.org and use our
             services, you trust us with your personal information. We take your
             privacy very seriously. In this privacy policy, we seek to explain
             to you in the clearest way possible what information we collect, how
@@ -103,7 +103,7 @@ function TermsContent(props) {
           </p>
           <p id='07a5ef95-89ed-44be-8159-a152cc1233dd' className={classes.p}>
             This privacy policy applies to all information collected through our
-            website (such as collegekeyfoundation.org), and/or any related
+            website (such as collegearch.org), and/or any related
             services, sales, marketing or events (we refer to them collectively
             in this privacy policy as the &quot;
             <strong>Services</strong>
@@ -664,8 +664,8 @@ We may use third-party
                 If you have questions or comments about your privacy rights, you
                 may email us at
 {' '}
-                <Link href='mailto:contact@collegekeyfoundation.org'>
-                  collegekeyfoundation@gmail.com
+                <Link href='mailto:contact.collegearch@gmail.com'>
+                  contact.collegearch@gmail.com
                 </Link>
                 .
               </p>
@@ -736,14 +736,14 @@ We may use third-party
               >
                 A privacy breach occurs when there is unauthorized access to or
                 collection, use, disclosure or disposal of personal information.
-                You will be notified about data breaches when College Key
-                Foundation [not sure] believes you are likely to be at risk or
+                You will be notified about data breaches when College ARCH
+                [not sure] believes you are likely to be at risk or
                 serious harm. For example, a data breach may be likely to result
                 in serious financial harm or harm to your mental or physical
-                well-being. In the event that College Key Foundation [not sure]
+                well-being. In the event that College ARCH [not sure]
                 becomes aware of a security breach which has resulted or may
                 result in unauthorized access, use or disclosure of personal
-                information College Key Foundation [not sure] will promptly
+                information College ARCH [not sure] will promptly
                 investigate the matter and notify the applicable Supervisory
                 Authority not later than 72 hours after having become aware of
                 it, unless the personal data breach is unlikely to result in a
@@ -857,8 +857,8 @@ We may use third-party
                 If you have questions or comments about this policy, you may
                 email us at
 {' '}
-                <Link href='mailto:contact@collegekeyfoundation.org'>
-                  collegekeyfoundation@gmail.com
+                <Link href='mailto:contact.collegearch@gmail.com'>
+                  contact.collegearch@gmail.com
                 </Link>
               </p>
             </div>
@@ -877,7 +877,7 @@ We may use third-party
                 request access to the personal information we collect from you,
                 change that information, or delete it in some circumstances. To
                 request to review, update, or delete your personal information,
-                please email us at collegekyfoundation@gmail.com. We will
+                please email us at contact.collegearche@gmail.com. We will
                 respond to your request within 30 days.
               </p>
             </div>
@@ -896,7 +896,7 @@ We may use third-party
           <p id='0429a79b-1cfc-4e68-a02a-36c2601958b7' className={classes.p}>
             These Terms of Use constitute a legally binding agreement made
             between you, whether personally or on behalf of an entity (“you”)
-            and College Key Foundation [not sure] (&quot;
+            and College ARCH [not sure] (&quot;
             <strong>organization [?]</strong>
             &quot;, “ 
 {' '}
@@ -907,7 +907,7 @@ We may use third-party
 <strong>our</strong>
             ”), concerning your access to and use of the
 {' '}
-            <Link>https://collegekeyfoundation.org</Link> website as well as any
+            <Link>https://collegearch.org</Link> website as well as any
             other media form, media channel, mobile website or mobile
             application related, linked, or otherwise connected thereto
             (collectively, the “Site”). You agree that by accessing the Site,
@@ -1207,7 +1207,7 @@ We may use third-party
           </p>
           <p id='7d741380-123d-45f7-838f-3d9bf73ce8db' className={classes.p}>
             These Terms shall be governed by and defined following the laws of
-            the the State of Massachusetts. College Key Foundation [not sure]
+            the the State of Massachusetts. College ARCH [not sure]
             and yourself irrevocably consent that the courts of Suffolk County,
             Massachusetts shall have exclusive jurisdiction to resolve any
             dispute which may arise in connection with these terms.
@@ -1415,8 +1415,8 @@ We may use third-party
             In order to resolve a complaint regarding the Site or to receive
             further information regarding use of the Site, please contact us at
 {' '}
-            <Link href='mailto:contact@collegekeyfoundation.org'>
-              collegekeyfoundation@gmail.com
+            <Link href='mailto:contact.collegearch@gmail.com'>
+              contact.collegearch@gmail.com
             </Link>
             .
           </p>

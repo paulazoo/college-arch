@@ -76,7 +76,7 @@ function Three(props) {
           </Grid>
           <Grid item className={classes.textGrid}>
             <Typography className={classes.text}>
-              College Key Foundation's weekly seminars cover a multitude of
+              College ARCH's weekly seminars cover a multitude of
               subjects, including standardized testing led by a prominent author
               of Kaplan’s testing material to college apps, led by Admissions
               Officers from top universities and even financial aid and FAFSA.

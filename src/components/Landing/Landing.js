@@ -204,7 +204,7 @@ function Landing(props) {
           <Grid item xs={0} md={12} />
           <Grid item xs={8} md={5} className={classes.textGrid}>
             <Typography color='inherit' className={classes.landingText3}>
-              The College Key Foundation was founded on the idea of free,
+              The College ARCH was founded on the idea of free,
               accessible guidance to the college application process for those
               of underprivileged backgrounds
             </Typography>

@@ -196,7 +196,7 @@ function MobileDrawer({ menuItems, ...props }) {
               component={NavLink}
               to='/'
             >
-              <Typography>College Key Foundation</Typography>
+              <Typography>College ARCH</Typography>
             </Link>
           </Grid>
         </Grid>

@@ -110,7 +110,7 @@ function Apply(props) {
             >
               <Grid item xs={12} className={classes.applyTextContainer}>
                 <Typography className={classes.applyText}>
-                  Apply to be a College Key Foundation Mentee or Mentor!
+                  Apply to be a College ARCH Mentee or Mentor!
                 </Typography>
                 <Typography className={classes.dueDate}>
                   Fellowship applications will be open again in January 2021
