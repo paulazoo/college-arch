@@ -23,6 +23,12 @@ _ROUTE: https://www.collegearch.org/_
 - Landing page
 - You can sign up for the newsletter email list at the bottom
 
+### EventPage
+
+_ROUTE: https://www.collegearch.org/events/:event_id_
+
+- Page for the specific public event as specified by their unique event id, `:event_id`
+
 ### About
 
 _ROUTE: https://www.collegearch.org/about-us_
