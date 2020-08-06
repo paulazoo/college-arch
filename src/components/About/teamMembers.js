@@ -37,14 +37,14 @@ export const outreachTeam = [
 export const recruitmentDirectors = [
   {
     name: 'Ireland Parrish',
-    position: 'Northern Region Director',
+    position: 'Northern Regional Director',
     text:
       'Ireland Parrish is a member of the Johns Hopkins University class of 2024, and plans to double major in Physics and Astronomy and Applied Mathematics with a minor in Computer Science. She is the co-director for recruitment in the northern region of the United States.',
     image: '',
   },
   {
     name: 'Violet Wang',
-    position: 'Northern Region Director',
+    position: 'Northern Regional Director',
     text:
       'Violet, part of Duke’s class of 2024, works to recruit and communicate with students in the Northern region to access resources to help them in their college admissions journey!',
     image: '',
@@ -52,50 +52,50 @@ export const recruitmentDirectors = [
   {
     name: 'Sahir Qureshi',
     team: 'Recruitment Team',
-    position: 'Western Region Director',
+    position: 'Western Regional Director',
     text:
       "Sahir, part of Stanford's Class of 2024, coordinates outreach to the Northern California region for the organization and is excited about helping underserved students in his area get the resources they need to succeed.",
     image: '',
   },
   {
     name: 'Kobi Khong',
-    position: 'Western Region Director',
+    position: 'Western Regional Director',
     text:
       "Kobi, part of Johns Hopkin's Class of 2024, is studying Public Health with a minor in Bioethics, and liaises with schools and organizations throughout the Southern California region for College Key in order to ensure equal opportunities for students who strive their goals and for their education, regardless of socio-economic status.",
     image: '',
   },
   {
     name: 'Luis Rubio',
-    position: 'Midwestern Region Director',
+    position: 'Midwestern Regional Director',
     text:
       "Luis, part of Johns Hopkin's Class of 2024, communicates with students across the Mid Western United States and is eager to ease the college application process for many driven and talented students.",
     image: '',
   },
   {
     name: 'Kathleen Beetner',
-    position: 'Midwestern Region Director',
+    position: 'Midwestern Regional Director',
     text:
       "Kathleen, part of University of Illinois at Urbana-Champaign's Class of 2021, identifies and communicates with schools across the Midwest region and is dedicated to facilitating help and instruction to students from all backgrounds.",
     image: '',
   },
   {
-    name: 'Caillou Pena',
-    position: 'Southern Region Director',
-    text: '??????.',
-    image: '',
-  },
-  {
     name: 'Rina Nagashima',
-    position: 'Hawaii Region Director',
+    position: 'Hawaii Regional Director',
     text:
       "Rina, a transfer student from Wellesley to Scripps' Class of 2023, is in charge of mentor outreach and organizational partnership at the Hawaii branch. Having gone through the application process twice, she is enthusiastic in her outreach and mission to Hawaii's rising seniors and their unique situations.",
     image: '',
   },
   {
     name: 'Natalie Winter',
-    position: 'Hawaii Region Director',
+    position: 'Hawaii Regional Director',
     text:
       "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of the College ARCH.",
+    image: '',
+  },
+  {
+    name: 'Brenda Barnetche',
+    position: 'Florida Regional Director',
+    text: '???????',
     image: '',
   },
 ];
@@ -152,14 +152,6 @@ export const graphicsMarketingTeam = [
 
 export const curriculumTeam = [
   {
-    name: 'Audrey Kang',
-    team: 'Curriculum Team',
-    position: 'Curriculum Director',
-    text:
-      "Audrey Kang, part of Harvard College's Class of 2024, is one of two Curriculum Directors at College Key. She's looking forward to help increase college access to all students through helpful resources, talks, witty comments.",
-    image: '',
-  },
-  {
     name: 'Ikshu Pandey',
     team: 'Curriculum Team',
     position: 'Curriculum Director',
@@ -171,7 +163,7 @@ export const curriculumTeam = [
 export const technicalTeam = [
   {
     name: 'Paula Zhu',
-    position: 'Website Development Director',
+    position: 'Technical Director',
     text:
       "Paula, part of Harvard's Class of 2024, helps to manage the technology aspects of College Key, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
