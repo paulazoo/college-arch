@@ -44,14 +44,14 @@ export default function Footer() {
         <Grid item xs={12} md={4}>
           <div className={classes.textContainer}>
             <Typography className={classes.text}>
-              © Copyright 2020 College Key Foundation
+              © Copyright 2020 College ARCH
             </Typography>
           </div>
         </Grid>
         <Grid item xs={12} md={4}>
           <div className={classes.textContainer}>
             <Typography className={classes.text}>
-              Made with 💗 by College Key Foundation
+              Made with 💗 by College ARCH
             </Typography>
           </div>
         </Grid>
