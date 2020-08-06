@@ -168,4 +168,10 @@ export const technicalTeam = [
       "Paula, part of Harvard's Class of 2024, helps to manage the technology aspects of College Key, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
   },
+  {
+    name: 'Isabela Sanchez',
+    position: 'Technical Director',
+    text: ':) :P :D ;)',
+    image: '',
+  },
 ];
