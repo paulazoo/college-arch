@@ -85,12 +85,12 @@ _ROUTE: https://www.collegearch.org/login_
 _ROUTE: https://www.collegearch.org/dashboard_
 
 - Dashboard page
-- Redirects here immediately after loggin in
+- Redirects here immediately after logging in
 - Shows who your respective mentees or mentors are if you've already been matched
+  - includes button to either your or your mentees' respective google classrooms
 - Also shows events:
-  - upcoming public events open to all website visitors
-  - upcoming private events where you have been specifically have been invited
-  - your past events
+  - your upcoming events (public and private)
+  - your past events (public and private)
 
 ### Profile
 
@@ -121,4 +121,4 @@ _ROUTE: https://www.collegearch.org/master_
   - Searching for one mentor or mentee will also show up their respective mentees/mentors
   - Click their profile picture to see all their account information
 - See all emails signed up for the newsletter email list
-- Create an event (NOT YET IMPLEMENTED)
+- Create an event
