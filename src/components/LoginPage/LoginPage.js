@@ -119,7 +119,7 @@ function LoginPage(props) {
   const renderGoogleLogin = () => {
     return (
       <GoogleLogin
-        clientId='322643072137-r7mupmjsg74h6g16o6k5vpi7cgsqvlmq.apps.googleusercontent.com'
+        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID}
         buttonText='Log in with Google'
         onSuccess={responseGoogle}
         onFailure={responseGoogleErrors}

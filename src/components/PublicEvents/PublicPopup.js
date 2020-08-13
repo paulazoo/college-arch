@@ -163,7 +163,7 @@ function PublicPopup({
   const renderGoogleLogin = () => {
     return (
       <GoogleLogin
-        clientId='322643072137-r7mupmjsg74h6g16o6k5vpi7cgsqvlmq.apps.googleusercontent.com'
+        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID}
         buttonText='Log in with Google'
         onSuccess={responseGoogle}
         onFailure={responseGoogleErrors}
@@ -187,12 +187,12 @@ function PublicPopup({
     >
       <Card className={classes.eventCard}>
         <CardHeader
-          title={(
+          title={
             <div className={classes.cardTitle}>
               <strong className={classes.nameText}>{renderHeader()}</strong>
             </div>
-          )}
-          subheader={(
+          }
+          subheader={
             <div className={classes.cardTime}>
               {event.start_time !== null ? (
                 <>
@@ -204,7 +204,7 @@ function PublicPopup({
                 <>Always open.</>
               )}
             </div>
-          )}
+          }
         />
         <CardContent>
           <Grid
