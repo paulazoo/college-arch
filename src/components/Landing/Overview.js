@@ -62,18 +62,17 @@ function Overview(props) {
             height='90%'
             width='100%'
             alt='Overview Image'
-            src={require('../../assets/Overview/foundationCover.png')}
+            src={require('../../assets/Overview/TempOverview.jpg')}
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <div className={classes.headTextContainer}>
             <Typography className={classes.headText}>WHO ARE WE?</Typography>
             <Typography className={classes.mainText}>
-              The College ARCH is an incorporated non-profit
-              organization led by low-income and minority students. The
-              organization was founded with the intent of helping
-              underrepresented students aim high and guide them through the
-              complex process of college admissions.
+              The College ARCH is an incorporated non-profit organization led by
+              low-income and minority students. The organization was founded
+              with the intent of helping underrepresented students aim high and
+              guide them through the complex process of college admissions.
               <br />
               <br />
               Our team attempts to reimagine the way guidance for the admission
