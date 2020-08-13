@@ -67,9 +67,8 @@ function TermsContent(props) {
             <strong>Last updated July 15, 2020</strong>
           </p>
           <p id='66835df9-c05a-495d-9634-7d74dcac9d04' className={classes.p}>
-            Thank you for choosing to be part of our community at College
-            ARCH [uhhh what r we again? 501c3? Something else? not sure...
-            :/]. (“
+            Thank you for choosing to be part of our community at College ARCH
+            [uhhh what r we again? 501c3? Something else? not sure... :/]. (“
             <strong>Organization</strong>
             ”, “ 
 {' '}
@@ -77,7 +76,9 @@ function TermsContent(props) {
             ”, “ 
 {' '}
 <strong>us</strong>
-            ”, or “ <strong>our</strong>
+            ”, or “ 
+{' '}
+<strong>our</strong>
             ”). We are committed to protecting your personal information and
             your right to privacy. If you have any questions or concerns about
             our policy, or our practices with regards to your personal
@@ -92,20 +93,20 @@ function TermsContent(props) {
             .
           </p>
           <p id='3187c025-d13c-4098-a5af-f54ebae8c420' className={classes.p}>
-            When you visit our website collegearch.org and use our
-            services, you trust us with your personal information. We take your
-            privacy very seriously. In this privacy policy, we seek to explain
-            to you in the clearest way possible what information we collect, how
-            we use it and what rights you have in relation to it. We hope you
-            take some time to read through it carefully, as it is important. If
-            there are any terms in this privacy policy that you do not agree
-            with, please discontinue use of our Sites and our services.
+            When you visit our website collegearch.org and use our services, you
+            trust us with your personal information. We take your privacy very
+            seriously. In this privacy policy, we seek to explain to you in the
+            clearest way possible what information we collect, how we use it and
+            what rights you have in relation to it. We hope you take some time
+            to read through it carefully, as it is important. If there are any
+            terms in this privacy policy that you do not agree with, please
+            discontinue use of our Sites and our services.
           </p>
           <p id='07a5ef95-89ed-44be-8159-a152cc1233dd' className={classes.p}>
             This privacy policy applies to all information collected through our
-            website (such as collegearch.org), and/or any related
-            services, sales, marketing or events (we refer to them collectively
-            in this privacy policy as the &quot;
+            website (such as collegearch.org), and/or any related services,
+            sales, marketing or events (we refer to them collectively in this
+            privacy policy as the &quot;
             <strong>Services</strong>
             &quot;).
           </p>
@@ -246,34 +247,28 @@ function TermsContent(props) {
                 id='d509c8b9-871b-4795-8338-52cdc7abb76b'
                 className={classes.p}
               >
-                <strong>Publicly Available Personal Information.</strong>
-{' '}
-We
+                <strong>Publicly Available Personal Information.</strong> We
                 collect first name, maiden name, last name, and nickname; email
                 addresses; social media; and other similar data.
-</p>
+              </p>
               <p
                 id='8a4b100a-6fc1-4bf7-9296-71eee924144b'
                 className={classes.p}
               >
-                <strong>Personal Information Provided by You.</strong>
-{' '}
-We
+                <strong>Personal Information Provided by You.</strong> We
                 collect app usage; and other similar data.
-</p>
+              </p>
               <p
                 id='b5cf220d-58b3-4914-9649-4b6f55956117'
                 className={classes.p}
               >
-                <strong>Social Media Login Data.</strong>
-{' '}
-We may provide you
+                <strong>Social Media Login Data.</strong> We may provide you
                 with the option to register using social media account details,
                 like your Facebook, Twitter or other social media account. If
                 you choose to register in this way, we will collect the
                 Information described in the section called &quot;HOW DO WE
                 HANDLE YOUR SOCIAL LOGINS&quot; below.
-</p>
+              </p>
               <p
                 id='b7e9b91d-d75d-44a1-8664-161f8b2fbf3b'
                 className={classes.p}
@@ -353,12 +348,10 @@ We may provide you
                 className='bulleted-list'
               >
                 <li>
-                  <strong>Request Feedback.</strong>
-{' '}
-We may use your information
+                  <strong>Request Feedback.</strong> We may use your information
                   to request feedback and to contact you about your use of our
                   Services.
-</li>
+                </li>
               </ul>
               <ul
                 id='ea448fce-de2c-4ab7-947f-0b1958500973'
@@ -389,9 +382,7 @@ We may use your information
                 className='bulleted-list'
               >
                 <li>
-                  <strong>For other Business Purposes.</strong>
-{' '}
-We may use your
+                  <strong>For other Business Purposes.</strong> We may use your
                   information for other Business Purposes, such as data
                   analysis, identifying usage trends, determining the
                   effectiveness of our promotional campaigns and to evaluate and
@@ -401,7 +392,7 @@ We may use your
                   end users and does not include personal information. We will
                   not use identifiable personal information without your
                   consent.
-</li>
+                </li>
               </ul>
             </div>
           </p>
@@ -431,24 +422,20 @@ We may use your
                 className='bulleted-list'
               >
                 <li>
-                  <strong>Consent:</strong>
-{' '}
-We may process your data if you have
+                  <strong>Consent:</strong> We may process your data if you have
                   given us specific consent to use your personal information in
                   a specific purpose.
-</li>
+                </li>
               </ul>
               <ul
                 id='03285a79-43dc-405e-af1f-8dd8ab2c8d5c'
                 className='bulleted-list'
               >
                 <li>
-                  <strong>Legitimate Interests:</strong>
-{' '}
-We may process your
+                  <strong>Legitimate Interests:</strong> We may process your
                   data when it is reasonably necessary to achieve our legitimate
                   business interests.
-</li>
+                </li>
               </ul>
               <ul
                 id='47eac016-3621-45d3-9a2f-cfeec61a4259'
@@ -466,31 +453,27 @@ We may process your
                 className='bulleted-list'
               >
                 <li>
-                  <strong>Legal Obligations:</strong>
-{' '}
-We may disclose your
+                  <strong>Legal Obligations:</strong> We may disclose your
                   information where we are legally required to do so in order to
                   comply with applicable law, governmental requests, a judicial
                   proceeding, court order, or legal process, such as in response
                   to a court order or a subpoena (including in response to
                   public authorities to meet national security or law
                   enforcement requirements).
-</li>
+                </li>
               </ul>
               <ul
                 id='7fbfd626-8288-4f1c-9a17-7b7d7db68745'
                 className='bulleted-list'
               >
                 <li>
-                  <strong>Vital Interests:</strong>
-{' '}
-We may disclose your
+                  <strong>Vital Interests:</strong> We may disclose your
                   information where we believe it is necessary to investigate,
                   prevent, or take action regarding potential violations of our
                   policies, suspected fraud, situations involving potential
                   threats to the safety of any person and illegal activities, or
                   as evidence in litigation in which we are involved.
-</li>
+                </li>
               </ul>
               <p
                 id='5a5eaf32-cbee-4547-9d16-1629f00afa3e'
@@ -503,27 +486,23 @@ We may disclose your
                 id='fb6f4f0d-8e18-48d1-9852-385e940d9c8d'
                 className={classes.p}
               >
-                <strong>Business Transfers.</strong>
-{' '}
-We may share or transfer
+                <strong>Business Transfers.</strong> We may share or transfer
                 your information in connection with, or during negotiations of,
                 any merger, sale of organization assets, financing, or
                 acquisition of all or a portion of our business to another
                 organization.
-</p>
+              </p>
               <p
                 id='9853b775-256c-4665-b1f3-6e5dc1dcbea2'
                 className={classes.p}
               >
-                <strong>Third-Party Advertisers.</strong>
-{' '}
-We may use third-party
+                <strong>Third-Party Advertisers.</strong> We may use third-party
                 advertising companies to serve ads when you visit the Services.
                 These companies may use information about your visits to our
                 Website(s) and other websites that are contained in web cookies
                 and other tracking technologies in order to provide
                 advertisements about goods and services of interest to you.
-</p>
+              </p>
             </div>
           </p>
           <p id='6e62d95d-0d4a-4513-a8b2-1ddda9e0d6e5' className={classes.p}>
@@ -737,13 +716,12 @@ We may use third-party
                 A privacy breach occurs when there is unauthorized access to or
                 collection, use, disclosure or disposal of personal information.
                 You will be notified about data breaches when College ARCH
-                believes you are likely to be at risk or
-                serious harm. For example, a data breach may be likely to result
-                in serious financial harm or harm to your mental or physical
-                well-being. In the event that College ARCH
-                becomes aware of a security breach which has resulted or may
-                result in unauthorized access, use or disclosure of personal
-                information College ARCH will promptly
+                believes you are likely to be at risk or serious harm. For
+                example, a data breach may be likely to result in serious
+                financial harm or harm to your mental or physical well-being. In
+                the event that College ARCH becomes aware of a security breach
+                which has resulted or may result in unauthorized access, use or
+                disclosure of personal information College ARCH will promptly
                 investigate the matter and notify the applicable Supervisory
                 Authority not later than 72 hours after having become aware of
                 it, unless the personal data breach is unlikely to result in a
@@ -877,7 +855,7 @@ We may use third-party
                 request access to the personal information we collect from you,
                 change that information, or delete it in some circumstances. To
                 request to review, update, or delete your personal information,
-                please email us at contact.collegearche@gmail.com. We will
+                please email us at contact.collegearch@gmail.com. We will
                 respond to your request within 30 days.
               </p>
             </div>
@@ -901,21 +879,25 @@ We may use third-party
             &quot;, “ 
 {' '}
 <strong>we</strong>
-            ”, “ <strong>us</strong>
+            ”, “ 
+{' '}
+<strong>us</strong>
             ”, or “ 
 {' '}
 <strong>our</strong>
             ”), concerning your access to and use of the
 {' '}
-            <Link>https://collegearch.org</Link> website as well as any
-            other media form, media channel, mobile website or mobile
-            application related, linked, or otherwise connected thereto
-            (collectively, the “Site”). You agree that by accessing the Site,
-            you have read, understood, and agreed to be bound by all of these
-            Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE,
-            THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST
-            DISCONTINUE USE IMMEDIATELY.
-          </p>
+            <Link>https://collegearch.org</Link>
+{' '}
+website as well as any other
+            media form, media channel, mobile website or mobile application
+            related, linked, or otherwise connected thereto (collectively, the
+            “Site”). You agree that by accessing the Site, you have read,
+            understood, and agreed to be bound by all of these Terms of Use. IF
+            YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE
+            EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE
+            USE IMMEDIATELY.
+</p>
           <p id='5f0951de-7816-444b-955c-610b60806f87' className={classes.p}>
             Supplemental terms and conditions or documents that may be posted on
             the Site from time to time are hereby expressly incorporated herein
@@ -1207,10 +1189,10 @@ We may use third-party
           </p>
           <p id='7d741380-123d-45f7-838f-3d9bf73ce8db' className={classes.p}>
             These Terms shall be governed by and defined following the laws of
-            the the State of Massachusetts. College ARCH
-            and yourself irrevocably consent that the courts of Suffolk County,
-            Massachusetts shall have exclusive jurisdiction to resolve any
-            dispute which may arise in connection with these terms.
+            the the State of Massachusetts. College ARCH and yourself
+            irrevocably consent that the courts of Suffolk County, Massachusetts
+            shall have exclusive jurisdiction to resolve any dispute which may
+            arise in connection with these terms.
           </p>
           <p id='848220a9-0833-4514-89c4-65b4fcba5916' className={classes.p}>
             <strong>DISPUTE RESOLUTION</strong>
