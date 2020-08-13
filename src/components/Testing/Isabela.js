@@ -34,8 +34,10 @@ But I prefer functional components, so this application uses functional componen
 Anyway, so this Isabela component is in the Testing folder
 */
 
-/* First thing to do is to import React */
-import React from 'react';
+/* First thing to do is to import React
+we also need to import useState, which is a React hook we'll use later
+useState is necessary for making React variables */
+import React, { useState } from 'react';
 /* Also this application uses Material UI 
 (pre made html pieces that already look nice and styled
   also helps with organizing and spacing and centering everything etc.
@@ -151,4 +153,4 @@ const mapDispatchToProps = () => {
   return {};
 };
 
-export default connect(maptStateToProps, mapDispatchToProps)(Isabela);
+export default connect(mapStateToProps, mapDispatchToProps)(Isabela);
