@@ -149,7 +149,7 @@ function Profile(props) {
                 </Typography>
               </Grid>
               <Grid item xs={0} md={12} />
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   variant='outlined'
@@ -161,7 +161,7 @@ function Profile(props) {
               {props.account.user_type === 'Mentor' && (
                 <>
                   <Grid item xs={0} md={12} />
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={12} md={6}>
                     <TextField
                       fullWidth
                       variant='outlined'
@@ -171,7 +171,7 @@ function Profile(props) {
                     />
                   </Grid>
                   <Grid item xs={0} md={12} />
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={12} md={6}>
                     <TextField
                       fullWidth
                       variant='outlined'
@@ -185,7 +185,7 @@ function Profile(props) {
                 </>
               )}
               <Grid item xs={0} md={12} />
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   variant='outlined'
@@ -197,7 +197,7 @@ function Profile(props) {
                 />
               </Grid>
               <Grid item xs={12} />
-              <Grid item xs={12} md={5}>
+              <Grid item xs={12} md={7}>
                 <Grid container direction='row' justify='flex-end'>
                   <Grid item>
                     <Button
