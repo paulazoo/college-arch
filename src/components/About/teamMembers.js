@@ -95,7 +95,7 @@ export const recruitmentDirectors = [
   {
     name: 'Brenda Barnetche',
     position: 'Florida Regional Director',
-    text: '???????',
+    text: '????????',
     image: '',
   },
 ];
