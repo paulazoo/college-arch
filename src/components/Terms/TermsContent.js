@@ -70,7 +70,7 @@ function TermsContent(props) {
             Thank you for choosing to be part of our community at College
             ARCH [uhhh what r we again? 501c3? Something else? not sure...
             :/]. (“
-            <strong>Organization [not sure how to refer to us tbh]</strong>
+            <strong>Organization</strong>
             ”, “ 
 {' '}
 <strong>we</strong>
@@ -507,9 +507,9 @@ We may disclose your
 {' '}
 We may share or transfer
                 your information in connection with, or during negotiations of,
-                any merger, sale of organization [?] assets, financing, or
+                any merger, sale of organization assets, financing, or
                 acquisition of all or a portion of our business to another
-                organization [?].
+                organization.
 </p>
               <p
                 id='9853b775-256c-4665-b1f3-6e5dc1dcbea2'
@@ -737,13 +737,13 @@ We may use third-party
                 A privacy breach occurs when there is unauthorized access to or
                 collection, use, disclosure or disposal of personal information.
                 You will be notified about data breaches when College ARCH
-                [not sure] believes you are likely to be at risk or
+                believes you are likely to be at risk or
                 serious harm. For example, a data breach may be likely to result
                 in serious financial harm or harm to your mental or physical
-                well-being. In the event that College ARCH [not sure]
+                well-being. In the event that College ARCH
                 becomes aware of a security breach which has resulted or may
                 result in unauthorized access, use or disclosure of personal
-                information College ARCH [not sure] will promptly
+                information College ARCH will promptly
                 investigate the matter and notify the applicable Supervisory
                 Authority not later than 72 hours after having become aware of
                 it, unless the personal data breach is unlikely to result in a
@@ -896,8 +896,8 @@ We may use third-party
           <p id='0429a79b-1cfc-4e68-a02a-36c2601958b7' className={classes.p}>
             These Terms of Use constitute a legally binding agreement made
             between you, whether personally or on behalf of an entity (“you”)
-            and College ARCH [not sure] (&quot;
-            <strong>organization [?]</strong>
+            and College ARCH (&quot;
+            <strong>organization</strong>
             &quot;, “ 
 {' '}
 <strong>we</strong>
@@ -1207,7 +1207,7 @@ We may use third-party
           </p>
           <p id='7d741380-123d-45f7-838f-3d9bf73ce8db' className={classes.p}>
             These Terms shall be governed by and defined following the laws of
-            the the State of Massachusetts. College ARCH [not sure]
+            the the State of Massachusetts. College ARCH
             and yourself irrevocably consent that the courts of Suffolk County,
             Massachusetts shall have exclusive jurisdiction to resolve any
             dispute which may arise in connection with these terms.
