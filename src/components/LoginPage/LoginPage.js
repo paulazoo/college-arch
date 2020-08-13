@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import LogRocket from 'logrocket';
-import GoogleLogin from 'react-google-login';
 import MuiAlert from '@material-ui/lab/Alert';
 import {
   Button,
@@ -31,6 +29,7 @@ import { getLogin } from '../../store/actions/api';
 import WordDivider from '../Shared/WordDivider';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
+import GoogleLoginButton from './GoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
   wordDivider: {
@@ -91,43 +90,6 @@ function LoginPage(props) {
     history.push('/apply');
   };
 
-  const getLoginCallback = (account) => {
-    LogRocket.identify(account.id, {
-      name: account.name,
-      email: account.email,
-      google_id: account.google_id,
-    });
-  };
-
-  const responseGoogle = (response) => {
-    props.setCurrentlyLoading(true);
-    sessionStorage.setItem('user_token', response.tokenId);
-    props.getLogin(response.tokenId, getLoginCallback);
-  };
-
-  const responseGoogleErrors = (response) => {
-    switch (response.error) {
-      case 'popup_closed_by_user':
-        break;
-      case 'idpiframe_initialization_failed':
-        setErrorText('Login error- ensure that cookies are enabled to login.');
-      default:
-        setErrorDisplayOpen(true);
-    }
-  };
-
-  const renderGoogleLogin = () => {
-    return (
-      <GoogleLogin
-        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID}
-        buttonText='Log in with Google'
-        onSuccess={responseGoogle}
-        onFailure={responseGoogleErrors}
-        cookiePolicy='single_host_origin'
-      />
-    );
-  };
-
   const renderLogin = () => {
     if (props.currentlyLoading === true) {
       return (
@@ -173,7 +135,9 @@ function LoginPage(props) {
           <div className={classes.spacing} />
         </Grid>
         <Grid item>
-          <Box>{renderGoogleLogin()}</Box>
+          <Box>
+            <GoogleLoginButton />
+          </Box>
         </Grid>
       </>
     );

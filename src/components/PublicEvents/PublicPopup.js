@@ -12,10 +12,6 @@ import {
   TextField,
   Divider,
 } from '@material-ui/core';
-import InfoIcon from '@material-ui/icons/Info';
-import { NavLink } from 'react-router-dom';
-import LogRocket from 'logrocket';
-import GoogleLogin from 'react-google-login';
 import moment from 'moment';
 
 // Redux
@@ -29,6 +25,7 @@ import { userLogout, setCurrentlyLoading } from '../../store/actions/index';
 
 // Theme
 import { makeStyles } from '@material-ui/styles';
+import GoogleLoginButton from '../LoginPage/GoogleLoginButton';
 
 // Custom Components
 
@@ -104,11 +101,6 @@ function PublicPopup({
   const [publicName, setPublicName] = useState('');
   const [publicEmail, setPublicEmail] = useState('');
 
-  const [errorDisplayOpen, setErrorDisplayOpen] = useState(false);
-  const [errorText, setErrorText] = useState(
-    'Login error. Please refresh the page to try again'
-  );
-
   const handleChangePublicName = (e) => {
     setPublicName(e.target.value);
   };
@@ -135,43 +127,6 @@ function PublicPopup({
     setPublicPopup(false);
   };
 
-  const getLoginCallback = (account) => {
-    LogRocket.identify(account.id, {
-      name: account.name,
-      email: account.email,
-      google_id: account.google_id,
-    });
-  };
-
-  const responseGoogle = (response) => {
-    props.setCurrentlyLoading(true);
-    sessionStorage.setItem('user_token', response.tokenId);
-    props.getLogin(response.tokenId, getLoginCallback);
-  };
-
-  const responseGoogleErrors = (response) => {
-    switch (response.error) {
-      case 'popup_closed_by_user':
-        break;
-      case 'idpiframe_initialization_failed':
-        setErrorText('Login error- ensure that cookies are enabled to login.');
-      default:
-        setErrorDisplayOpen(true);
-    }
-  };
-
-  const renderGoogleLogin = () => {
-    return (
-      <GoogleLogin
-        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID}
-        buttonText='Log in with Google'
-        onSuccess={responseGoogle}
-        onFailure={responseGoogleErrors}
-        cookiePolicy='single_host_origin'
-      />
-    );
-  };
-
   const renderHeader = () => {
     if (type === 'register') {
       return `Register for ${event.name}`;
@@ -187,12 +142,12 @@ function PublicPopup({
     >
       <Card className={classes.eventCard}>
         <CardHeader
-          title={
+          title={(
             <div className={classes.cardTitle}>
               <strong className={classes.nameText}>{renderHeader()}</strong>
             </div>
-          }
-          subheader={
+          )}
+          subheader={(
             <div className={classes.cardTime}>
               {event.start_time !== null ? (
                 <>
@@ -204,7 +159,7 @@ function PublicPopup({
                 <>Always open.</>
               )}
             </div>
-          }
+          )}
         />
         <CardContent>
           <Grid
@@ -226,7 +181,9 @@ function PublicPopup({
                 justify='center'
                 alignItems='center'
               >
-                <Grid item>{renderGoogleLogin()}</Grid>
+                <Grid item>
+                  <GoogleLoginButton />
+                </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12}>
