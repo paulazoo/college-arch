@@ -30,6 +30,7 @@ import Profile from './components/Profile/Profile';
 import PublicEvents from './components/PublicEvents/PublicEvents';
 import EventPage from './components/EventPage/EventPage';
 import { userLogout } from './store/actions';
+import Isabela from './components/Testing/Isabela';
 
 function App(props) {
   const createdTheme = createMuiTheme({
@@ -85,6 +86,7 @@ function App(props) {
         <Route exact path='/events/:eventId' component={EventPage} />
 
         <Route exact path='/testing' component={Testing} />
+        <Route exact path='/isabela' component={Isabela} />
 
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/profile' component={Profile} />
