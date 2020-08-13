@@ -41,7 +41,7 @@ import React from 'react';
   also helps with organizing and spacing and centering everything etc.
   kind of like bootstrap if you've ever heard of or used that), 
 so now we import any necessary Material UI pieces */
-import { Button, Typography, TextField } from '@material-ui/core';
+import { Button, Typography, TextField, Box } from '@material-ui/core';
 
 /* Then here are the redux related imports
 Redux is like a way for us to have a global data storage that is accessible from any component
