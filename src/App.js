@@ -58,10 +58,10 @@ function App(props) {
         lightGray: 'lightgray',
         gray: 'gray',
         black: 'black',
-        muted: '#84c6c8',
+        muted: '#F3AD78',
         teamOne: '#3A8DB5',
         teamTwo: '#A5D6D9',
-        asSeenIn: '#B4D2D4',
+        asSeenIn: '#FFD582',
       },
     },
     typography: {
@@ -96,6 +96,10 @@ function App(props) {
     </MuiThemeProvider>
   );
 }
+
+const mapStateToProps = (state) => {
+  return state;
+};
 
 function mapDispatchToProps(dispatch) {
   return {
