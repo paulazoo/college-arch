@@ -55,7 +55,8 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     height: theme.spacing(15),
     justifyContent: 'center',
-    backgroundColor: theme.palette.primary.main,
+    // backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.common.navbar,
   },
   lastItem: {
     padding: 0,

@@ -53,6 +53,7 @@ function App(props) {
         dark: '#C33C23',
       },
       common: {
+        navbar: '#CE8217',
         white: 'white',
         black: 'black',
         gray: 'gray',
@@ -97,7 +98,6 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
   return {
