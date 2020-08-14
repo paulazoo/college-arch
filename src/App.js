@@ -59,8 +59,8 @@ function App(props) {
         gray: 'gray',
         yellow: '#ffde59',
         muted: '#84c6c8',
-        teamGreen: '#93E3B6',
-        teamBlue: '#92E1E4',
+        teamOne: '#93E3B6',
+        teamTwo: '#92E1E4',
         lightGray: 'lightgray',
         greenFoam: '#B4D2D4',
       },
@@ -97,7 +97,6 @@ function App(props) {
     </MuiThemeProvider>
   );
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {

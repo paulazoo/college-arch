@@ -32,7 +32,7 @@ import ProfilePic from '../ProfilePic/ProfilePic';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.common.teamGreen,
+    backgroundColor: theme.palette.common.teamOne,
   },
   wordDivider: {
     fontSize: 44,

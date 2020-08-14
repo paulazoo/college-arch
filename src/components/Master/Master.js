@@ -36,7 +36,7 @@ import MasterDrawer from './MasterDrawer.';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.common.teamGreen,
+    backgroundColor: theme.palette.common.teamOne,
   },
   main: {
     padding: theme.spacing(4),

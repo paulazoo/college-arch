@@ -280,29 +280,29 @@ function Team(props) {
       {renderTeam(
         executiveTeam,
         'Executive Team',
-        theme.palette.common.teamGreen
+        theme.palette.common.teamOne
       )}
-      {renderTeam(programTeam, 'Program Team', theme.palette.common.teamBlue)}
+      {renderTeam(programTeam, 'Program Team', theme.palette.common.teamTwo)}
       {renderTeam(
         curriculumTeam,
         'Curriculum Team',
-        theme.palette.common.teamGreen
+        theme.palette.common.teamOne
       )}
-      {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamBlue)}
+      {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamTwo)}
       {renderTeam(
         graphicsMarketingTeam,
         'Graphics and Marketing Team',
-        theme.palette.common.teamGreen
+        theme.palette.common.teamOne
       )}
       {renderTeam(
         technicalTeam,
         'Technical Team',
-        theme.palette.common.teamBlue
+        theme.palette.common.teamTwo
       )}
       {renderTeam(
         recruitmentDirectors,
         'Recruitment Directors',
-        theme.palette.common.teamGreen
+        theme.palette.common.teamOne
       )}
     </>
   );

@@ -34,7 +34,7 @@ import Past from '../EventsList/Past';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.common.teamBlue,
+    backgroundColor: theme.palette.common.teamTwo,
   },
   wordDivider: {
     fontSize: 44,
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   card: {
-    backgroundColor: theme.palette.common.teamBlue,
+    backgroundColor: theme.palette.common.teamTwo,
     // margin: theme.spacing(8),
     padding: theme.spacing(8),
     minHeight: '100vh',
