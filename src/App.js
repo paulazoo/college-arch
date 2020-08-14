@@ -36,14 +36,14 @@ function App(props) {
   const createdTheme = createMuiTheme({
     palette: {
       primary: {
-        light: '#92E1E4',
-        main: '#004BAD',
-        dark: '#00306F',
+        light: '#FFB347',
+        main: '#FF971A',
+        dark: '#CE8217',
         contrastText: '#FFFFFF',
       },
       secondary: {
-        light: '#B3F363',
-        main: '#81C437',
+        light: '#30C3CD',
+        main: '#1697B7',
         contrastText: '#FFFFFF',
       },
       contrastText: '#fff',
