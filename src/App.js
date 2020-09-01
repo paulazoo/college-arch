@@ -36,14 +36,14 @@ function App(props) {
   const createdTheme = createMuiTheme({
     palette: {
       primary: {
-        light: '#FFB347',
-        main: '#FF971A',
-        dark: '#CE8217',
+        light: 'hsl(213, 97%, 45%)',
+        main: 'hsl(213, 97%, 30%)',
+        dark: 'hsl(213, 97%, 14%)',
         contrastText: '#FFFFFF',
       },
       secondary: {
-        light: '#30C3CD',
-        main: '#1697B7',
+        light: 'hsl(24, 99%, 65%)',
+        main: 'hsl(24, 99%, 51%)',
         contrastText: '#FFFFFF',
       },
       contrastText: '#fff',
@@ -53,7 +53,7 @@ function App(props) {
         dark: '#C33C23',
       },
       common: {
-        navbar: '#CE8217',
+        navbar: 'hsl(24, 99%, 51%)',
         white: 'white',
         lightGray: 'lightgray',
         gray: 'gray',
