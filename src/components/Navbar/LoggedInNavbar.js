@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logInOut: {
     fontSize: 16,
-    color: theme.palette.secondary.light,
+    color: theme.palette.common.loginout,
     fontWeight: 'bold',
     [theme.breakpoints.down('md')]: {
       fontSize: 14,

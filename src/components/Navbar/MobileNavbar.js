@@ -35,7 +35,7 @@ function MobileNavbar({ ...props }) {
 
   return (
     <div>
-      {sessionStorage.getItem('user_token') ? (
+      {sessionStorage.getItem('access_token') ? (
         <MobileDrawer menuItems={loggedInMenuItems} />
       ) : (
         <MobileDrawer menuItems={loggedOutMenuItems} />

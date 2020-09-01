@@ -165,7 +165,7 @@ export const technicalTeam = [
     name: 'Paula Zhu',
     position: 'Technical Director',
     text:
-      "Paula, part of Harvard's Class of 2024, helps to manage the technology aspects of College Key, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
+      "Paula, part of Harvard's Class of 2024, helps to manage the technical aspects and website of College Key, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
   },
   {

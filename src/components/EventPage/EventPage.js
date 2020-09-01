@@ -88,7 +88,7 @@ function EventPage({ ...props }) {
   const [publicPopupOpen, setPublicPopupOpen] = useState(false);
   const [publicPopupType, setPublicPopupType] = useState('register');
 
-  const loggedIn = sessionStorage.getItem('user_token') && props.account.id;
+  const loggedIn = sessionStorage.getItem('access_token') && props.account.id;
 
   useEffect(() => {
     if (loggedIn) {
@@ -166,14 +166,14 @@ function EventPage({ ...props }) {
           />
           <Card className={classes.eventCard}>
             <CardHeader
-              title={(
+              title={
                 <div className={classes.cardTitle}>
                   <strong className={classes.nameText}>
                     {`${event.name} `}
                   </strong>
                 </div>
-              )}
-              subheader={(
+              }
+              subheader={
                 <div className={classes.cardTime}>
                   {event.start_time !== null ? (
                     <>
@@ -185,7 +185,7 @@ function EventPage({ ...props }) {
                     <>Always open.</>
                   )}
                 </div>
-              )}
+              }
             />
             <CardContent>
               <Grid

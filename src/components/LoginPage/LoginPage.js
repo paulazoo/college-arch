@@ -23,7 +23,6 @@ import {
   setUser,
   setCurrentlyLoading,
 } from '../../store/actions/index';
-import { getLogin } from '../../store/actions/api';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -176,7 +175,7 @@ function LoginPage(props) {
               justify='center'
               spacing={3}
             >
-              {sessionStorage.getItem('user_token') && props.account.id ? (
+              {sessionStorage.getItem('access_token') && props.account.id ? (
                 <Grid item xs={12} className={classes.loginTextContainer}>
                   <Typography className={classes.loginText}>
                     You are logged in!
@@ -203,7 +202,6 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     userLogout: () => dispatch(userLogout()),
-    getLogin: (userToken) => dispatch(getLogin(userToken)),
     setCurrentlyLoading: (currentlyLoading) =>
       dispatch(setCurrentlyLoading(currentlyLoading)),
   };

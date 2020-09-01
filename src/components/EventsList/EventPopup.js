@@ -102,7 +102,7 @@ function EventPopup({
   const renderEventButton = (name) => {
     if (
       name === 'public' &&
-      !sessionStorage.getItem('user_token') &&
+      !sessionStorage.getItem('access_token') &&
       !props.account?.id
     ) {
       return (
@@ -144,12 +144,12 @@ function EventPopup({
     >
       <Card className={classes.eventCard}>
         <CardHeader
-          title={(
+          title={
             <div className={classes.cardTitle}>
               <strong className={classes.nameText}>{renderEventName()}</strong>
             </div>
-          )}
-          subheader={(
+          }
+          subheader={
             <div className={classes.cardTime}>
               {event.start_time !== null ? (
                 <>
@@ -161,7 +161,7 @@ function EventPopup({
                 <>Always open.</>
               )}
             </div>
-          )}
+          }
         />
         <CardContent>
           <Grid

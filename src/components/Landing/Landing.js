@@ -174,7 +174,7 @@ function Landing(props) {
   };
 
   useEffect(() => {
-    if (!sessionStorage.getItem('user_token') || !props.account?.id) {
+    if (!sessionStorage.getItem('access_token') || !props.account?.id) {
       props.userLogout();
     }
   }, []);
@@ -204,9 +204,9 @@ function Landing(props) {
           <Grid item xs={0} md={12} />
           <Grid item xs={8} md={5} className={classes.textGrid}>
             <Typography color='inherit' className={classes.landingText3}>
-              The College ARCH was founded on the idea of free,
-              accessible guidance to the college application process for those
-              of underprivileged backgrounds
+              The College ARCH was founded on the idea of free, accessible
+              guidance to the college application process for those of
+              underprivileged backgrounds
             </Typography>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Button

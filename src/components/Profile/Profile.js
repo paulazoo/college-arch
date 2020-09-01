@@ -22,7 +22,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // Redux
 import { connect } from 'react-redux';
 import { userLogout, setUser } from '../../store/actions/index';
-import { getLogin, putAccount, getAccount } from '../../store/actions/api';
+import { putAccount, getAccount } from '../../store/actions/api';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -228,7 +228,6 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     userLogout: () => dispatch(userLogout()),
-    getLogin: (userToken, callback) => dispatch(getLogin(userToken, callback)),
     putAccount: (body) => dispatch(putAccount(body)),
     getAccount: () => dispatch(getAccount()),
   };

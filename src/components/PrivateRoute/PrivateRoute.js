@@ -3,7 +3,7 @@ import * as JWT from 'jwt-decode';
 import { Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  let userLoggedIn = sessionStorage.getItem('user_token');
+  let userLoggedIn = sessionStorage.getItem('access_token');
 
   // should be put into middleware
   if (userLoggedIn && JWT(userLoggedIn).exp < Date.now() / 1000) {

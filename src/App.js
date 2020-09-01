@@ -59,9 +59,10 @@ function App(props) {
         gray: 'gray',
         black: 'black',
         muted: '#F3AD78',
-        teamOne: '#3A8DB5',
-        teamTwo: '#A5D6D9',
-        asSeenIn: '#FFD582',
+        teamOne: 'hsl(213, 99%, 80%)',
+        teamTwo: 'hsl(24, 99%, 80%)',
+        asSeenIn: 'hsl(24, 99%, 70%)',
+        loginout: 'hsl(213, 99%, 20%)',
       },
     },
     typography: {

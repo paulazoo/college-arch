@@ -88,7 +88,7 @@ function MobileDrawer({ menuItems, ...props }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {sessionStorage.getItem('user_token') &&
+        {sessionStorage.getItem('access_token') &&
           props.account &&
           props.isMaster === true && (
             <Button
@@ -131,7 +131,7 @@ function MobileDrawer({ menuItems, ...props }) {
             <ListItemText style={{ color: 'white' }} primary='Donate' />
           </ListItem>
         </Button>
-        {sessionStorage.getItem('user_token') ? (
+        {sessionStorage.getItem('access_token') ? (
           <Button
             color='inherit'
             className={classes.rightLink}

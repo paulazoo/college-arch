@@ -42,7 +42,7 @@ function DesktopNavbar({ ...props }) {
   return (
     <>
       <PersonalSnackbar />
-      {sessionStorage.getItem('user_token') && props.account.id ? (
+      {sessionStorage.getItem('access_token') && props.account.id ? (
         <LoggedInNavbar />
       ) : (
         <LoggedOutNavbar />

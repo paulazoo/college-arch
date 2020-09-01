@@ -16,11 +16,7 @@ import moment from 'moment';
 
 // Redux
 import { connect } from 'react-redux';
-import {
-  postPublicRegister,
-  getLogin,
-  postPublicJoin,
-} from '../../store/actions/api';
+import { postPublicRegister, postPublicJoin } from '../../store/actions/api';
 import { userLogout, setCurrentlyLoading } from '../../store/actions/index';
 
 // Theme
@@ -142,12 +138,12 @@ function PublicPopup({
     >
       <Card className={classes.eventCard}>
         <CardHeader
-          title={(
+          title={
             <div className={classes.cardTitle}>
               <strong className={classes.nameText}>{renderHeader()}</strong>
             </div>
-          )}
-          subheader={(
+          }
+          subheader={
             <div className={classes.cardTime}>
               {event.start_time !== null ? (
                 <>
@@ -159,7 +155,7 @@ function PublicPopup({
                 <>Always open.</>
               )}
             </div>
-          )}
+          }
         />
         <CardContent>
           <Grid
@@ -268,7 +264,6 @@ function mapDispatchToProps(dispatch) {
     postPublicRegister: (eventId, body) =>
       dispatch(postPublicRegister(eventId, body)),
     userLogout: () => dispatch(userLogout()),
-    getLogin: (userToken) => dispatch(getLogin(userToken)),
     setCurrentlyLoading: (currentlyLoading) =>
       dispatch(setCurrentlyLoading(currentlyLoading)),
   };

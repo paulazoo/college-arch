@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // Redux
 import { connect } from 'react-redux';
 import { userLogout, setUser } from '../../store/actions/index';
-import { getLogin, getAccount } from '../../store/actions/api';
+import { getAccount } from '../../store/actions/api';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -34,7 +34,7 @@ import Past from '../EventsList/Past';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.common.teamTwo,
+    backgroundColor: theme.palette.common.teamOne,
   },
   wordDivider: {
     fontSize: 44,
@@ -136,7 +136,6 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     userLogout: () => dispatch(userLogout()),
-    getLogin: (userToken, callback) => dispatch(getLogin(userToken, callback)),
     getAccount: () => dispatch(getAccount()),
   };
 }
