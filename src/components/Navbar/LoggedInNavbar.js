@@ -96,7 +96,7 @@ function LoggedInNavbar({ ...props }) {
             >
               <Grid item>
                 <img
-                  src={require('../../assets/Logos/OrangeTempNavbar.jpg')}
+                  src={require('../../assets/Logos/NavbarLogo.PNG')}
                   alt='fancy banner :D'
                   width='245'
                   height='66'
