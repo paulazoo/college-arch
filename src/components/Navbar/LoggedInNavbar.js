@@ -91,14 +91,14 @@ function LoggedInNavbar({ ...props }) {
               container
               direction='row'
               alignItems='center'
-              // justify="center"
+              justify='flex-start'
               spacing={1}
             >
               <Grid item xs={12}>
                 <img
                   src={require('../../assets/Logos/NavbarLogo.JPG')}
                   alt='fancy banner :D'
-                  width='80%'
+                  width='60%'
                   onClick={logoClick}
                 />
               </Grid>

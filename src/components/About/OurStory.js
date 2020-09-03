@@ -144,8 +144,8 @@ function OurStory(props) {
                 >
                   <Typography className={classes.story}>
                     <p>
-                      As the founders of College ARCH (Access and Resources for
-                      College and Higher Education), many of us including our
+                      As the founders of College ARCH (Application Resources for
+                      College and Higher-Education), many of us including our
                       President, Lucas Leanza (Stanford ’23), are
                       First-Generation Low-Income (FGLI) students. Inspired
                       through Questbridge, a college match program for high
