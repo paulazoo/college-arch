@@ -144,28 +144,28 @@ function OurStory(props) {
                 >
                   <Typography className={classes.story}>
                     <p>
-                      As the founders of College ARCH (Access and Resources for 
-                      College and Higher Education), many of us including our 
-                      President, Lucas Leanza (Stanford ’23), are First-Generation 
-                      Low-Income (FGLI) students. Inspired through 
-                      Questbridge, a college match program for high achieving 
-                      low-income students, we aim to recreate that mentor-mentee 
-                      relationship and friendship to help thousands of students 
-                      with the college application process. For many underrepresented 
-                      students, having this kind of peer support while navigating the many
-                      aspects in the college application process can make the
-                      process feel less stressful.
+                      As the founders of College ARCH (Access and Resources for
+                      College and Higher Education), many of us including our
+                      President, Lucas Leanza (Stanford ’23), are
+                      First-Generation Low-Income (FGLI) students. Inspired
+                      through Questbridge, a college match program for high
+                      achieving low-income students, we aim to recreate that
+                      mentor-mentee relationship and friendship to help
+                      thousands of students with the college application
+                      process. For many underrepresented students, having this
+                      kind of peer support while navigating the many aspects in
+                      the college application process can make the process feel
+                      less stressful.
                     </p>
                     <p>
-                      Thus, we realized that individualized support was a
-                      key factor missing from existing guidance programs.
+                      Thus, we realized that individualized support was a key
+                      factor missing from existing guidance programs.
                     </p>
                     <p>
-                      Our hopes are that the College ARCH’s
-                      combination of one-on-one mentorship in addition to
-                      traditional information sessions will help support
-                      students in all aspects of the college application
-                      process.
+                      Our hopes are that College ARCH’s combination of
+                      one-on-one mentorship in addition to traditional
+                      information sessions will help support students in all
+                      aspects of the college application process.
                     </p>
                     <p>
                       The extra hurdles facing FGLI students and those from
@@ -174,9 +174,9 @@ function OurStory(props) {
                       crisis exacerbates these difficulties. But just as the
                       COVID-19 pandemic has forced the nation’s education model
                       to change, the growing inequalities in our education
-                      system has caused the College ARCH to reimagine
-                      the way college prep is delivered to students of
-                      disadvantaged backgrounds.
+                      system has caused College ARCH to reimagine the way
+                      college prep is delivered to students of disadvantaged
+                      backgrounds.
                     </p>
                   </Typography>
                 </Grid>

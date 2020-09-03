@@ -96,10 +96,10 @@ function LoggedInNavbar({ ...props }) {
             >
               <Grid item>
                 <img
-                  src={require('../../assets/Logos/NavbarLogo.PNG')}
+                  src={require('../../assets/Logos/NavbarLogo.JPG')}
                   alt='fancy banner :D'
-                  width='245'
-                  height='66'
+                  width='396'
+                  height='70'
                   onClick={logoClick}
                 />
               </Grid>

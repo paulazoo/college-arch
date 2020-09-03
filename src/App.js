@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 import Landing from './components/Landing/Landing';
 import About from './components/About/About';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Testing from './components/Testing/Testing';
+import Testing from './components/Testing/TestingTestimonial';
 import FellowshipProgram from './components/FellowshipProgram/FellowshipProgram';
 import LoginPage from './components/LoginPage/LoginPage';
 import MenteesPage from './components/MenteesPage/MenteesPage';

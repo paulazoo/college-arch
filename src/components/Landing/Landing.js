@@ -204,7 +204,8 @@ function Landing(props) {
           <Grid item xs={0} md={12} />
           <Grid item xs={8} md={5} className={classes.textGrid}>
             <Typography color='inherit' className={classes.landingText3}>
-              The College ARCH was founded on the idea of free, accessible
+              College ARCH (Application Resources for College and
+              Higher-education) was founded on the idea of free, accessible
               guidance to the college application process for those of
               underprivileged backgrounds
             </Typography>

@@ -164,7 +164,7 @@ function MobileDrawer({ menuItems, ...props }) {
       <MuiAppBar
         elevation={0}
         position='static'
-        color='primary'
+        color='secondary'
         style={{ height: 60 }}
       >
         <Grid

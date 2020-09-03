@@ -39,12 +39,12 @@ function FellowshipGeneral(props) {
           </strong>
         </p>
         <p>
-          The College ARCH's summer fellowship is a 4-week FREE
-          program where fellows attend two virtual workshops (over zoom) each
-          week to learn about the college application process, get paired with a
-          college mentor (from Harvard, Yale, Princeton, MIT, and other
-          colleges) and will also receive additional resources during the 4-week
-          programming to learn.
+          College ARCH's summer fellowship is a 4-week FREE program where
+          fellows attend two virtual workshops (over zoom) each week to learn
+          about the college application process, get paired with a college
+          mentor (from Harvard, Yale, Princeton, MIT, and other colleges) and
+          will also receive additional resources during the 4-week programming
+          to learn.
         </p>
         <p>
           <strong>

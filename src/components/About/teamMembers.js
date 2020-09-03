@@ -89,7 +89,7 @@ export const recruitmentDirectors = [
     name: 'Natalie Winter',
     position: 'Hawaii Regional Director',
     text:
-      "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of the College ARCH.",
+      "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of College ARCH.",
     image: '',
   },
   {

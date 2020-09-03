@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
+import Testimonials from '../Testimonials/Testimonials';
 
 // Custom Components
 
@@ -19,7 +20,24 @@ function Testing(props) {
     console.log('clicked');
   };
 
-  return <Button onClick={handleClick}>Click me</Button>;
+  const testimonialData = [
+    {
+      source: 'hi',
+      author: 'author 1',
+      content: 'content 1',
+    },
+    {
+      source: 'hiya',
+      author: 'author 2',
+      content: 'content 2',
+    },
+  ];
+
+  return (
+    <>
+      <Testimonials testimonialData={testimonialData} />
+    </>
+  );
 }
 
 const mapStateToProps = (state) => ({});
