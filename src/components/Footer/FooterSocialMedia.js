@@ -74,7 +74,7 @@ function FooterSocialMedia() {
           <IconButton
             size='small'
             target='_blank'
-            href='https://www.facebook.com/College-Arch-113328083738629'
+            href='https://www.facebook.com/collegearch/'
           >
             <Icon>
               <img src={WhiteFacebookSvg} width={24} height={24} />
@@ -85,7 +85,7 @@ function FooterSocialMedia() {
           <IconButton
             size='small'
             target='_blank'
-            href='https://twitter.com/college__key?s=21&fbclid=IwAR0m1F8EBpX-K5MN1K0U1cT8dRWLCzIZH8FeDuE7Chl-eIZJHqbqvfC59m0'
+            href='https://twitter.com/collegearch'
           >
             <Icon>
               <img src={WhiteTwitterSvg} width={24} height={24} />
