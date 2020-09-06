@@ -171,7 +171,7 @@ export const technicalTeam = [
   {
     name: 'Isabela Sanchez',
     position: 'Technical Director',
-    text: ':) :P :D ;)',
+    text: 'She is cool ;D but kinda shy!! Loves to code and play charango(Im going to change this bio as soon as I can)',
     image: '',
   },
 ];
