@@ -157,11 +157,53 @@ function ContactUs(props) {
                 <Button variant='contained'>Submit</Button>
               </Grid>
               <Grid item xs={12}>
+                <Typography>Or email us:</Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Typography>
-                  Or email us at
-{' '}
+                  <b>General Inquiries:</b>
                   <a href='mailto:contact.collegearch@gmail.com'>
                     contact.collegearch@gmail.com
+                  </a>
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Tech Inquiries:</b>
+                  <a href='mailto:tech.collegearch@gmail.com'>
+                    tech.collegearch@gmail.com
+                  </a>
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Marketing and Graphics Inquiries:</b>
+                  <a href='mailto:marketing.collegearch@gmail.com'>
+                    marketing.collegearch@gmail.com
+                  </a>
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Outreach Inquiries:</b>
+                  <a href='mailto:outreach.collegearch@gmail.com'>
+                    outreach.collegearch@gmail.com
+                  </a>
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Programming Inquiries:</b>
+                  <a href='mailto:programming.collegearch@gmail.com'>
+                    programming.collegearch@gmail.com
+                  </a>
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Curriculum Inquiries:</b>
+                  <a href='mailto:curriculum.collegearch@gmail.com'>
+                    curriculum.collegearch@gmail.com
                   </a>
                 </Typography>
               </Grid>
