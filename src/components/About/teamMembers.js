@@ -22,7 +22,7 @@ export const outreachTeam = [
     name: 'Iandra Ramos',
     position: 'Outreach Director',
     text:
-      "Iandra, part of Harvard's Class of 2024, helps to coordinate partnerships with other organizations that have similar goals as College Key, and is dedicated to providing unique  academic opportunities to underprivileged students.",
+      "Iandra, part of Harvard's Class of 2024, helps to coordinate partnerships with other organizations that have similar goals as College ARCH, and is dedicated to providing unique  academic opportunities to underprivileged students.",
     image: '',
   },
   {
@@ -61,7 +61,7 @@ export const recruitmentDirectors = [
     name: 'Kobi Khong',
     position: 'Western Regional Director',
     text:
-      "Kobi, part of Johns Hopkin's Class of 2024, is studying Public Health with a minor in Bioethics, and liaises with schools and organizations throughout the Southern California region for College Key in order to ensure equal opportunities for students who strive their goals and for their education, regardless of socio-economic status.",
+      "Kobi, part of Johns Hopkin's Class of 2024, is studying Public Health with a minor in Bioethics, and liaises with schools and organizations throughout the Southern California region for College ARCH in order to ensure equal opportunities for students who strive their goals and for their education, regardless of socio-economic status.",
     image: '',
   },
   {
@@ -128,7 +128,7 @@ export const programTeam = [
     team: 'Program Team',
     position: 'Program Designer',
     text:
-      "Sarah, part of Washington University in St. Louis's Class of 2024, works alongside her fellow Program Team members to organize College Key events. She is excited to coordinate informative and helpful panels to guide students in their application process.",
+      "Sarah, part of Washington University in St. Louis's Class of 2024, works alongside her fellow Program Team members to organize College ARCH events. She is excited to coordinate informative and helpful panels to guide students in their application process.",
     image: '',
   },
 ];
@@ -138,14 +138,14 @@ export const graphicsMarketingTeam = [
     name: 'Melissa Meng',
     position: 'Graphics/Marketing Director',
     text:
-      "Melissa, part of Harvard's Class of 2024, helps to manage the creative aspects and design of College Key, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
+      "Melissa, part of Harvard's Class of 2024, helps to manage the creative aspects and design of College ARCH, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
   },
   {
     name: 'Emily Bennett',
     position: 'Graphics/Marketing Director',
     text:
-      'Emily Bennett is a rising senior at Mauldin High School in South Carolina and as the marketing director, she makes all the email flyers and social media graphics for College Key. She hopes to go somewhere near home for her first 2 years of college and then transfer out to an art school in Southern California. She plans to major in something related to graphic design with a minor in film studies and cinematography!',
+      'Emily Bennett is a rising senior at Mauldin High School in South Carolina and as the marketing director, she makes all the email flyers and social media graphics for College ARCH. She hopes to go somewhere near home for her first 2 years of college and then transfer out to an art school in Southern California. She plans to major in something related to graphic design with a minor in film studies and cinematography!',
     image: '',
   },
 ];
@@ -165,7 +165,7 @@ export const technicalTeam = [
     name: 'Paula Zhu',
     position: 'Technical Director',
     text:
-      "Paula, part of Harvard's Class of 2024, helps to manage the technical aspects and website of College Key, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
+      "Paula, part of Harvard's Class of 2024, helps to manage the technical aspects and website of College ARCH, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
   },
   {
