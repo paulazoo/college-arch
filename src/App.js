@@ -31,11 +31,12 @@ import PublicEvents from './components/PublicEvents/PublicEvents';
 import EventPage from './components/EventPage/EventPage';
 import { userLogout } from './store/actions';
 import Isabela from './components/Testing/Isabela';
+import ContactUs from './components/About/ContactUs';
 
 function App(props) {
   const createdTheme = createMuiTheme({
     palette: {
-      primary: { 
+      primary: {
         light: 'hsl(213, 97%, 45%)',
         main: 'hsl(213, 97%, 30%)',
         dark: 'hsl(213, 97%, 14%)',
@@ -86,7 +87,7 @@ function App(props) {
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/events/:eventId' component={EventPage} />
 
-        <Route exact path='/testing' component={Testing} />
+        <Route exact path='/testing' component={ContactUs} />
         <Route exact path='/isabela' component={Isabela} />
 
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
