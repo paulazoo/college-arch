@@ -35,7 +35,7 @@ import Isabela from './components/Testing/Isabela';
 function App(props) {
   const createdTheme = createMuiTheme({
     palette: {
-      primary: {
+      primary: { 
         light: 'hsl(213, 97%, 45%)',
         main: 'hsl(213, 97%, 30%)',
         dark: 'hsl(213, 97%, 14%)',
