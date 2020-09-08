@@ -156,6 +156,15 @@ function ContactUs(props) {
               <Grid item xs={12}>
                 <Button variant='contained'>Submit</Button>
               </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  Or email us at
+{' '}
+                  <a href='mailto:contact.collegearch@gmail.com'>
+                    contact.collegearch@gmail.com
+                  </a>
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
