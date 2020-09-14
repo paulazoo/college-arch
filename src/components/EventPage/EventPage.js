@@ -88,7 +88,7 @@ function EventPage({ ...props }) {
   const [publicPopupOpen, setPublicPopupOpen] = useState(false);
   const [publicPopupType, setPublicPopupType] = useState('register');
 
-  const loggedIn = sessionStorage.getItem('access_token') && props.account.id;
+  const loggedIn = sessionStorage.getItem('access_token') && props.user.id;
 
   useEffect(() => {
     if (loggedIn) {
@@ -149,7 +149,7 @@ function EventPage({ ...props }) {
         link={event.link}
         showJoin={moment().add(1, 'days').isAfter(moment(event.start_time))}
         showRegister={moment().isBefore(moment(event.end_time))}
-        accountRegistration={event.account_registration}
+        userRegistration={event.user_registration}
       />
     );
   };
@@ -166,14 +166,14 @@ function EventPage({ ...props }) {
           />
           <Card className={classes.eventCard}>
             <CardHeader
-              title={
+              title={(
                 <div className={classes.cardTitle}>
                   <strong className={classes.nameText}>
                     {`${event.name} `}
                   </strong>
                 </div>
-              }
-              subheader={
+              )}
+              subheader={(
                 <div className={classes.cardTime}>
                   {event.start_time !== null ? (
                     <>
@@ -185,7 +185,7 @@ function EventPage({ ...props }) {
                     <>Always open.</>
                   )}
                 </div>
-              }
+              )}
             />
             <CardContent>
               <Grid
@@ -245,8 +245,7 @@ function EventPage({ ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-  account: state.account.account,
+  user: state.user.user,
   events: state.events.events,
   publicEvents: state.events.publicEvents,
 });

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 // different reducer files
-import { initialState } from './initialState';
+import initialState from './initialState';
 import homeReducer from './homeReducer';
 import userReducer from './userReducer';
 import accountReducer from './accountReducer';

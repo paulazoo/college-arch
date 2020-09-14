@@ -14,7 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout } from '../../store/actions/index';
 import { postExportJoined } from '../../store/actions/api';
 
 // Custom Components
@@ -80,7 +79,6 @@ const mapStateToProps = (state) => ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
     postExportJoined: (body) => dispatch(postExportJoined(body)),
   };
 }

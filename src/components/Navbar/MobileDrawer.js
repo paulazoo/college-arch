@@ -89,7 +89,7 @@ function MobileDrawer({ menuItems, ...props }) {
     >
       <List>
         {sessionStorage.getItem('access_token') &&
-          props.account &&
+          props.user &&
           props.isMaster === true && (
             <Button
               color='inherit'

@@ -13,7 +13,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
+
+// Custom Components
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Team from './Team';
@@ -21,8 +22,6 @@ import WordDivider from '../Shared/WordDivider';
 import AboutDrawer from './AboutDrawer';
 import MissionPurpose from './MissionPurpose';
 import OurStory from './OurStory';
-
-// Custom Components
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -89,9 +88,7 @@ function About(props) {
 const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

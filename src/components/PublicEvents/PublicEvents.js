@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
 function PublicEvents(props) {
   const classes = useStyles();
 
-  return props.account.id ? (
+  return props.user.id ? (
     <Redirect
       to={{
         pathname: '/dashboard',
@@ -164,7 +164,7 @@ function PublicEvents(props) {
 }
 
 const mapStateToProps = (state) => ({
-  account: state.account.account,
+  user: state.user.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({});

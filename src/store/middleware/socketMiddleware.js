@@ -1,7 +1,6 @@
 import * as actions from '../actions/websocket';
 
-import {
-} from '../actions/index';
+import {} from '../actions/index';
 
 import { WS_URL } from '../constants';
 
@@ -35,20 +34,20 @@ const socketMiddleware = () => {
       return;
     }
 
-    const userId = store.getState().user.id;
+    const userId = store.getState().user.user.id;
     if (
       payload.message &&
       (payload.message.receivers === 'global' ||
         payload.message.receivers.includes(userId))
     ) {
-      let state = store.getState();
+      const state = store.getState();
       // console.log(payload.message);
       switch (payload.message.type) {
         // filtering broadcasts from websockets
         case 'testing':
-          console.log('testing ws')
+          console.log('testing ws');
           break;
-        
+
         default:
           break;
       }
@@ -75,7 +74,7 @@ const socketMiddleware = () => {
         }
         socket = null;
         break;
-      
+
       default:
         return next(action);
     }

@@ -1,11 +1,11 @@
-import { initialState } from './initialState';
+import initialState from './initialState';
 
 export default function masterReducer(state = initialState.master, action) {
   switch (action.type) {
-    case 'SET_ACCOUNTS':
+    case 'SET_USERS':
       return {
         ...state,
-        accounts: action.payload,
+        users: action.payload,
       };
 
     case 'SET_MENTORS':

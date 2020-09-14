@@ -13,7 +13,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
 import ProfileCard from '../ProfilePic/ProfileCard';
 
@@ -41,11 +40,11 @@ function MentorDashboard(props) {
     <>
       <Typography className={classes.cardsIntro}>Your Mentees:</Typography>
       <Grid container direction='row' spacing={1} className={classes.dashboard}>
-        {props.user.mentees &&
-          props.user.mentees.map((mentee) => (
+        {props.account.mentees &&
+          props.account.mentees.map((mentee) => (
             <>
               <Grid item sm={10} key={mentee.id}>
-                <ProfileCard account={mentee.account} />
+                <ProfileCard user={mentee.user} />
               </Grid>
               <Grid item sm={2} style={{ display: 'flex' }}>
                 <Card className={classes.classroom}>
@@ -71,13 +70,11 @@ function MentorDashboard(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  account: state.account.account,
 });
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MentorDashboard);

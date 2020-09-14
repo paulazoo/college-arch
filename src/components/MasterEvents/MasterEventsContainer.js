@@ -13,7 +13,6 @@ import {
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
-import { userLogout, setUser } from '../../store/actions/index';
 
 // Redux
 import { connect } from 'react-redux';

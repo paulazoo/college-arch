@@ -181,9 +181,9 @@ function LoggedInNavbar({ ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  user: state.user.user,
   account: state.account.account,
-  isMaster: state.account.isMaster,
+  isMaster: state.user.isMaster,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   popoverBox: { padding: '1.5rem' },
 }));
-function ProfileCard({ account, ...props }) {
+function ProfileCard({ user, ...props }) {
   const classes = useStyles();
 
   return (
@@ -67,15 +67,15 @@ function ProfileCard({ account, ...props }) {
                     borderColor: 'red',
                     borderWidth: 5,
                   }}
-                  src={account.image_url}
-                  alt={account.name}
+                  src={user.image_url}
+                  alt={user.name}
                 />
               </Grid>
               <Grid item>
                 <Grid container direction='column'>
                   <Grid item>
                     <Typography className={classes.welcomeName}>
-                      {account.name}
+                      {user.name}
                     </Typography>
                   </Grid>
                   <Grid item>
@@ -89,7 +89,7 @@ function ProfileCard({ account, ...props }) {
                         <IconButton
                           size='small'
                           target='_blank'
-                          href={`mailto:${account.email}`}
+                          href={`mailto:${user.email}`}
                         >
                           <Icon>
                             <img
@@ -104,21 +104,22 @@ function ProfileCard({ account, ...props }) {
                       <Grid item>
                         <Typography>
                           <a
-                            href={`mailto:${account.email}`}
+                            href={`mailto:${user.email}`}
                             target='_blank'
+                            rel='noreferrer'
                             className={classes.link}
                           >
-                            {account.email}
+                            {user.email}
                           </a>
                         </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
 
-                  {/* If account user has entered their phone number */}
-                  {typeof account.phone !== 'undefined' &&
-                    account.phone !== null &&
-                    account.phone !== '' && (
+                  {/* If user has entered their phone number */}
+                  {typeof user.phone !== 'undefined' &&
+                    user.phone !== null &&
+                    user.phone !== '' && (
                       <Grid item>
                         <Grid
                           container
@@ -133,17 +134,15 @@ function ProfileCard({ account, ...props }) {
                           </Grid>
                           <Grid item>
                             <Typography>
-                              <a className={classes.link}>
-                                {`${account.phone}`}
-                              </a>
+                              <a className={classes.link}>{`${user.phone}`}</a>
                             </Typography>
                           </Grid>
                         </Grid>
                       </Grid>
                     )}
-                  {typeof account.school !== 'undefined' &&
-                    account.school !== null &&
-                    account.school !== '' && (
+                  {typeof user.school !== 'undefined' &&
+                    user.school !== null &&
+                    user.school !== '' && (
                       <Grid item>
                         <Grid
                           container
@@ -159,9 +158,9 @@ function ProfileCard({ account, ...props }) {
                           <Grid item>
                             <Typography>
                               <a className={classes.link}>
-                                {account.grad_year
-                                  ? `${account.school} (${account.grad_year})`
-                                  : `${account.school}`}
+                                {user.grad_year
+                                  ? `${user.school} (${user.grad_year})`
+                                  : `${user.school}`}
                               </a>
                             </Typography>
                           </Grid>
@@ -174,13 +173,13 @@ function ProfileCard({ account, ...props }) {
           </Grid>
 
           {/* If user does not have a bio */}
-          {typeof account.bio !== 'undefined' &&
-            account.bio !== null &&
-            account.bio !== '' && (
+          {typeof user.bio !== 'undefined' &&
+            user.bio !== null &&
+            user.bio !== '' && (
               <Grid item>
                 <Typography>
                   <b>Bio: </b>
-                  {account.bio}
+                  {user.bio}
                 </Typography>
               </Grid>
             )}

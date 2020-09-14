@@ -1,11 +1,12 @@
-export const initialState = {
-  // set up default audio and video devices
+const initialState = {
   user: {
-    user_type: 'Mentee',
+    user: {
+      account_type: 'Mentee',
+    },
+    isMaster: false,
   },
   account: {
     account: {},
-    isMaster: false,
   },
   home: {
     onMobile: false,
@@ -16,7 +17,7 @@ export const initialState = {
     currentlyLoading: false,
   },
   master: {
-    accounts: [],
+    users: [],
     mentors: {},
     mentees: {},
     newsletterEmails: [],
@@ -27,3 +28,5 @@ export const initialState = {
     allEvents: {},
   },
 };
+
+export default initialState;

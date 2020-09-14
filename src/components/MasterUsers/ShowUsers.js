@@ -20,7 +20,7 @@ import CheckIcon from '@material-ui/icons/Check';
 
 // Redux
 import { connect } from 'react-redux';
-import { getAccounts } from '../../store/actions/api';
+import { getUsers } from '../../store/actions/api';
 
 // Theme
 import { useTheme, makeStyles } from '@material-ui/core/styles';
@@ -81,14 +81,14 @@ const rows = [
 
 const rowsPerPage = 10;
 
-function ShowAccounts({ people, ...props }) {
+function ShowUsers({ people, ...props }) {
   const classes = useStyles();
 
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState(null);
   const [page, setPage] = useState(0);
   const [masterProfileOpen, setMasterProfileOpen] = useState(false);
-  const [masterProfileAccount, setMasterProfileAccount] = useState({});
+  const [masterProfileUser, setMasterProfileUser] = useState({});
 
   const handleRequestSort = (__, property) => {
     const _orderBy = property;
@@ -106,15 +106,15 @@ function ShowAccounts({ people, ...props }) {
 
   const handleMasterProfileOpen = (person) => {
     setMasterProfileOpen(true);
-    setMasterProfileAccount(person);
+    setMasterProfileUser(person);
     console.log(person);
   };
 
   return (
     <>
-      {masterProfileAccount && (
+      {masterProfileUser && (
         <MasterProfile
-          account={masterProfileAccount}
+          user={masterProfileUser}
           masterProfileOpen={masterProfileOpen}
           setMasterProfileOpen={setMasterProfileOpen}
         />
@@ -139,7 +139,7 @@ function ShowAccounts({ people, ...props }) {
                       scope='row'
                       style={{ padding: 0, paddingLeft: 20 }}
                     >
-                      <ProfilePic account={person} buttonHeight={64} />
+                      <ProfilePic user={person} buttonHeight={64} />
                     </TableCell>
                     <TableCell
                       component='th'
@@ -191,7 +191,7 @@ function ShowAccounts({ people, ...props }) {
           </Table>
         ) : (
           <Box m={2}>
-            <Typography variant='h5'>No accounts yet.</Typography>
+            <Typography variant='h5'>No users yet.</Typography>
           </Box>
         )}
         <div className={classes.alignRight}>
@@ -227,9 +227,9 @@ const mapStateToProps = (state) => ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    getAccounts: (user, body, callback) =>
-      dispatch(getAccounts(user, body, callback)),
+    getUsers: (user, body, callback) =>
+      dispatch(getUsers(user, body, callback)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowAccounts);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowUsers);

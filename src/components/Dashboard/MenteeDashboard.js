@@ -14,10 +14,10 @@ import { makeStyles } from '@material-ui/core/styles';
 // Redux
 import { connect } from 'react-redux';
 import { userLogout, setUser } from '../../store/actions/index';
-import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
-import ProfileCard from '../ProfilePic/ProfileCard';
 
 // Custom Components
+import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
+import ProfileCard from '../ProfilePic/ProfileCard';
 
 const useStyles = makeStyles((theme) => ({
   cardsIntro: {
@@ -41,10 +41,10 @@ function MenteeDashboard(props) {
       </Grid>
       <Typography className={classes.cardsIntro}>Your Mentor:</Typography>
       <Grid container direction='column'>
-        {props.user.mentor && (
+        {props.account.mentor && (
           <>
             <Grid item>
-              <ProfileCard account={props.user.mentor.account} />
+              <ProfileCard user={props.account.mentor.user} />
             </Grid>
           </>
         )}
@@ -54,7 +54,8 @@ function MenteeDashboard(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  user: state.user.user,
+  account: state.account.account,
 });
 
 function mapDispatchToProps(dispatch) {

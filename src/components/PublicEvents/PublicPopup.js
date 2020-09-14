@@ -138,12 +138,12 @@ function PublicPopup({
     >
       <Card className={classes.eventCard}>
         <CardHeader
-          title={
+          title={(
             <div className={classes.cardTitle}>
               <strong className={classes.nameText}>{renderHeader()}</strong>
             </div>
-          }
-          subheader={
+          )}
+          subheader={(
             <div className={classes.cardTime}>
               {event.start_time !== null ? (
                 <>
@@ -155,7 +155,7 @@ function PublicPopup({
                 <>Always open.</>
               )}
             </div>
-          }
+          )}
         />
         <CardContent>
           <Grid
@@ -253,8 +253,8 @@ function PublicPopup({
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-  accounts: state.master.accounts,
+  user: state.user.user,
+  users: state.master.users,
   currentlyLoading: state.home.currentlyLoading,
 });
 

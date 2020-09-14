@@ -59,7 +59,10 @@ function MatchMentorMentee({ mentees, mentors, ...props }) {
   };
 
   const handleMatch = () => {
-    props.postMatch({ mentor_id: mentor.user.id, mentee_id: mentee.user.id });
+    props.postMatch({
+      mentor_id: mentor.account.id,
+      mentee_id: mentee.account.id,
+    });
     setMentee('');
     setMentor('');
   };
@@ -80,7 +83,7 @@ function MatchMentorMentee({ mentees, mentors, ...props }) {
 
   const renderMatchMenuItem = (person) => {
     return (
-      <MenuItem value={person.user_id} key={person.id}>
+      <MenuItem value={person.account_id} key={person.id}>
         <Grid container direction='row' alignItems='center' spacing={1}>
           <Grid item>
             {person.image_url && (
@@ -189,7 +192,6 @@ function MatchMentorMentee({ mentees, mentors, ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   account: state.account.account,
 });
 

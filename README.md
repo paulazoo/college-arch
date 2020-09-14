@@ -4,11 +4,11 @@
 
 [collegearch.org](https://www.collegearch.org) - non-profit devoted to helping FGLI students achieve their academic potential.
 
-Website frontend for the College Key Arch, written in React JS by Paula Zhu.
+Website frontend for College ARCH, written in React JS by Paula Zhu.
 
 ## Set Up
 
-You will need a .env file to store API and WS urls
+You will need a .env file to store API and WS urls, and Google Client credentials
 
 The first time you run this locally, you will need to run `npm i` to install dependencies
 

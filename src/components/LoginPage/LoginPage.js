@@ -18,11 +18,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import {
-  userLogout,
-  setUser,
-  setCurrentlyLoading,
-} from '../../store/actions/index';
+import { setCurrentlyLoading } from '../../store/actions/index';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -175,7 +171,7 @@ function LoginPage(props) {
               justify='center'
               spacing={3}
             >
-              {sessionStorage.getItem('access_token') && props.account.id ? (
+              {sessionStorage.getItem('access_token') && props.user.id ? (
                 <Grid item xs={12} className={classes.loginTextContainer}>
                   <Typography className={classes.loginText}>
                     You are logged in!
@@ -194,14 +190,12 @@ function LoginPage(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-  account: state.account.account,
+  user: state.user.user,
   currentlyLoading: state.home.currentlyLoading,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
     setCurrentlyLoading: (currentlyLoading) =>
       dispatch(setCurrentlyLoading(currentlyLoading)),
   };

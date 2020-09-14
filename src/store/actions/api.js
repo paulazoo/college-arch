@@ -7,7 +7,7 @@ import {
   setPersonalSnackbar,
   setMentees,
   setMentors,
-  setAccounts,
+  setUsers,
   setNewsletterEmails,
   setCurrentlyLoading,
   setPublicEvents,
@@ -15,7 +15,7 @@ import {
   setEvent,
   setAllEvents,
   deleteEvent,
-  setMasterAccount,
+  setMasterUser,
   setIsMaster,
 } from './index';
 import { wsConnect } from './websocket';
@@ -41,7 +41,7 @@ const api = (path, requestOptions) => {
 // Api Calls:
 
 // GET Calls:
-export const getAccount = () => {
+export const getUser = () => {
   return (dispatch, getState) => {
     const requestOptions = {
       method: 'GET',
@@ -51,10 +51,10 @@ export const getAccount = () => {
         Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
       },
     };
-    api(`accounts/${getState().account.account.id}`, requestOptions)
+    api(`users/${getState().user.user.id}`, requestOptions)
       .then((response) => {
-        dispatch(setAccount(response.account));
         dispatch(setUser(response.user));
+        dispatch(setAccount(response.account));
       })
       .catch((error) => {
         console.error('API Error: ', error);
@@ -62,7 +62,7 @@ export const getAccount = () => {
   };
 };
 
-export const getAccounts = () => {
+export const getUsers = () => {
   return (dispatch, getState) => {
     const requestOptions = {
       method: 'GET',
@@ -72,14 +72,16 @@ export const getAccounts = () => {
         Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
       },
     };
-    api(`accounts`, requestOptions)
+    api(`users`, requestOptions)
       .then((response) => {
-        const preAccounts = {};
-        response.forEach((account) => {
-          preAccounts[account.id] = account;
+        console.log(response);
+        const preUsers = {};
+        response.forEach((user) => {
+          console.log(user.id);
+          preUsers[user.id] = user;
         });
 
-        dispatch(setAccounts(response));
+        dispatch(setUsers(preUsers));
       })
       .catch((error) => {
         console.error('API Error: ', error);
@@ -215,7 +217,7 @@ export const getEvents = () => {
         Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
       },
     };
-    api(`accounts/${getState().account.account.id}/events`, requestOptions)
+    api(`users/${getState().user.user.id}/events`, requestOptions)
       .then((response) => {
         const preEvents = {};
         response.forEach((event) => {
@@ -252,15 +254,15 @@ export const postGoogleLogin = (googleToken, callback) => {
           sessionStorage.setItem('access_token', response.access_token);
 
           dispatch(setPersonalSnackbar({ open: false, content: '' }));
-          dispatch(setAccount(response.account));
           dispatch(setUser(response.user));
-          dispatch(setIsMaster(response.account.email));
+          dispatch(setAccount(response.account));
+          dispatch(setIsMaster(response.user.email));
 
           dispatch(setCurrentlyLoading(false));
 
           history.push('/dashboard');
 
-          // callback(response.account);
+          // callback(response.user);
         } else if (response.message) {
           dispatch(
             setPersonalSnackbar({ open: true, content: response.message })
@@ -321,11 +323,11 @@ export const postMentors = (body) => {
     };
     api(`mentors`, requestOptions)
       .then((response) => {
-        if (response.message === 'Account already exists') {
+        if (response.message === 'User already exists') {
           dispatch(
             setPersonalSnackbar({
               open: true,
-              content: `Error: Account with email ${body.email} already exists!`,
+              content: `Error: User with email ${body.email} already exists!`,
             })
           );
         } else {
@@ -356,11 +358,11 @@ export const postMentees = (body) => {
     };
     api(`mentees`, requestOptions)
       .then((response) => {
-        if (response.message === 'Account already exists') {
+        if (response.message === 'User already exists') {
           dispatch(
             setPersonalSnackbar({
               open: true,
-              content: `Error: Account with email ${body.email} already exists!`,
+              content: `Error: User with email ${body.email} already exists!`,
             })
           );
         } else {
@@ -733,7 +735,7 @@ export const postPublicJoin = (eventId) => {
 };
 
 // PUT Calls:
-export const putAccount = (body) => {
+export const putUser = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
       method: 'PUT',
@@ -744,9 +746,9 @@ export const putAccount = (body) => {
       },
       body: JSON.stringify(body),
     };
-    api(`accounts/${getState().account.account.id}`, requestOptions)
+    api(`users/${getState().user.user.id}`, requestOptions)
       .then((response) => {
-        dispatch(setAccount(response));
+        dispatch(setUser(response));
         dispatch(
           setPersonalSnackbar({
             open: true,
@@ -760,7 +762,7 @@ export const putAccount = (body) => {
   };
 };
 
-export const putMasterAccount = (body) => {
+export const putMasterUser = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
       method: 'PUT',
@@ -771,9 +773,9 @@ export const putMasterAccount = (body) => {
       },
       body: JSON.stringify(body),
     };
-    api(`accounts/master_update`, requestOptions)
+    api(`users/master_update`, requestOptions)
       .then((response) => {
-        dispatch(setMasterAccount(response));
+        dispatch(setMasterUser(response));
         dispatch(
           setPersonalSnackbar({
             open: true,

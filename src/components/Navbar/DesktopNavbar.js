@@ -42,7 +42,7 @@ function DesktopNavbar({ ...props }) {
   return (
     <>
       <PersonalSnackbar />
-      {sessionStorage.getItem('access_token') && props.account.id ? (
+      {sessionStorage.getItem('access_token') && props.user.id ? (
         <LoggedInNavbar />
       ) : (
         <LoggedOutNavbar />
@@ -52,7 +52,7 @@ function DesktopNavbar({ ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  user: state.user.user,
   account: state.account.account,
 });
 

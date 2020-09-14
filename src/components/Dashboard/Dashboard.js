@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // Redux
 import { connect } from 'react-redux';
 import { userLogout, setUser } from '../../store/actions/index';
-import { getAccount } from '../../store/actions/api';
+import { getUser } from '../../store/actions/api';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -71,23 +71,23 @@ function Dashboard(props) {
   const history = useHistory();
 
   useEffect(() => {
-    props.getAccount();
-    LogRocket.identify(props.account.id, {
-      name: props.account.name,
-      email: props.account.email,
-      google_id: props.account.google_id,
+    props.getUser();
+    LogRocket.identify(props.user.id, {
+      name: props.user.name,
+      email: props.user.email,
+      google_id: props.user.google_id,
     });
   }, []);
 
   const renderRightDashboard = () => {
-    if (props.account.user_type === 'Mentor') {
+    if (props.user.account_type === 'Mentor') {
       return (
         <>
           <MentorDashboard />
         </>
       );
     }
-    if (props.account.user_type === 'Mentee') {
+    if (props.user.account_type === 'Mentee') {
       return (
         <>
           <MenteeDashboard />
@@ -111,7 +111,7 @@ function Dashboard(props) {
             >
               <Grid item xs={12}>
                 <Typography className={classes.text}>
-                  {`Welcome, ${props.account.name}!`}
+                  {`Welcome, ${props.user.name}!`}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -130,13 +130,13 @@ function Dashboard(props) {
 
 const mapStateToProps = (state) => ({
   account: state.account.account,
-  user: state.user,
+  user: state.user.user,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
     userLogout: () => dispatch(userLogout()),
-    getAccount: () => dispatch(getAccount()),
+    getUser: () => dispatch(getUser()),
   };
 }
 

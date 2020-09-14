@@ -14,7 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import WordDivider from '../Shared/WordDivider';
@@ -153,9 +152,7 @@ function Apply(props) {
 const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Apply);

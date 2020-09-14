@@ -14,7 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import { getEvents } from '../../store/actions/api';
 
 // Custom Components
@@ -61,14 +60,11 @@ function Past(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-  account: state.account.account,
   events: state.events.events,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
     getEvents: () => dispatch(getEvents()),
   };
 }

@@ -38,29 +38,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function UnmatchMentorMentee({ menteesAccounts, mentorsAccounts, ...props }) {
+function UnmatchMentorMentee({ menteesUsers, mentorsUsers, ...props }) {
   const classes = useStyles();
 
-  const [menteeAccount, setMenteeAccount] = useState('');
-  const [mentorAccount, setMentorAccount] = useState('');
+  const [menteeUser, setMenteeUser] = useState('');
+  const [mentorUser, setMentorUser] = useState('');
   const [inputMenteeValue, setInputMenteeValue] = useState('');
 
   const handleMenteeChange = (event, newValue) => {
-    console.log(newValue);
-    setMenteeAccount(newValue);
-    // Find respective matched mentor and set Mentor as well
-    const mentee = props.mentees[newValue.user_id];
-    const mentor = mentee.mentor;
-    setMentorAccount(props.accounts[mentor.account.id]);
+    if (newValue) {
+      setMenteeUser(newValue);
+      // Find respective matched mentor and set Mentor as well
+      const mentee = props.mentees[newValue.account_id];
+      const mentor = mentee.mentor;
+      console.log(mentee);
+      if (mentor) {
+        setMentorUser(props.users[mentor.user.id]);
+      }
+    }
   };
 
   const handleUnmatch = () => {
     props.postUnmatch({
-      mentor_id: mentorAccount.user.id,
-      mentee_id: menteeAccount.user.id,
+      mentor_id: mentorUser.account_id,
+      mentee_id: menteeUser.account_id,
     });
-    setMenteeAccount('');
-    setMentorAccount('');
+    setMenteeUser('');
+    setMentorUser('');
   };
 
   const handleInputMenteeChange = (event, newInputValue) => {
@@ -76,7 +80,7 @@ function UnmatchMentorMentee({ menteesAccounts, mentorsAccounts, ...props }) {
   const renderMatchMenuItem = (person) => {
     return (
       person && (
-        <MenuItem value={person.user_id} key={person.id}>
+        <MenuItem value={person.account_id} key={person.id}>
           <Grid container direction='row' alignItems='center' spacing={1}>
             <Grid item>
               {person.image_url && (
@@ -122,11 +126,11 @@ function UnmatchMentorMentee({ menteesAccounts, mentorsAccounts, ...props }) {
         <Grid item xs={4}>
           <Autocomplete
             fullWidth
-            value={menteeAccount}
+            value={menteeUser}
             onChange={handleMenteeChange}
             inputValue={inputMenteeValue}
             onInputChange={handleInputMenteeChange}
-            options={menteesAccounts} // TODO: only unmatched mentees
+            options={menteesUsers} // TODO: only unmatched mentees
             filterOptions={filterOptions}
             // freeSolo
             getOptionLabel={(person) => person.email}
@@ -148,7 +152,7 @@ function UnmatchMentorMentee({ menteesAccounts, mentorsAccounts, ...props }) {
         </Grid>
         <Grid item xs={4}>
           <Typography>
-            {mentorAccount && `${mentorAccount.email} (${mentorAccount.name})`}
+            {mentorUser && `${mentorUser.email} (${mentorUser.name})`}
           </Typography>
         </Grid>
         <Grid item>
@@ -162,9 +166,9 @@ function UnmatchMentorMentee({ menteesAccounts, mentorsAccounts, ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  user: state.user.user,
   account: state.account.account,
-  accounts: state.master.accounts,
+  users: state.master.users,
   mentees: state.master.mentees,
   mentors: state.master.mentors,
 });

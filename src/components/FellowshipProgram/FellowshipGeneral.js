@@ -12,7 +12,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 
 // Custom Components
 
@@ -105,9 +104,7 @@ function FellowshipGeneral(props) {
 const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FellowshipGeneral);
