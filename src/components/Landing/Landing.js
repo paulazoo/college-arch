@@ -174,7 +174,7 @@ function Landing(props) {
   };
 
   useEffect(() => {
-    if (!sessionStorage.getItem('access_token') || !props.account?.id) {
+    if (!sessionStorage.getItem('access_token') || !props.user?.id) {
       props.userLogout();
     }
   }, []);

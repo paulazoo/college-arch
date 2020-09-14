@@ -17,7 +17,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 
 // Custom Components
 
@@ -49,7 +48,7 @@ function MasterDrawer({ selectedMaster, setSelectedMaster, ...props }) {
   const classes = useStyles();
 
   const aboutChoices = [
-    { label: 'Accounts' },
+    { label: 'Users' },
     { label: 'Newsletter Emails' },
     { label: 'Events' },
   ];
@@ -81,9 +80,7 @@ function MasterDrawer({ selectedMaster, setSelectedMaster, ...props }) {
 const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MasterDrawer);

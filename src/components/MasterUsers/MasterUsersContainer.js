@@ -14,14 +14,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { getAccounts, getMentors, getMentees } from '../../store/actions/api';
+import { getUsers, getMentors, getMentees } from '../../store/actions/api';
 
 // Custom Components
 import ImportMenteeMentor from '../GoogleSheets/ImportMenteeMentor';
 import MatchMentorMentee from './MatchMentorMentee';
-import AddAccounts from './AddAccounts';
-import AccountSearch from './AccountSearch';
-import ShowAccounts from './ShowAccounts';
+import AddUsers from './AddUsers';
+import UserSearch from './UserSearch';
+import ShowUsers from './ShowUsers';
 import UnmatchMentorMentee from './UnmatchMentorMentee';
 
 const useStyles = makeStyles((theme) => ({
@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function MasterAccountsContainer(props) {
+function MasterUsersContainer(props) {
   const classes = useStyles();
 
   useEffect(() => {
-    props.getAccounts();
+    props.getUsers();
     props.getMentors();
     props.getMentees();
   }, []);
@@ -56,12 +56,12 @@ function MasterAccountsContainer(props) {
 
   // get attendee and room options for search
   useEffect(() => {
-    setOptions(Object.values(props.accounts));
-    setAllOptions(Object.values(props.accounts));
+    setOptions(Object.values(props.users));
+    setAllOptions(Object.values(props.users));
 
-    setMentorResults(Object.values(props.mentors).map((m) => m.account));
-    setMenteeResults(Object.values(props.mentees).map((m) => m.account));
-  }, [props.accounts]);
+    setMentorResults(Object.values(props.mentors).map((m) => m.user));
+    setMenteeResults(Object.values(props.mentees).map((m) => m.user));
+  }, [props.users]);
 
   return (
     <>
@@ -73,18 +73,18 @@ function MasterAccountsContainer(props) {
 
       <Grid item xs={12}>
         <Card className={classes.card}>
-          <AddAccounts />
+          <AddUsers />
         </Card>
       </Grid>
 
       <Grid item xs={12}>
         <Card className={classes.card}>
           <MatchMentorMentee
-            mentees={Object.values(props.accounts).filter(
-              (p) => p.user_type === 'Mentee'
+            mentees={Object.values(props.users).filter(
+              (p) => p.account_type === 'Mentee'
             )}
-            mentors={Object.values(props.accounts).filter(
-              (p) => p.user_type === 'Mentor'
+            mentors={Object.values(props.users).filter(
+              (p) => p.account_type === 'Mentor'
             )}
           />
         </Card>
@@ -93,11 +93,11 @@ function MasterAccountsContainer(props) {
       <Grid item xs={12}>
         <Card className={classes.card}>
           <UnmatchMentorMentee
-            menteesAccounts={Object.values(props.accounts).filter(
-              (p) => p.user_type === 'Mentee'
+            menteesUsers={Object.values(props.users).filter(
+              (p) => p.account_type === 'Mentee'
             )}
-            mentorsAccounts={Object.values(props.accounts).filter(
-              (p) => p.user_type === 'Mentor'
+            mentorsUsers={Object.values(props.users).filter(
+              (p) => p.account_type === 'Mentor'
             )}
           />
         </Card>
@@ -113,7 +113,7 @@ function MasterAccountsContainer(props) {
             spacing={3}
           >
             <Grid item xs={12}>
-              <AccountSearch
+              <UserSearch
                 options={options}
                 allOptions={allOptions}
                 selected={selected}
@@ -127,14 +127,14 @@ function MasterAccountsContainer(props) {
               <Divider />
             </Grid>
             <Grid item xs={12}>
-              <ShowAccounts people={mentorResults} />
+              <ShowUsers people={mentorResults} />
             </Grid>
             <Grid item xs={12} className={classes.textContainer}>
               <Typography className={classes.text}>Mentees</Typography>
               <Divider />
             </Grid>
             <Grid item xs={12}>
-              <ShowAccounts people={menteeResults} />
+              <ShowUsers people={menteeResults} />
             </Grid>
           </Grid>
         </Card>
@@ -144,16 +144,15 @@ function MasterAccountsContainer(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   account: state.account.account,
-  accounts: state.master.accounts,
+  users: state.master.users,
   mentors: state.master.mentors,
   mentees: state.master.mentees,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    getAccounts: () => dispatch(getAccounts()),
+    getUsers: () => dispatch(getUsers()),
     getMentors: () => dispatch(getMentors()),
     getMentees: () => dispatch(getMentees()),
   };
@@ -162,4 +161,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MasterAccountsContainer);
+)(MasterUsersContainer);

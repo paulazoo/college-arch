@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AccountSearch({
+function UserSearch({
   options,
   allOptions = [],
   selected,
@@ -40,35 +40,36 @@ function AccountSearch({
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (event, newValue) => {
+    console.log(newValue);
     setSelected(newValue);
     const preMentors = [];
     const preMentees = [];
-    let user = {};
-    if (newValue !== null && newValue.user_type === 'Mentor') {
+    let account = {};
+    if (newValue !== null && newValue.account_type === 'Mentor') {
       preMentors.push(newValue);
       setMentorResults(preMentors);
 
-      user = props.mentors[newValue.user_id];
-      if (user && user.mentees) {
-        user.mentees.forEach((m) => {
-          preMentees.push(m.account);
+      account = props.mentors[newValue.account_id];
+      if (account && account.mentees) {
+        account.mentees.forEach((m) => {
+          preMentees.push(m.user);
         });
       }
 
       setMenteeResults(preMentees);
-    } else if (newValue !== null && newValue.user_type === 'Mentee') {
+    } else if (newValue !== null && newValue.account_type === 'Mentee') {
       preMentees.push(newValue);
       setMenteeResults(preMentees);
 
-      user = props.mentees[newValue.user_id];
-      if (user && user.mentor) {
-        preMentors.push(user.mentor.account);
+      account = props.mentees[newValue.account_id];
+      if (account && account.mentor) {
+        preMentors.push(account.mentor.user);
       }
 
       setMentorResults(preMentors);
     } else if (newValue === null) {
-      setMentorResults(allOptions.filter((p) => p.user_type === 'Mentor'));
-      setMenteeResults(allOptions.filter((p) => p.user_type === 'Mentee'));
+      setMentorResults(allOptions.filter((p) => p.account_type === 'Mentor'));
+      setMenteeResults(allOptions.filter((p) => p.account_type === 'Mentee'));
     }
   };
 
@@ -84,7 +85,7 @@ function AccountSearch({
 
   const renderMatchMenuItem = (person) => {
     return (
-      <MenuItem value={person.user_id} key={person.id}>
+      <MenuItem value={person.account_id} key={person.id}>
         <Grid container direction='row' alignItems='center' spacing={1}>
           <Grid item>
             {person.image_url && (
@@ -113,7 +114,7 @@ function AccountSearch({
     <>
       <Grid container spacing={1} alignItems='center' justify='flex-start'>
         <Grid item xs={12}>
-          <Typography className={classes.text}>All Accounts</Typography>
+          <Typography className={classes.text}>All Users</Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography>
@@ -154,7 +155,7 @@ function AccountSearch({
 }
 
 const mapStateToProps = (state) => ({
-  accounts: state.master.accounts,
+  users: state.master.users,
   mentors: state.master.mentors,
   mentees: state.master.mentees,
 });
@@ -163,4 +164,4 @@ function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(UserSearch);

@@ -373,10 +373,7 @@ function EventDetails(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  user: state.user,
-  accounts: state.master.accounts,
-});
+const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
   return {

@@ -17,9 +17,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import {
-  getAccounts,
+  getUsers,
   getMentees,
   getMentors,
   getNewsletterEmails,
@@ -29,7 +28,7 @@ import {
 import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import MasterAccountsContainer from '../MasterAccounts/MasterAccountsContainer';
+import MasterUsersContainer from '../MasterUsers/MasterUsersContainer';
 import MasterNewsletterContainer from './MasterNewsletterContainer';
 import MasterEventsContainer from '../MasterEvents/MasterEventsContainer';
 import MasterDrawer from './MasterDrawer.';
@@ -80,18 +79,18 @@ const useStyles = makeStyles((theme) => ({
 function Master(props) {
   const classes = useStyles();
 
-  const [selectedMaster, setSelectedMaster] = useState('Accounts');
+  const [selectedMaster, setSelectedMaster] = useState('Users');
 
   const renderMaster = () => {
     switch (selectedMaster) {
-      case 'Accounts':
-        return <MasterAccountsContainer />;
+      case 'Users':
+        return <MasterUsersContainer />;
       case 'Newsletter Emails':
         return <MasterNewsletterContainer />;
       case 'Events':
         return <MasterEventsContainer />;
       default:
-        return <MasterAccountsContainer />;
+        return <MasterUsersContainer />;
     }
   };
 
@@ -157,19 +156,17 @@ function Master(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   account: state.account.account,
-  accounts: state.master.accounts,
+  users: state.master.users,
   mentors: state.master.mentors,
   mentees: state.master.mentees,
   onMobile: state.home.onMobile,
-  isMaster: state.account.isMaster,
+  isMaster: state.user.isMaster,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
-    getAccounts: () => dispatch(getAccounts()),
+    getUsers: () => dispatch(getUsers()),
     getMentors: () => dispatch(getMentors()),
     getMentees: () => dispatch(getMentees()),
   };

@@ -22,12 +22,12 @@ export function userLogout(payload) {
   return { type: 'USER_LOGOUT', payload };
 }
 
-export function setAccounts(payload) {
-  return { type: 'SET_ACCOUNTS', payload };
+export function setUsers(payload) {
+  return { type: 'SET_USERS', payload };
 }
 
-export function setMasterAccount(payload) {
-  return { type: 'SET_MASTERACCOUNT', payload };
+export function setMasterUser(payload) {
+  return { type: 'SET_MASTERUSER', payload };
 }
 
 export function setMentors(payload) {

@@ -13,7 +13,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout } from '../../store/actions/index';
 import { postImportMenteeMentor } from '../../store/actions/api';
 
 // Custom Components
@@ -58,13 +57,11 @@ function ImportMenteeMentor(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   account: state.account.account,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
     postImportMenteeMentor: () => dispatch(postImportMenteeMentor()),
   };
 }

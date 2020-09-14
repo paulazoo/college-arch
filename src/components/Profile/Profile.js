@@ -21,8 +21,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
-import { putAccount, getAccount } from '../../store/actions/api';
+import { putUser, getUser } from '../../store/actions/api';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -66,15 +65,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Profile(props) {
+function Profile({ user, ...props }) {
   const classes = useStyles();
 
   const history = useHistory();
 
-  const [bio, setBio] = useState(props.account.bio);
-  const [phone, setPhone] = useState(props.account.phone);
-  const [school, setSchool] = useState(props.account.school);
-  const [gradYear, setGradYear] = useState(props.account.grad_year);
+  const [bio, setBio] = useState(user.bio);
+  const [phone, setPhone] = useState(user.phone);
+  const [school, setSchool] = useState(user.school);
+  const [gradYear, setGradYear] = useState(user.grad_year);
   const [gradYearError, setGradYearError] = useState(false);
 
   const handleBioChange = (e) => {
@@ -93,14 +92,14 @@ function Profile(props) {
     setGradYear(e.target.value);
   };
 
-  const handleSubmitAccount = () => {
+  const handleSubmitUser = () => {
     if (
       +gradYear === parseInt(gradYear) ||
-      props.account.user_type === 'Mentee' ||
+      user.account_type === 'Mentee' ||
       gradYear === null
     ) {
       setGradYearError(false);
-      props.putAccount({
+      props.putUser({
         bio,
         phone,
         school,
@@ -112,7 +111,7 @@ function Profile(props) {
   };
 
   useEffect(() => {
-    props.getAccount();
+    props.getUser();
   }, []);
 
   return (
@@ -131,7 +130,7 @@ function Profile(props) {
             >
               <Grid item>
                 <ProfilePic
-                  account={props.account}
+                  user={user}
                   buttonHeight={128}
                   imgHeight={128}
                   imgWidth={128}
@@ -142,10 +141,10 @@ function Profile(props) {
                   Edit Your Profile Details
                 </Typography>
                 <Typography className={classes.textDetails}>
-                  {`Full Name: ${props.account.name}`}
+                  {`Full Name: ${user.name}`}
                 </Typography>
                 <Typography className={classes.textDetails}>
-                  {`Email: ${props.account.email}`}
+                  {`Email: ${user.email}`}
                 </Typography>
               </Grid>
               <Grid item xs={0} md={12} />
@@ -158,7 +157,7 @@ function Profile(props) {
                   label='Phone Number'
                 />
               </Grid>
-              {props.account.user_type === 'Mentor' && (
+              {user.account_type === 'Mentor' && (
                 <>
                   <Grid item xs={0} md={12} />
                   <Grid item xs={12} md={6}>
@@ -203,7 +202,7 @@ function Profile(props) {
                     <Button
                       variant='contained'
                       color='secondary'
-                      onClick={handleSubmitAccount}
+                      onClick={handleSubmitUser}
                     >
                       Save
                     </Button>
@@ -222,14 +221,13 @@ function Profile(props) {
 
 const mapStateToProps = (state) => ({
   account: state.account.account,
-  user: state.user,
+  user: state.user.user,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
-    putAccount: (body) => dispatch(putAccount(body)),
-    getAccount: () => dispatch(getAccount()),
+    putUser: (body) => dispatch(putUser(body)),
+    getUser: () => dispatch(getUser()),
   };
 }
 

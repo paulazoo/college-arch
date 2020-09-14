@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AddAccounts(props) {
+function AddUsers(props) {
   const classes = useStyles();
 
   const [mentorEmailValue, setMentorEmailValue] = useState('');
@@ -71,12 +71,12 @@ function AddAccounts(props) {
       >
         <Grid item xs={6}>
           <Typography className={classes.text}>
-            Add an accepted Mentor Account with their email
+            Add an accepted Mentor User with their email
           </Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography className={classes.text}>
-            Add an accepted Mentee Account with their email
+            Add an accepted Mentee User with their email
           </Typography>
         </Grid>
         <Grid item xs={4}>
@@ -123,7 +123,6 @@ function AddAccounts(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   account: state.account.account,
 });
 
@@ -135,4 +134,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddAccounts);
+export default connect(mapStateToProps, mapDispatchToProps)(AddUsers);

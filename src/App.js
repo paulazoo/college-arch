@@ -29,7 +29,6 @@ import Master from './components/Master/Master';
 import Profile from './components/Profile/Profile';
 import PublicEvents from './components/PublicEvents/PublicEvents';
 import EventPage from './components/EventPage/EventPage';
-import { userLogout } from './store/actions';
 import Isabela from './components/Testing/Isabela';
 import ContactUs from './components/About/ContactUs';
 
@@ -104,9 +103,7 @@ const mapStateToProps = (state) => {
 };
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

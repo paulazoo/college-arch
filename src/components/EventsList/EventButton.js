@@ -78,7 +78,7 @@ function EventButton({
   eventId,
   link,
   fullLink = false,
-  accountRegistration = { registered: false, joined: false },
+  userRegistration = { registered: false, joined: false },
   showJoin,
   showRegister,
   ...props
@@ -87,10 +87,10 @@ function EventButton({
 
   const handleToggleRegister = () => {
     if (
-      !accountRegistration ||
-      typeof accountRegistration === 'undefined' ||
-      accountRegistration === null ||
-      accountRegistration.registered === true
+      !userRegistration ||
+      typeof userRegistration === 'undefined' ||
+      userRegistration === null ||
+      userRegistration.registered === true
     ) {
       props.postUnregister(eventId);
     } else {
@@ -120,8 +120,8 @@ function EventButton({
             className={classes.button}
             // disabled={!showRegister}
           >
-            {accountRegistration !== null &&
-            accountRegistration.registered === true ? (
+            {userRegistration !== null &&
+            userRegistration.registered === true ? (
               <h3 className={classes.link}>Unregister</h3>
             ) : (
               <h3 className={classes.link}>Register</h3>

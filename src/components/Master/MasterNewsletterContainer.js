@@ -16,7 +16,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import { getNewsletterEmails } from '../../store/actions/api';
 
 // Custom Components

@@ -12,7 +12,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import { postNewsletterEmails } from '../../store/actions/api';
 
 // Custom Components
@@ -73,7 +72,6 @@ const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
   return {
-    userLogout: () => dispatch(userLogout()),
     postNewsletterEmails: (body) => dispatch(postNewsletterEmails(body)),
   };
 }

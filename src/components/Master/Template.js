@@ -13,7 +13,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 
 // Custom Components
 import Navbar from '../Navbar/Navbar';
@@ -52,7 +51,7 @@ function Template(props) {
     <>
       <Grid item xs={6}>
         <Typography className={classes.text}>
-          Add a Mentor Account with their email
+          Add a Mentor User with their email
         </Typography>
       </Grid>
       <Grid item xs={4}>
@@ -75,14 +74,11 @@ function Template(props) {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
   account: state.account.account,
 });
 
 function mapDispatchToProps(dispatch) {
-  return {
-    userLogout: () => dispatch(userLogout()),
-  };
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Template);

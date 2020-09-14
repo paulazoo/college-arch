@@ -22,8 +22,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
-import { putMasterAccount } from '../../store/actions/api';
+import { putMasterUser } from '../../store/actions/api';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
@@ -66,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function MasterProfile({
-  account,
+  user,
   masterProfileOpen,
   setMasterProfileOpen,
   ...props
@@ -75,20 +74,20 @@ function MasterProfile({
 
   const history = useHistory();
 
-  const [bio, setBio] = useState(account.bio);
-  const [phone, setPhone] = useState(account.phone);
-  const [school, setSchool] = useState(account.school);
-  const [email, setEmail] = useState(account.email);
-  const [gradYear, setGradYear] = useState(account.grad_year);
+  const [bio, setBio] = useState(user.bio);
+  const [phone, setPhone] = useState(user.phone);
+  const [school, setSchool] = useState(user.school);
+  const [email, setEmail] = useState(user.email);
+  const [gradYear, setGradYear] = useState(user.grad_year);
   const [gradYearError, setGradYearError] = useState(false);
 
   useEffect(() => {
-    setBio(account.bio);
-    setPhone(account.phone);
-    setSchool(account.school);
-    setEmail(account.email);
-    setGradYear(account.grad_year);
-  }, [account]);
+    setBio(user.bio);
+    setPhone(user.phone);
+    setSchool(user.school);
+    setEmail(user.email);
+    setGradYear(user.grad_year);
+  }, [user]);
 
   const handleBioChange = (e) => {
     setBio(e.target.value);
@@ -110,20 +109,20 @@ function MasterProfile({
     setGradYear(e.target.value);
   };
 
-  const handleSubmitAccount = () => {
+  const handleSubmitUser = () => {
     if (
       +gradYear === parseInt(gradYear) ||
-      account.user_type === 'Mentee' ||
+      user.account_type === 'Mentee' ||
       gradYear === null
     ) {
       setGradYearError(false);
-      props.putMasterAccount({
+      props.putMasterUser({
         email,
         bio,
         phone,
         school,
         grad_year: gradYear,
-        other_account_id: account.id,
+        other_user_id: user.id,
       });
     } else {
       setGradYearError(true);
@@ -146,18 +145,16 @@ function MasterProfile({
         >
           <Grid item>
             <ProfilePic
-              account={account}
+              user={user}
               buttonHeight={128}
               imgHeight={128}
               imgWidth={128}
             />
           </Grid>
           <Grid item>
-            <Typography className={classes.text}>
-              Edit This Person's Account
-            </Typography>
+            <Typography className={classes.text}>Edit This User</Typography>
             <Typography className={classes.textDetails}>
-              {`Full Name: ${account.name}`}
+              {`Full Name: ${user.name}`}
             </Typography>
           </Grid>
           <Grid item xs={12} md={12}>
@@ -178,7 +175,7 @@ function MasterProfile({
               label='Phone Number'
             />
           </Grid>
-          {account.user_type === 'Mentor' && (
+          {user.account_type === 'Mentor' && (
             <>
               <Grid item xs={12} md={12}>
                 <TextField
@@ -224,7 +221,7 @@ function MasterProfile({
                 <Button
                   variant='contained'
                   color='secondary'
-                  onClick={handleSubmitAccount}
+                  onClick={handleSubmitUser}
                 >
                   Save
                 </Button>
@@ -241,7 +238,7 @@ const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
   return {
-    putMasterAccount: (body) => dispatch(putMasterAccount(body)),
+    putMasterUser: (body) => dispatch(putMasterUser(body)),
   };
 }
 

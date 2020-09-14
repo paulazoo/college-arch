@@ -103,7 +103,7 @@ function EventPopup({
     if (
       name === 'public' &&
       !sessionStorage.getItem('access_token') &&
-      !props.account?.id
+      !props.user?.id
     ) {
       return (
         <PublicEventButton
@@ -124,7 +124,7 @@ function EventPopup({
         link={event.link}
         showJoin={moment().add(1, 'days').isAfter(moment(event.start_time))}
         showRegister={moment().isBefore(moment(event.end_time))}
-        accountRegistration={event.account_registration}
+        userRegistration={event.user_registration}
       />
     );
   };
@@ -144,12 +144,12 @@ function EventPopup({
     >
       <Card className={classes.eventCard}>
         <CardHeader
-          title={
+          title={(
             <div className={classes.cardTitle}>
               <strong className={classes.nameText}>{renderEventName()}</strong>
             </div>
-          }
-          subheader={
+          )}
+          subheader={(
             <div className={classes.cardTime}>
               {event.start_time !== null ? (
                 <>
@@ -161,7 +161,7 @@ function EventPopup({
                 <>Always open.</>
               )}
             </div>
-          }
+          )}
         />
         <CardContent>
           <Grid
@@ -203,8 +203,7 @@ function EventPopup({
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-  account: state.account.account,
+  user: state.user.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({});

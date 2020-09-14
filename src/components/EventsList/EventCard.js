@@ -144,7 +144,7 @@ function EventCard({ event, name, ...props }) {
     if (
       name === 'public' &&
       !sessionStorage.getItem('access_token') &&
-      !props.account?.id
+      !props.user?.id
     ) {
       return (
         <PublicEventButton
@@ -162,7 +162,7 @@ function EventCard({ event, name, ...props }) {
         link={event.link}
         showJoin={moment().add(1, 'days').isAfter(moment(event.start_time))}
         showRegister={moment().isBefore(moment(event.end_time))}
-        accountRegistration={event.account_registration}
+        userRegistration={event.user_registration}
       />
     );
   };
@@ -285,7 +285,9 @@ function EventCard({ event, name, ...props }) {
   );
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   deleteEventApi: (eventId) => dispatch(deleteEventApi(eventId)),
