@@ -31,6 +31,8 @@ import PublicEvents from './components/PublicEvents/PublicEvents';
 import EventPage from './components/EventPage/EventPage';
 import Isabela from './components/Testing/Isabela';
 import ContactUs from './components/About/ContactUs';
+import MentorApplication from './components/Apply/MentorApplication';
+import MenteeApplication from './components/Apply/MenteeApplication';
 
 function App(props) {
   const createdTheme = createMuiTheme({
@@ -82,6 +84,8 @@ function App(props) {
         <Route exact path='/mentees' component={MenteesPage} />
         <Route exact path='/mentors' component={MentorsPage} />
         <Route exact path='/apply' component={Apply} />
+        <Route exact path='/apply/mentor' component={MentorApplication} />
+        <Route exact path='/apply/mentee' component={MenteeApplication} />
         <Route exact path='/terms' component={Terms} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/events/:eventId' component={EventPage} />

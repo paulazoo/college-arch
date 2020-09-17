@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Button,
   TextField,
@@ -82,6 +83,16 @@ const useStyles = makeStyles((theme) => ({
 function Apply(props) {
   const classes = useStyles();
 
+  const history = useHistory();
+
+  const goToMentorApplication = () => {
+    history.push('/apply/mentor');
+  };
+
+  const goToMenteeApplication = () => {
+    history.push('/apply/mentee');
+  };
+
   return (
     <>
       <Navbar />
@@ -120,6 +131,7 @@ function Apply(props) {
                   variant='contained'
                   color='secondary'
                   className={classes.applyButton}
+                  onClick={goToMenteeApplication}
                   disabled
                 >
                   Mentee
@@ -135,6 +147,7 @@ function Apply(props) {
                   variant='contained'
                   color='secondary'
                   className={classes.applyButton}
+                  onClick={goToMentorApplication}
                   disabled
                 >
                   Mentor
