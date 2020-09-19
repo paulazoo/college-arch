@@ -32,7 +32,7 @@ function PersonalSnackbar(props) {
       open={props.personalSnackbar ? props.personalSnackbar.open : false}
       autoHideDuration={6000}
       onClose={handleClosePersonalSnackbar}
-      message={props.personalSnackbar.content}
+      message={props.personalSnackbar ? props.personalSnackbar.content : ''}
     />
   );
 }

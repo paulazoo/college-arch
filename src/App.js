@@ -12,6 +12,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
+import { userLogout } from './store/actions';
 
 // Custom Components
 import Landing from './components/Landing/Landing';
@@ -35,6 +36,10 @@ import MentorApplication from './components/Apply/MentorApplication';
 import MenteeApplication from './components/Apply/MenteeApplication';
 
 function App(props) {
+  useEffect(() => {
+    props.userLogout();
+  }, []);
+
   const createdTheme = createMuiTheme({
     palette: {
       primary: {
@@ -107,7 +112,9 @@ const mapStateToProps = (state) => {
 };
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    userLogout: () => dispatch(userLogout()),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
