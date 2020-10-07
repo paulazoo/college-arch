@@ -23,11 +23,6 @@ import App from './App';
 
 require('dotenv').config();
 
-if (process.env.REACT_APP_APP_ENV === 'production') {
-  LogRocket.init(process.env.REACT_APP_LOGROCKET_KEY);
-  setupLogRocketReact(LogRocket);
-}
-
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
