@@ -1,70 +1,19 @@
-/* eslint-disable no-console */
-// Template for components
-import React, { useEffect, useState, useRef } from 'react';
-import { Button } from '@material-ui/core';
+import React from 'react';
+import { PayPalButton } from 'react-paypal-button-v2';
 
-// Redux
-import { connect } from 'react-redux';
-
-// Theme
-
-// Custom Components
-
-function PaypalDonate(props) {
-  const [checkout, setCheckout] = useState(false);
-
-  const handlePaypalClick = () => {
-    setCheckout(true);
-  };
-
-  const paypal = useRef();
-
-  useEffect(() => {
-    window.paypal
-      .Buttons({
-        createOrder: (data, actions, err) => {
-          return actions.order.create({
-            intent: 'CAPTURE',
-            purchase_units: [
-              {
-                description: 'College ARCH Donation',
-                amount: {
-                  currency_code: 'USD',
-                  value: 10.0,
-                },
-              },
-            ],
-          });
-        },
-        onApprove: async (data, actions) => {
-          const order = await actions.order.capture();
-          console.log(order);
-        },
-        onError: (err) => {
-          console.log(err);
-        },
-      })
-      .render(paypal.current);
-  }, []);
-
-  return checkout ? (
-    <>
-      <div>
-        <div ref={paypal} />
-      </div>
-    </>
-  ) : (
-    <>
-      <p>plsss give us monies bc we are pooor</p>
-      <Button onClick={handlePaypalClick}>Donate</Button>
-    </>
-  );
+class PaypalDonate extends React.Component {
+  render() {
+    return (
+      <PayPalButton
+        amount={0.01}
+        currency='USD'
+        onSuccess={(details, data) => console.log(details, data)}
+        options={{
+          clientId:
+            'AQulV7aFCM-Ki5udsLsyCpAS6X76uyx2XKh-NXo9Tk25wBU3UHa6fovT6FKINDZ6xPOYTHZs2HQaA0H5',
+        }}
+      />
+    );
+  }
 }
-
-const mapStateToProps = (state) => ({});
-
-function mapDispatchToProps(dispatch) {
-  return {};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PaypalDonate);
+export default PaypalDonate;

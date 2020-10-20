@@ -107,7 +107,7 @@ function ContactUs(props) {
     <>
       <WordDivider spacing={125}>
         <Typography variant='h3' className={classes.wordDivider}>
-          Connect with us
+          Connect with us!
         </Typography>
       </WordDivider>
       <Card className={classes.card}>
