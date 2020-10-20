@@ -143,8 +143,8 @@ function LoggedOutNavbar({ ...props }) {
                   <Button
                     color='inherit'
                     className={classes.rightLink}
-                    target='_blank'
-                    href='https://www.gofundme.com/f/the-college-key'
+                    component={NavLink}
+                    to='/donate'
                   >
                     Donate
                   </Button>

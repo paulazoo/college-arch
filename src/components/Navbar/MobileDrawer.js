@@ -120,12 +120,7 @@ function MobileDrawer({ menuItems, ...props }) {
             </ListItem>
           </Button>
         ))}
-        <Button
-          color='inherit'
-          target='_blank'
-          key='Donate'
-          href='https://www.gofundme.com/f/the-college-key'
-        >
+        <Button color='inherit' key='Donate' component={NavLink} to='/donate'>
           <ListItem button key='Donate'>
             <ListItemIcon style={{ color: 'white' }}>{DonateSvg}</ListItemIcon>
             <ListItemText style={{ color: 'white' }} primary='Donate' />

@@ -34,7 +34,7 @@ import Isabela from './components/Testing/Isabela';
 import ContactUs from './components/About/ContactUs';
 import MentorApplication from './components/Apply/MentorApplication';
 import MenteeApplication from './components/Apply/MenteeApplication';
-import PaypalDonate from './components/Donate/PaypalDonate';
+import Donate from './components/Donate/Donate';
 
 function App(props) {
   useEffect(() => {
@@ -94,7 +94,7 @@ function App(props) {
         <Route exact path='/apply/mentee' component={MenteeApplication} />
         <Route exact path='/terms' component={Terms} />
         <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/donate' component={PaypalDonate} />
+        <Route exact path='/donate' component={Donate} />
         <Route exact path='/events/:eventId' component={EventPage} />
 
         <Route exact path='/testing' component={ContactUs} />
