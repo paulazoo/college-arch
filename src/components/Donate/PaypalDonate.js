@@ -1,10 +1,10 @@
 import React from 'react';
 import { PayPalButton } from 'react-paypal-button-v2';
 
-function PaypalDonate(props) {
+function PaypalDonate({ donateAmount }) {
   return (
     <PayPalButton
-      amount={0.01}
+      amount={donateAmount}
       currency='USD'
       onSuccess={(details, data) => console.log(details, data)}
       options={{
