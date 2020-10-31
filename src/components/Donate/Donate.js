@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Donate() {
   const classes = useStyles();
 
-  const [donateAmount, setDonateAmount] = useState('0.0');
+  const [donateAmount, setDonateAmount] = useState('0.01');
 
   const handleDonateAmount = (e) => {
     setDonateAmount(e.target.value);

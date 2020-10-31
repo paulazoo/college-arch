@@ -23,6 +23,10 @@ import MasterSvg from '../../assets/Icons/Master.svg';
 import LoggedInSvg from '../../assets/Icons/LoggedIn.svg';
 import LoggedOutSvg from '../../assets/Icons/LoggedOut.svg';
 
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import LockIcon from '@material-ui/icons/Lock';
+
 // Redux
 import { connect } from 'react-redux';
 import { userLogout } from '../../store/actions';
@@ -122,7 +126,10 @@ function MobileDrawer({ menuItems, ...props }) {
         ))}
         <Button color='inherit' key='Donate' component={NavLink} to='/donate'>
           <ListItem button key='Donate'>
-            <ListItemIcon style={{ color: 'white' }}>{DonateSvg}</ListItemIcon>
+            <ListItemIcon style={{ color: 'white' }}>
+              <FavoriteIcon />
+            </ListItemIcon>
+            {/* <ListItemIcon style={{ color: 'white' }}>{DonateSvg}</ListItemIcon> */}
             <ListItemText style={{ color: 'white' }} primary='Donate' />
           </ListItem>
         </Button>
@@ -134,8 +141,11 @@ function MobileDrawer({ menuItems, ...props }) {
             key='Logout'
           >
             <ListItem button key='Logout'>
-              <ListItemIcon style={{ color: 'white' }}>
+              {/* <ListItemIcon style={{ color: 'white' }}>
                 {LoggedInSvg}
+              </ListItemIcon> */}
+              <ListItemIcon>
+                <ExitToAppIcon />
               </ListItemIcon>
               <ListItemText style={{ color: 'white' }} primary='Logout' />
             </ListItem>
@@ -143,8 +153,11 @@ function MobileDrawer({ menuItems, ...props }) {
         ) : (
           <Button color='inherit' component={NavLink} to='/login' key='Login'>
             <ListItem button key='Login'>
-              <ListItemIcon style={{ color: 'white' }}>
+              {/* <ListItemIcon style={{ color: 'white' }}>
                 {LoggedOutSvg}
+              </ListItemIcon> */}
+              <ListItemIcon style={{ color: 'white' }}>
+                <LockIcon />
               </ListItemIcon>
               <ListItemText style={{ color: 'white' }} primary='Login' />
             </ListItem>
