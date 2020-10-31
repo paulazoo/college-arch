@@ -71,6 +71,11 @@ function NavBar(props) {
     resize();
   }, [window.innerWidth]);
 
+  useEffect(() => {
+    window.addEventListener('resize', resize);
+    resize();
+  }, []);
+
   return <>{props.onMobile ? <MobileNavbar /> : <DesktopNavbar />}</>;
 }
 
