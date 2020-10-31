@@ -24,7 +24,7 @@ function PaypalDonate({ donateAmount }) {
           clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID,
         }}
       />
-      <Button onClick={() => handleSuccess('dtails', 'data')}>Simulate</Button>
+      {/* <Button onClick={() => handleSuccess('dtails', 'data')}>Simulate</Button> */}
     </>
   );
 }
