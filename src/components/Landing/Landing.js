@@ -69,33 +69,15 @@ const useStyles = makeStyles((theme) => ({
   },
   landingText1: {
     fontWeight: 'bold',
-    fontSize: 48,
-    [theme.breakpoints.down('md')]: {
-      fontSize: 32,
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 16,
-    },
+    fontSize: '3vw',
   },
   landingText2: {
     fontWeight: 'bold',
-    fontSize: 32,
-    [theme.breakpoints.down('md')]: {
-      fontSize: 24,
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 12,
-    },
+    fontSize: '2vw',
   },
   landingText3: {
     fontWeight: 'normal',
-    fontSize: 24,
-    [theme.breakpoints.down('md')]: {
-      fontSize: 18,
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 10,
-    },
+    fontSize: '1.5vw',
   },
   textGrid: {
     textAlign: 'center',
@@ -118,9 +100,8 @@ const useStyles = makeStyles((theme) => ({
   },
   applyButton: {
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: '1.5vw',
     [theme.breakpoints.down('sm')]: {
-      fontSize: 10,
       padding: theme.spacing(1),
     },
   },
@@ -129,10 +110,7 @@ const useStyles = makeStyles((theme) => ({
   },
   dueDate: {
     fontWeight: 'bold',
-    fontSize: 18,
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 8,
-    },
+    fontSize: '1vw',
   },
   spacing: {
     height: theme.spacing(8),
@@ -142,17 +120,11 @@ const useStyles = makeStyles((theme) => ({
   },
   memberCount: {
     fontWeight: 'bold',
-    fontSize: 64,
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 28,
-    },
+    fontSize: '4vw',
   },
   mentorsFrom: {
     fontWeight: 'bold',
-    fontSize: 18,
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 9,
-    },
+    fontSize: '1.5vw',
   },
 }));
 
