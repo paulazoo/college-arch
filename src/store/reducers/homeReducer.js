@@ -15,6 +15,10 @@ export default function homeReducer(state = initialState.home, action) {
       };
 
     case 'SET_ONMOBILE':
+      console.log({
+        ...state,
+        onMobile: action.payload,
+      });
       return {
         ...state,
         onMobile: action.payload,

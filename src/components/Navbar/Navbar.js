@@ -52,8 +52,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function NavBar(props) {
+function NavBar({ ...props }) {
   const classes = useStyles();
+  const currentHideNav = window.innerWidth <= 770;
 
   useEffect(() => {
     document.body.style.backgroundColor = props.backgroundColor;
@@ -72,11 +73,10 @@ function NavBar(props) {
   }, [window.innerWidth]);
 
   useEffect(() => {
-    window.addEventListener('resize', resize);
-    resize();
-  }, []);
+    console.log(props.onMobile, ' change detected');
+  }, [props.onMobile]);
 
-  return <>{props.onMobile ? <MobileNavbar /> : <DesktopNavbar />}</>;
+  return <>{currentHideNav ? <MobileNavbar /> : <DesktopNavbar />}</>;
 }
 
 const mapStateToProps = (state) => ({

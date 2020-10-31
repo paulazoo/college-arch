@@ -6,6 +6,9 @@ import GroupIcon from '@material-ui/icons/Group';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
+import StarIcon from '@material-ui/icons/Star';
+import CreateIcon from '@material-ui/icons/Create';
+
 import FellowshipProgramSvg from '../../assets/Icons/FellowshipProgram.svg';
 import ApplySvg from '../../assets/Icons/Apply.svg';
 
@@ -23,20 +26,22 @@ export const loggedOutMenuItems = [
   {
     text: 'Fellowship Program',
     link: '/fellowship-program',
-    icon: (
-      <Icon>
-        <img src={FellowshipProgramSvg} alt='icon' width={24} height={24} />
-      </Icon>
-    ),
+    icon: <StarIcon />,
+    // (
+    //   <Icon>
+    //     <img src={FellowshipProgramSvg} alt='icon' width={24} height={24} />
+    //   </Icon>
+    // ),
   },
   {
     text: 'Apply',
     link: '/apply',
-    icon: (
-      <Icon>
-        <img src={ApplySvg} alt='icon' width={24} height={24} />
-      </Icon>
-    ),
+    icon: <CreateIcon />,
+    // (
+    //   <Icon>
+    //     <img src={ApplySvg} alt='icon' width={24} height={24} />
+    //   </Icon>
+    // ),
   },
 ];
 
