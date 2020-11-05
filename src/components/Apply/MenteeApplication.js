@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import {
   Button,
   Card,
+  Checkbox,
   FormControl,
   FormControlLabel,
+  FormGroup,
   Grid,
   MenuItem,
   Radio,
@@ -22,26 +24,58 @@ import { makeStyles } from '@material-ui/core/styles';
 // Custom Components
 import Navbar from '../Navbar/Navbar';
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  intro: {
+    textAlign: 'center',
+    padding: '50px',
+  },
+  main: {
+    padding: '50px',
+    backgroundColor: theme.palette.common.teamOne,
+  },
+}));
 
 const stateList = ['Virginia', 'Colorado', 'Texas', 'Hawaii'];
 
 function MenteeApplication(props) {
   const classes = useStyles();
 
-  const [firstName, setFirstName] = useState('we');
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [city, setCity] = useState('');
+  const [highschool, setHighschool] = useState('');
+  const [essay, setEssay] = useState('');
   const [state, setState] = useState('');
+  const [country, setCountry] = useState('');
+  const [eligible, setEligible] = useState(false);
 
   const [usBoolean, setUsBoolean] = useState(true);
 
+  const [error, setError] = useState(false);
+
   const handleChange = (event) => {
     switch (event.target.id) {
+      case 'email':
+        setEmail(event.target.value);
+        break;
       case 'firstName':
         setFirstName(event.target.value);
         break;
       case 'lastName':
         setLastName(event.target.value);
+        break;
+      case 'essay':
+        setEssay(event.target.value);
+        break;
+      case 'city':
+        setCity(event.target.value);
+        break;
+      case 'highschool':
+        setHighschool(event.target.value);
+        break;
+      case 'country':
+        setCountry(event.target.value);
         break;
       default:
         break;
@@ -60,22 +94,92 @@ function MenteeApplication(props) {
     setState(event.target.value);
   };
 
+  const handleEligibleChange = (event) => {
+    if (event.target.value === 'true') {
+      setEligible(true);
+    } else {
+      setEligible(false);
+    }
+  };
+
+  const [background, setBackground] = useState({
+    first_gen: false,
+    low_income: false,
+    stem_girl: false,
+    single_parent: false,
+    disabled: false,
+    lgbt: false,
+    black: false,
+    hispanic: false,
+    asian: false,
+    native: false,
+  });
+
+  const handleBackgroundChange = (event) => {
+    setBackground({ ...background, [event.target.name]: event.target.checked });
+  };
+
   const handleSubmit = () => {
-    // TODO: eventually actually run the api call, but for now just console.log
-    console.log('first name: ', firstName);
-    console.log('last name: ', lastName);
+    if (
+      firstName === '' ||
+      lastName === '' ||
+      (state === '' && usBoolean === true) ||
+      (country === '' && usBoolean === false) ||
+      eligible === false ||
+      essay === '' ||
+      city === '' ||
+      email === '' ||
+      background ===
+        {
+          first_gen: false,
+          low_income: false,
+          stem_girl: false,
+          single_parent: false,
+          disabled: false,
+          lgbt: false,
+          black: false,
+          hispanic: false,
+          asian: false,
+          native: false,
+        }
+    ) {
+      setError(true);
+    } else {
+      setError(false);
+      // api call
+      console.log({
+        email,
+        city,
+        state,
+        country,
+        essay,
+        ...background,
+        first_name: firstName,
+        last_name: lastName,
+        school: highschool,
+      });
+    }
   };
 
   return (
     <>
       <Navbar />
-      <div style={{ padding: 50 }}>
+      <div className={classes.main}>
         <Card>
-          <Grid container direction='row'>
+          <Grid
+            container
+            direction='row'
+            alignItems='center'
+            spacing={4}
+            justify='center'
+            className={classes.intro}
+          >
             <Grid item>
-              <Typography variant='h2'>
+              <Typography variant='h3'>
                 College ARCH Fellowship Application
               </Typography>
+            </Grid>
+            <Grid item>
               <Typography>
                 College ARCH is focused on increasing accessibility of resources
                 and providing guidance to underrepresented students going
@@ -118,7 +222,14 @@ function MenteeApplication(props) {
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField fullWidth variant='outlined' label='Email' />
+              <TextField
+                value={email}
+                onChange={handleChange}
+                id='email'
+                fullWidth
+                variant='outlined'
+                label='Email'
+              />
             </Grid>
             <Grid item xs={12}>
               <Typography>Are you living in the U.S.?</Typography>
@@ -150,11 +261,25 @@ function MenteeApplication(props) {
             ) : (
               <Grid item xs={12}>
                 <Typography>Enter your country</Typography>
-                <TextField fullWidth variant='outlined' label='Country' />
+                <TextField
+                  fullWidth
+                  value={country}
+                  id='country'
+                  onChange={handleChange}
+                  variant='outlined'
+                  label='Country'
+                />
               </Grid>
             )}
             <Grid item xs={12}>
-              <TextField fullWidth variant='outlined' label='City or Town' />
+              <TextField
+                fullWidth
+                variant='outlined'
+                label='City or Town'
+                id='city'
+                value={city}
+                onChange={handleChange}
+              />
             </Grid>
             <Grid item xs={12}>
               <Typography>
@@ -163,17 +288,8 @@ function MenteeApplication(props) {
                 contact contact@collegearch@gmail.com to register as a higher-ed
                 follow or mentor)
               </Typography>
-              <RadioGroup
-                aria-label='gender'
-                name='gender1'
-                // value=true
-                onChange={handleChange}
-              >
-                <FormControlLabel
-                  value='female'
-                  control={<Radio />}
-                  label='Yes'
-                />
+              <RadioGroup value={eligible} onChange={handleEligibleChange}>
+                <FormControlLabel value control={<Radio />} label='Yes' />
               </RadioGroup>
             </Grid>
             <Grid item xs={12}>
@@ -182,7 +298,14 @@ function MenteeApplication(props) {
                 better connect you with better tailored opportunities and
                 networks.
               </Typography>
-              <TextField fullWidth variant='outlined' label='High School' />
+              <TextField
+                fullWidth
+                variant='outlined'
+                label='High School'
+                value={highschool}
+                onChange={handleChange}
+                id='highschool'
+              />
             </Grid>
             <Grid item xs={12}>
               <Typography>
@@ -190,7 +313,110 @@ function MenteeApplication(props) {
                 underrepresented backgrounds. Please select the backgrounds with
                 which you identify as
               </Typography>
-              <TextField fullWidth variant='outlined' label='High School' />
+              <FormControl component='fieldset' className={classes.formControl}>
+                <FormGroup>
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='first_gen'
+                        checked={background.first_gen}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='First-generation college student'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='low_income'
+                        checked={background.low_income}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Low-income household'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='stem_girl'
+                        checked={background.stem_girl}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Womxn in STEM'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='lgbt'
+                        checked={background.lgbt}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='LGBTQ+'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='disabled'
+                        checked={background.disabled}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Disabled'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='black'
+                        checked={background.black}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Black'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='hispanic'
+                        checked={background.hispanic}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Latinx or Hispanic'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='native'
+                        checked={background.native}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Indigenous or Native'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='asian'
+                        checked={background.asian}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Asian'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='immigrant'
+                        checked={background.immigrant}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Immigrant'
+                  />
+                </FormGroup>
+              </FormControl>
               <Typography>
                 If you do not see your background in the following list, but
                 believe you are still eligible for the College ARCH Fellowship,
@@ -207,6 +433,9 @@ function MenteeApplication(props) {
                 multiline
                 rowsMax={4}
                 rows={4}
+                value={essay}
+                onChange={handleChange}
+                id='essay'
               />
             </Grid>
             <Grid item xs={12}>
@@ -215,7 +444,18 @@ function MenteeApplication(props) {
                 is optional and not submitting a resume or CV will not
                 negatively affect your application.
               </Typography>
-              <TextField fullWidth variant='outlined' multiline rowsMax={4} />
+              <Button variant='contained' color='secondary' component='label'>
+                Upload File
+                <input type='file' style={{ display: 'none' }} />
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              {error && (
+                <p style={{ color: 'red' }}>
+                  You did not answer all the questions. Please finish answering
+                  the questions.
+                </p>
+              )}
             </Grid>
             <Grid item xs={12}>
               <Grid
