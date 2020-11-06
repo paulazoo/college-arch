@@ -283,6 +283,33 @@ export const postGoogleLogin = (googleToken, callback) => {
   };
 };
 
+export const postMenteeApplicants = (body) => {
+  return (dispatch, getState) => {
+    console.log('api call sending...');
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(body),
+    };
+    api(`mentee_applicants`, requestOptions)
+      .then((response) => {
+        console.log('ok http response received');
+        dispatch(
+          setPersonalSnackbar({
+            open: true,
+            content: `Application successfully submitted!`,
+          })
+        );
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
 export const postNewsletterEmails = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
