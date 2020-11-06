@@ -111,8 +111,10 @@ function MenteeApplication(props) {
     lgbt: false,
     black: false,
     hispanic: false,
-    asian: false,
+    asian_pi: false,
     native: false,
+    immigrant: false,
+    me_na: false,
   });
 
   const handleBackgroundChange = (event) => {
@@ -139,9 +141,10 @@ function MenteeApplication(props) {
           lgbt: false,
           black: false,
           hispanic: false,
-          asian: false,
+          asian_pi: false,
           native: false,
           immigrant: false,
+          me_na: false,
         }
     ) {
       setError(true);
@@ -370,6 +373,16 @@ function MenteeApplication(props) {
                   <FormControlLabel
                     control={(
                       <Checkbox
+                        name='immigrant'
+                        checked={background.immigrant}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Immigrant'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
                         name='black'
                         checked={background.black}
                         onChange={handleBackgroundChange}
@@ -400,22 +413,22 @@ function MenteeApplication(props) {
                   <FormControlLabel
                     control={(
                       <Checkbox
-                        name='asian'
-                        checked={background.asian}
+                        name='asian_pi'
+                        checked={background.asian_pi}
                         onChange={handleBackgroundChange}
                       />
                     )}
-                    label='Asian'
+                    label='Asian and/or Pacific Islander'
                   />
                   <FormControlLabel
                     control={(
                       <Checkbox
-                        name='immigrant'
-                        checked={background.immigrant}
+                        name='me_na'
+                        checked={background.me_na}
                         onChange={handleBackgroundChange}
                       />
                     )}
-                    label='Immigrant'
+                    label='Middle Eastern and/or North African'
                   />
                 </FormGroup>
               </FormControl>
