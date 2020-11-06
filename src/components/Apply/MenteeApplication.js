@@ -141,6 +141,7 @@ function MenteeApplication(props) {
           hispanic: false,
           asian: false,
           native: false,
+          immigrant: false,
         }
     ) {
       setError(true);
@@ -157,6 +158,7 @@ function MenteeApplication(props) {
         first_name: firstName,
         last_name: lastName,
         school: highschool,
+        us_living: usBoolean,
       });
     }
   };
