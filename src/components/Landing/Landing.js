@@ -187,15 +187,15 @@ function Landing(props) {
               variant='contained'
               className={classes.applyButton}
               onClick={handleApply}
-              disabled
+              // disabled
               style={{ backgroundColor: 'gray' }}
             >
               APPLY NOW
             </Button>
             <Grid item xs={0} md={12} className={classes.textGrid} />
-            <Typography className={classes.dueDate}>
+            {/* <Typography className={classes.dueDate}>
               Fellowship applications will be open again in January 2021
-            </Typography>
+            </Typography> */}
           </Grid>
           <Grid item xs={12} className={classes.textGrid}>
             <Grid
@@ -258,16 +258,16 @@ function Landing(props) {
             color='secondary'
             className={classes.applyButton}
             onClick={handleApply}
-            disabled
+            // disabled
           >
             APPLY NOW
           </Button>
         </Grid>
         <Grid item xs={12} className={classes.dueDateContainer}>
           <br />
-          <Typography className={classes.dueDate}>
+          {/* <Typography className={classes.dueDate}>
             Fellowship applications will be open again in January 2021
-          </Typography>
+          </Typography> */}
         </Grid>
       </Grid>
       <div className={classes.spacing} />

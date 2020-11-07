@@ -212,7 +212,7 @@ function FellowshipProgram(props) {
                       variant='contained'
                       className={classes.applyButton}
                       onClick={handleApply}
-                      disabled
+                      // disabled
                       style={{ backgroundColor: 'gray' }}
                     >
                       APPLY NOW
@@ -220,9 +220,9 @@ function FellowshipProgram(props) {
                   </Grid>
                   <Grid xs={12} />
                   <Grid item className={classes.dueDateContainer}>
-                    <Typography className={classes.dueDate}>
+                    {/* <Typography className={classes.dueDate}>
                       Fellowship applications will be open again in January 2021
-                    </Typography>
+                    </Typography> */}
                   </Grid>
                 </Grid>
               </Grid>
