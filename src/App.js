@@ -36,6 +36,7 @@ import MentorApplication from './components/Apply/MentorApplication';
 import MenteeApplication from './components/Apply/MenteeApplication';
 import Donate from './components/Donate/Donate';
 import Submitted from './components/Apply/Submitted';
+import Links from './components/Links/Links';
 
 function App(props) {
   useEffect(() => {
@@ -93,6 +94,7 @@ function App(props) {
         <Route exact path='/terms' component={Terms} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/donate' component={Donate} />
+        <Route exact path='/links' component={Links} />
         <Route exact path='/events/:eventId' component={EventPage} />
 
         {/* Application pages */}
