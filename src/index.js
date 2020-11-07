@@ -10,6 +10,7 @@ import AppStateProvider from './state';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import dotenv from 'dotenv';
+import history from './store/history';
 
 // Redux
 import store, { persistor } from './store/store';
@@ -26,10 +27,8 @@ require('dotenv').config();
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
-      <Router>
-        <AppStateProvider>
-          <App />
-        </AppStateProvider>
+      <Router history={history}>
+        <App />
       </Router>
     </PersistGate>
   </Provider>,

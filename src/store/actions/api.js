@@ -285,7 +285,6 @@ export const postGoogleLogin = (googleToken, callback) => {
 
 export const postMenteeApplicants = (body) => {
   return (dispatch, getState) => {
-    console.log('api call sending...');
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -296,13 +295,41 @@ export const postMenteeApplicants = (body) => {
     };
     api(`mentee_applicants`, requestOptions)
       .then((response) => {
-        console.log('ok http response received');
         dispatch(
           setPersonalSnackbar({
             open: true,
             content: `Application successfully submitted!`,
           })
         );
+        history.push('/apply/submitted');
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
+export const postMentorApplicants = (body) => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(body),
+    };
+    api(`mentor_applicants`, requestOptions)
+      .then((response) => {
+        dispatch(
+          setPersonalSnackbar({
+            open: true,
+            content: `Application successfully submitted!`,
+          })
+        );
+        history.push('/apply/submitted');
+        window.location.reload();
       })
       .catch((error) => {
         console.error('API Error: ', error);

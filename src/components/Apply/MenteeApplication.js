@@ -151,18 +151,6 @@ function MenteeApplication(props) {
       setError(true);
     } else {
       setError(false);
-      console.log({
-        email,
-        city,
-        state,
-        country,
-        essay,
-        ...background,
-        first_name: firstName,
-        last_name: lastName,
-        school: highschool,
-        us_living: usBoolean,
-      });
       // api call
       props.postMenteeApplicants({
         email,
@@ -172,9 +160,10 @@ function MenteeApplication(props) {
         essay,
         ...background,
         first_name: firstName,
-        last_name: lastName,
+        family_name: lastName,
         school: highschool,
         us_living: usBoolean,
+        grad_year: 2020,
       });
     }
   };
@@ -464,9 +453,12 @@ function MenteeApplication(props) {
                 value={essay}
                 onChange={handleChange}
                 id='essay'
+                inputProps={{
+                  maxLength: 1000,
+                }}
               />
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <Typography>
                 Optional: Please submit your resume or CV. Please note that this
                 is optional and not submitting a resume or CV will not
@@ -476,7 +468,7 @@ function MenteeApplication(props) {
                 Upload File
                 <input type='file' style={{ display: 'none' }} />
               </Button>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
               {error && (
                 <p style={{ color: 'red' }}>

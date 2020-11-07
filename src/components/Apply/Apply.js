@@ -123,7 +123,8 @@ function Apply(props) {
                   Apply to be a College ARCH Mentee or Mentor!
                 </Typography>
                 <Typography className={classes.dueDate}>
-                  Fellowship applications will be open again in January 2021
+                  Mentor fellowship applications will be open again in January
+                  2021
                 </Typography>
               </Grid>
               <Grid item>
@@ -132,7 +133,7 @@ function Apply(props) {
                   color='secondary'
                   className={classes.applyButton}
                   onClick={goToMenteeApplication}
-                  disabled
+                  // disabled
                 >
                   Mentee
                 </Button>

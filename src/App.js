@@ -35,6 +35,7 @@ import ContactUs from './components/About/ContactUs';
 import MentorApplication from './components/Apply/MentorApplication';
 import MenteeApplication from './components/Apply/MenteeApplication';
 import Donate from './components/Donate/Donate';
+import Submitted from './components/Apply/Submitted';
 
 function App(props) {
   useEffect(() => {
@@ -89,13 +90,16 @@ function App(props) {
         {/* <Route exact path='/events' component={PublicEvents} /> */}
         <Route exact path='/mentees' component={MenteesPage} />
         <Route exact path='/mentors' component={MentorsPage} />
-        <Route exact path='/apply' component={Apply} />
-        <Route exact path='/apply/mentor' component={MentorApplication} />
-        <Route exact path='/apply/mentee' component={MenteeApplication} />
         <Route exact path='/terms' component={Terms} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/donate' component={Donate} />
         <Route exact path='/events/:eventId' component={EventPage} />
+
+        {/* Application pages */}
+        <Route exact path='/apply' component={Apply} />
+        <Route exact path='/apply/mentor' component={MentorApplication} />
+        <Route exact path='/apply/mentee' component={MenteeApplication} />
+        <Route exact path='/apply/submitted' component={Submitted} />
 
         <Route exact path='/testing' component={ContactUs} />
         <Route exact path='/isabela' component={Isabela} />
