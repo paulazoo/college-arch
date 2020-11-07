@@ -25,6 +25,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Custom Components
 import Navbar from '../Navbar/Navbar';
+import statesList from './statesList.js';
+import Footer from '../Footer/Footer';
 
 const useStyles = makeStyles((theme) => ({
   intro: {
@@ -37,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const stateList = ['Virginia', 'Colorado', 'Texas', 'Hawaii'];
 const gradYearList = [2025, 2024, 2023];
 
 function MentorApplication(props) {
@@ -249,7 +250,7 @@ function MentorApplication(props) {
                   value={state}
                   onChange={handleStateChange}
                 >
-                  {stateList.map((option) => (
+                  {statesList.map((option) => (
                     <MenuItem value={option}>{option}</MenuItem>
                   ))}
                 </Select>
@@ -499,6 +500,7 @@ function MentorApplication(props) {
           </Grid>
         </Card>
       </div>
+      <Footer />
     </>
   );
 }

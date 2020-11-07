@@ -213,7 +213,7 @@ function FellowshipProgram(props) {
                       className={classes.applyButton}
                       onClick={handleApply}
                       // disabled
-                      style={{ backgroundColor: 'gray' }}
+                      // style={{ backgroundColor: 'gray' }}
                     >
                       APPLY NOW
                     </Button>
