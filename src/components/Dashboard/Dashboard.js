@@ -123,7 +123,6 @@ function Dashboard(props) {
           </Card>
         </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 }

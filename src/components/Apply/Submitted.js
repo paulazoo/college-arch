@@ -72,7 +72,6 @@ function Submitted(props) {
           </Card>
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

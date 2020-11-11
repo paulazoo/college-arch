@@ -20,7 +20,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 const useStyles = makeStyles((theme) => ({
-wordDivider: {
+  wordDivider: {
     fontSize: 44,
     fontWeight: 'bold',
     color: theme.palette.common.gray,
@@ -37,7 +37,6 @@ function MentorsPage(props) {
     <>
       <Navbar />
       <Button>Mentors Page</Button>
-      <Footer />
     </>
   );
 }

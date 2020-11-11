@@ -184,7 +184,6 @@ function LoginPage(props) {
           </Card>
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

@@ -500,7 +500,6 @@ function MentorApplication(props) {
           </Grid>
         </Card>
       </div>
-      <Footer />
     </>
   );
 }

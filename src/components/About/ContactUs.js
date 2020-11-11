@@ -8,6 +8,8 @@ import {
   Paper,
   Button,
   TextField,
+  IconButton,
+  Icon,
 } from '@material-ui/core';
 
 // Redux
@@ -18,6 +20,10 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
+import FacebookSvg from '../../assets/SocialMedia/Facebook.svg';
+import TwitterSvg from '../../assets/SocialMedia/Twitter.svg';
+import InstagramSvg from '../../assets/SocialMedia/Instagram.svg';
+import LinkedinSvg from '../../assets/SocialMedia/Linkedin.svg';
 
 const useStyles = makeStyles((theme) => ({
   headText: {
@@ -78,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
   teamNameContainer: {
     padding: '0 !important',
+    textAlign: 'center',
   },
   story: {
     fontSize: 18,
@@ -86,11 +93,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   card: {
+    padding: '2vw',
     margin: 0,
     marginRight: theme.spacing(6),
     marginLeft: theme.spacing(6),
     marginBottom: theme.spacing(6),
-    backgroundColor: theme.palette.common.teamTwo,
+    backgroundColor: theme.palette.common.teamOne,
     [theme.breakpoints.down('sm')]: {
       marginRight: theme.spacing(1),
       marginLeft: theme.spacing(1),
@@ -105,34 +113,30 @@ function ContactUs(props) {
 
   return (
     <>
-      <WordDivider spacing={125}>
+      <WordDivider spacing={200}>
         <Typography variant='h3' className={classes.wordDivider}>
           Connect with us!
         </Typography>
       </WordDivider>
       <Card className={classes.card}>
-        <Grid container spacing={0}>
-          <Grid item xs={12} sm={12} height='100%' width='80%'>
-            <Grid
-              container
-              direction='row'
-              justify='center'
-              alignItems='center'
-              spacing={4}
-              className={classes.totalGrid}
-            >
-              <Grid item xs={12} className={classes.teamNameContainer}>
-                <Grid
-                  container
-                  direction='row'
-                  justify='center'
-                  className={classes.teamNameContainer}
-                >
+        <Card>
+          <Grid
+            container
+            direction='row'
+            justify='center'
+            alignItems='center'
+            spacing={4}
+            className={classes.totalGrid}
+          >
+            <Grid item xs={12} className={classes.teamNameContainer}>
+              <Typography variant='h5'>
+                <b>
                   Whether you're a student, teacher, organization, or simply
                   curious, we'd love to hear from you!
-                </Grid>
-              </Grid>
-              <Grid item xs={6}>
+                </b>
+              </Typography>
+            </Grid>
+            {/* <Grid item xs={6}>
                 <TextField fullWidth variant='outlined' label='First Name' />
               </Grid>
               <Grid item xs={6}>
@@ -158,58 +162,107 @@ function ContactUs(props) {
               </Grid>
               <Grid item xs={12}>
                 <Typography>Or email us:</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography>
-                  <b>General Inquiries:</b>
-                  <a href='mailto:contact.collegearch@gmail.com'>
-                    contact.collegearch@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography>
-                  <b>Tech Inquiries:</b>
-                  <a href='mailto:tech.collegearch@gmail.com'>
-                    tech.collegearch@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography>
-                  <b>Marketing and Graphics Inquiries:</b>
-                  <a href='mailto:marketing.collegearch@gmail.com'>
-                    marketing.collegearch@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography>
-                  <b>Outreach Inquiries:</b>
-                  <a href='mailto:outreach.collegearch@gmail.com'>
-                    outreach.collegearch@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography>
-                  <b>Programming Inquiries:</b>
-                  <a href='mailto:programming.collegearch@gmail.com'>
-                    programming.collegearch@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography>
-                  <b>Curriculum Inquiries:</b>
-                  <a href='mailto:curriculum.collegearch@gmail.com'>
-                    curriculum.collegearch@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
+              </Grid> */}
+            <Grid item xs={12}>
+              <Typography>
+                <b>{'General Inquiries: '}</b>
+                <a href='mailto:contact.collegearch@gmail.com'>
+                  contact.collegearch@gmail.com
+                </a>
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography>
+                <b>{'Outreach and Partnership Inquiries: '}</b>
+                <a href='mailto:outreach.collegearch@gmail.com'>
+                  outreach.collegearch@gmail.com
+                </a>
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography>
+                <b>{'Recruitment and Career Inquiries: '}</b>
+                <a href='mailto:recruitment.collegearch@gmail.com'>
+                  recruitment.collegearch@gmail.com
+                </a>
+              </Typography>
             </Grid>
           </Grid>
-        </Grid>
+        </Card>
+        <div style={{ padding: '1vw' }} />
+        <Card>
+          <Grid
+            container
+            direction='row'
+            justify='center'
+            alignItems='center'
+            spacing={4}
+            className={classes.totalGrid}
+          >
+            <Grid item xs={12}>
+              <Typography variant='h5' className={classes.teamNameContainer}>
+                <b>Follow our social media for updates and info!</b>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <IconButton
+                size='small'
+                target='_blank'
+                href='https://www.instagram.com/collegearch/'
+              >
+                <Icon>
+                  <img alt='ig' src={InstagramSvg} width={24} height={24} />
+                </Icon>
+              </IconButton>
+              <a href='https://www.instagram.com/collegearch/'>@collegearch</a>
+            </Grid>
+            <Grid item>
+              <IconButton
+                size='small'
+                target='_blank'
+                href='https://www.linkedin.com/company/college-arch/'
+              >
+                <Icon>
+                  <img
+                    alt='linkedin'
+                    src={LinkedinSvg}
+                    width={24}
+                    height={24}
+                  />
+                </Icon>
+              </IconButton>
+              <a href='https://www.linkedin.com/company/college-arch/'>
+                linkedin.com/company/college-arch
+              </a>
+            </Grid>
+            <Grid item>
+              <IconButton
+                size='small'
+                target='_blank'
+                href='https://www.facebook.com/collegearch/'
+              >
+                <Icon>
+                  <img alt='fb' src={FacebookSvg} width={24} height={24} />
+                </Icon>
+              </IconButton>
+              <a href='https://www.facebook.com/collegearch/'>
+                facebook.com/collegearch
+              </a>
+            </Grid>
+            <Grid item>
+              <IconButton
+                size='small'
+                target='_blank'
+                href='https://twitter.com/collegearch'
+              >
+                <Icon>
+                  <img alt='twitter' src={TwitterSvg} width={24} height={24} />
+                </Icon>
+              </IconButton>
+              <a href='https://www.facebook.com/collegearch/'>@collegearch</a>
+            </Grid>
+          </Grid>
+        </Card>
       </Card>
     </>
   );

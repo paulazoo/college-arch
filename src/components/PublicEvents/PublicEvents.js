@@ -158,7 +158,6 @@ function PublicEvents(props) {
           </Grid>
         </Grid>
       </Card>
-      <Footer />
     </>
   );
 }

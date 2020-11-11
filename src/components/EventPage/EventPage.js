@@ -239,7 +239,6 @@ function EventPage({ ...props }) {
       </Typography>
       <br />
       {renderEvent()}
-      <Footer />
     </>
   );
 }

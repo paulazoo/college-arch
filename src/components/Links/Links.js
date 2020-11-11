@@ -55,7 +55,6 @@ export default function Links() {
           ))}
         </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 }

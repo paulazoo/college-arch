@@ -50,6 +50,7 @@ function AboutDrawer({ selectedAbout, setSelectedAbout, ...props }) {
     { label: 'Mission and Purpose' },
     { label: 'Our Story' },
     { label: 'Meet The Team' },
+    { label: 'Contact Us' },
   ];
 
   return (

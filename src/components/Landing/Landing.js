@@ -280,7 +280,6 @@ function Landing(props) {
       <div className={classes.spacing} />
       <EmailNewsletter />
       <div className={classes.spacing} />
-      <Footer />
     </div>
   );
 }

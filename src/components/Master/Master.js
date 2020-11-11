@@ -150,7 +150,6 @@ function Master(props) {
           </Grid>
         </Grid>
       )}
-      <Footer />
     </div>
   );
 }

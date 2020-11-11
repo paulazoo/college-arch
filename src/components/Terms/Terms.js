@@ -18,7 +18,6 @@ function Terms() {
         <Container maxWidth='lg'>
           <TermsContent />
         </Container>
-        <Footer />
       </Box>
     </>
   );

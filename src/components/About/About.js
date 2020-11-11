@@ -22,6 +22,7 @@ import WordDivider from '../Shared/WordDivider';
 import AboutDrawer from './AboutDrawer';
 import MissionPurpose from './MissionPurpose';
 import OurStory from './OurStory';
+import ContactUs from './ContactUs';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,6 +62,8 @@ function About(props) {
         return <OurStory />;
       case 'Meet The Team':
         return <Team />;
+      case 'Contact Us':
+        return <ContactUs />;
       default:
         return <MissionPurpose />;
     }
@@ -80,7 +83,6 @@ function About(props) {
           {renderAbout()}
         </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 }

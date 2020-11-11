@@ -158,7 +158,6 @@ function Apply(props) {
           </Card>
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

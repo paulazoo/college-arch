@@ -230,7 +230,6 @@ function FellowshipProgram(props) {
           </Grid>
         </Grid>
       </Card>
-      <Footer />
     </>
   );
 }

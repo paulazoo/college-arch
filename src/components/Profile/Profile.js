@@ -214,7 +214,6 @@ function Profile({ user, ...props }) {
           {/* </Box> */}
         </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 }

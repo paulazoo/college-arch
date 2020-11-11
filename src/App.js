@@ -37,6 +37,7 @@ import MenteeApplication from './components/Apply/MenteeApplication';
 import Donate from './components/Donate/Donate';
 import Submitted from './components/Apply/Submitted';
 import Links from './components/Links/Links';
+import Footer from './components/Footer/Footer';
 
 function App(props) {
   useEffect(() => {
@@ -111,6 +112,7 @@ function App(props) {
         <PrivateRoute exact path='/master' component={Master} />
         <Redirect to='/' />
       </Switch>
+      <Footer />
     </MuiThemeProvider>
   );
 }
