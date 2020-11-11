@@ -201,7 +201,7 @@ function ContactUs(props) {
           >
             <Grid item xs={12}>
               <Typography variant='h5' className={classes.teamNameContainer}>
-                <b>Follow our social media for updates and info!</b>
+                <b>Follow our instagram and facebook for updates and info!</b>
               </Typography>
             </Grid>
             <Grid item>
@@ -215,6 +215,25 @@ function ContactUs(props) {
                 </Icon>
               </IconButton>
               <a href='https://www.instagram.com/collegearch/'>@collegearch</a>
+            </Grid>
+            <Grid item>
+              <IconButton
+                size='small'
+                target='_blank'
+                href='https://www.facebook.com/collegearch/'
+              >
+                <Icon>
+                  <img alt='fb' src={FacebookSvg} width={24} height={24} />
+                </Icon>
+              </IconButton>
+              <a href='https://www.facebook.com/collegearch/'>
+                facebook.com/collegearch
+              </a>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant='h5' className={classes.teamNameContainer}>
+                <b>Check out our other social media as well!</b>
+              </Typography>
             </Grid>
             <Grid item>
               <IconButton
@@ -239,27 +258,13 @@ function ContactUs(props) {
               <IconButton
                 size='small'
                 target='_blank'
-                href='https://www.facebook.com/collegearch/'
-              >
-                <Icon>
-                  <img alt='fb' src={FacebookSvg} width={24} height={24} />
-                </Icon>
-              </IconButton>
-              <a href='https://www.facebook.com/collegearch/'>
-                facebook.com/collegearch
-              </a>
-            </Grid>
-            <Grid item>
-              <IconButton
-                size='small'
-                target='_blank'
                 href='https://twitter.com/collegearch'
               >
                 <Icon>
                   <img alt='twitter' src={TwitterSvg} width={24} height={24} />
                 </Icon>
               </IconButton>
-              <a href='https://www.facebook.com/collegearch/'>@collegearch</a>
+              <a href='https://www.twitter.com/collegearch/'>@collegearch</a>
             </Grid>
           </Grid>
         </Card>
