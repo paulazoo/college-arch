@@ -40,9 +40,9 @@ import Links from './components/Links/Links';
 import Footer from './components/Footer/Footer';
 
 function App(props) {
-  useEffect(() => {
-    props.userLogout();
-  }, []);
+  // useEffect(() => {
+  //   props.userLogout();
+  // }, []);
 
   const createdTheme = createMuiTheme({
     palette: {
