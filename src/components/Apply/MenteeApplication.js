@@ -116,6 +116,7 @@ function MenteeApplication(props) {
     pi: false,
     native: false,
     immigrant: false,
+    undoc: false,
     me_na: false,
   });
 
@@ -147,6 +148,7 @@ function MenteeApplication(props) {
           pi: false,
           native: false,
           immigrant: false,
+          undoc: false,
           me_na: false,
         }
     ) {
@@ -321,6 +323,10 @@ function MenteeApplication(props) {
                 underrepresented backgrounds. Please select the backgrounds with
                 which you identify as
               </Typography>
+              <Typography variant='h6'>
+                We do not report or use this information for anything other than
+                checking your eligibility status.
+              </Typography>
               <FormControl component='fieldset' className={classes.formControl}>
                 <FormGroup>
                   <FormControlLabel
@@ -382,6 +388,16 @@ function MenteeApplication(props) {
                       />
                     )}
                     label='Immigrant'
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name='undoc'
+                        checked={background.undoc}
+                        onChange={handleBackgroundChange}
+                      />
+                    )}
+                    label='Undocumented/DACA/Mixed Status Family'
                   />
                   <FormControlLabel
                     control={(
