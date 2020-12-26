@@ -116,7 +116,8 @@ function MentorApplication(props) {
     lgbt: false,
     black: false,
     hispanic: false,
-    asian_pi: false,
+    asian: false,
+    pi: false,
     native: false,
     immigrant: false,
     me_na: false,
@@ -421,12 +422,22 @@ function MentorApplication(props) {
                   <FormControlLabel
                     control={(
                       <Checkbox
-                        name='asian_pi'
-                        checked={background.asian_pi}
+                        name='asian'
+                        checked={background.asian}
                         onChange={handleBackgroundChange}
                       />
                     )}
-                    label='Asian and/or Pacific Islander'
+                    label='Asian'
+                  />
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        name='pi'
+                        checked={background.pi}
+                        onChange={handleBackgroundChange}
+                      />
+                    }
+                    label='Pacific Islander'
                   />
                   <FormControlLabel
                     control={(
