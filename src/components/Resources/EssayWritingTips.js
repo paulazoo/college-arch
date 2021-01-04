@@ -7,6 +7,7 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   infoGrid: {
     margin: '20px',
+    paddingRight: theme.spacing(6),
   },
   infoList: {
     margin: '15px 0',
