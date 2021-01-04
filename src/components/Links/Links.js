@@ -25,7 +25,7 @@ export default function Links() {
 
   return (
     <Grid
-      style={{ margin: '20px' }}
+      class='info-grid'
       container
       direction='column'
       spacing={3}

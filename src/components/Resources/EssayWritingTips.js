@@ -7,7 +7,7 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   infoGrid: {
     margin: '20px',
-    paddingRight: theme.spacing(6),
+    paddingRight: theme.spacing(8),
   },
   infoList: {
     margin: '15px 0',
@@ -49,7 +49,7 @@ export default function EssayWritingTips() {
           </li>
           <li className={classes.infoList}>
             <Typography>
-              <b>Show, don’t tell!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</b>
+              <b>Show, don’t tell!!!!!!!!</b>
             </Typography>
           </li>
           <li className={classes.infoList}>

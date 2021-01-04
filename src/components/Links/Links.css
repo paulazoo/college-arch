@@ -3,7 +3,7 @@
   margin-top: 20px;
   padding: 20px;
   margin: 10px auto;
-  width: 100vw;
+  width: 100%;
   max-width: 680px;
   display: block;
   text-decoration: none;
@@ -16,4 +16,10 @@
   border: 3px solid hsl(24, 97%, 50%);
   color:hsl(24, 97%, 50%);
   background: #fff;
+}
+
+.info-grid {
+  margin: 20px;
+  padding-right: 40px;
+  text-align: center;
 }
