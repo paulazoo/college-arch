@@ -8,6 +8,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import StarIcon from '@material-ui/icons/Star';
 import CreateIcon from '@material-ui/icons/Create';
+import InfoIcon from '@material-ui/icons/Info';
 
 import FellowshipProgramSvg from '../../assets/Icons/FellowshipProgram.svg';
 import ApplySvg from '../../assets/Icons/Apply.svg';
@@ -55,5 +56,10 @@ export const loggedInMenuItems = [
     text: 'Profile',
     link: '/profile',
     icon: <AccountCircleIcon />,
+  },
+  {
+    text: 'Resources',
+    link: '/resources',
+    icon: <InfoIcon />,
   },
 ];

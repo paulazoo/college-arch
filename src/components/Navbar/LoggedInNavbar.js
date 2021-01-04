@@ -150,6 +150,18 @@ function LoggedInNavbar({ ...props }) {
                 </Tooltip>
               </Grid>
               <Grid item>
+                <Tooltip title='Resources'>
+                  <Button
+                    color='inherit'
+                    className={classes.rightLink}
+                    component={NavLink}
+                    to='/resources'
+                  >
+                    Resources
+                  </Button>
+                </Tooltip>
+              </Grid>
+              <Grid item>
                 <Tooltip title='Donate'>
                   <Button
                     color='inherit'
