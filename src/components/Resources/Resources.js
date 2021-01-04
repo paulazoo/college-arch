@@ -9,11 +9,9 @@ import { connect } from 'react-redux';
 
 // Custom Components
 import Navbar from '../Navbar/Navbar';
-import Team from './Team';
-import AboutDrawer from './AboutDrawer';
-import MissionPurpose from './MissionPurpose';
-import OurStory from './OurStory';
-import ContactUs from './ContactUs';
+import ResourcesDrawer from './ResourcesDrawer';
+import Links from '../Links/Links';
+import EssayWritingTips from './EssayWritingTips';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 16,
     },
   },
-  mainAbout: {
+  mainResources: {
     marginLeft: '20vw',
     padding: 0,
     paddingRight: theme.spacing(2),
@@ -40,23 +38,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function About(props) {
+function Resources(props) {
   const classes = useStyles();
 
-  const [selectedAbout, setSelectedAbout] = useState('Mission and Purpose');
+  const [selectedResources, setSelectedResources] = useState('Links');
 
-  const renderAbout = () => {
-    switch (selectedAbout) {
-      case 'Mission and Purpose':
-        return <MissionPurpose />;
-      case 'Our Story':
-        return <OurStory />;
-      case 'Meet The Team':
-        return <Team />;
-      case 'Contact Us':
-        return <ContactUs />;
+  const renderResources = () => {
+    switch (selectedResources) {
+      case 'Links':
+        return <Links />;
+      case 'EssayWritingTips':
+        return <EssayWritingTips />;
       default:
-        return <MissionPurpose />;
+        return <Links />;
     }
   };
 
@@ -65,13 +59,13 @@ function About(props) {
       <Navbar />
       <Grid container direction='row'>
         <Grid item>
-          <AboutDrawer
-            selectedAbout={selectedAbout}
-            setSelectedAbout={setSelectedAbout}
+          <ResourcesDrawer
+            selectedResources={selectedResources}
+            setSelectedResources={setSelectedResources}
           />
         </Grid>
-        <Grid item xs={12} className={classes.mainAbout}>
-          {renderAbout()}
+        <Grid item xs={12} className={classes.mainResources}>
+          {renderResources()}
         </Grid>
       </Grid>
     </div>
@@ -84,4 +78,4 @@ function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default connect(mapStateToProps, mapDispatchToProps)(Resources);

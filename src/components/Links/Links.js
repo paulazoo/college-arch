@@ -24,37 +24,34 @@ export default function Links() {
   ];
 
   return (
-    <div>
-      <Navbar />
-      <Grid
-        style={{ margin: '20px' }}
-        container
-        direction='column'
-        spacing={3}
-        alignItems='center'
-        justify='center'
-        textAlign='center'
-      >
-        <Grid item>
-          <Typography variant='h4'>
-            <b>Important Links:</b>
-          </Typography>
-        </Grid>
-        <Grid item>
-          {linksList.map((entry) => (
-            <a
-              href={entry.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='link-button'
-            >
-              <Typography>
-                <b>{entry.name}</b>
-              </Typography>
-            </a>
-          ))}
-        </Grid>
+    <Grid
+      style={{ margin: '20px' }}
+      container
+      direction='column'
+      spacing={3}
+      alignItems='center'
+      justify='center'
+      textAlign='center'
+    >
+      <Grid item>
+        <Typography variant='h4'>
+          <b>Important Links:</b>
+        </Typography>
       </Grid>
-    </div>
+      <Grid item>
+        {linksList.map((entry) => (
+          <a
+            href={entry.link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='link-button'
+          >
+            <Typography>
+              <b>{entry.name}</b>
+            </Typography>
+          </a>
+        ))}
+      </Grid>
+    </Grid>
   );
 }

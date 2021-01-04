@@ -36,8 +36,9 @@ import MentorApplication from './components/Apply/MentorApplication';
 import MenteeApplication from './components/Apply/MenteeApplication';
 import Donate from './components/Donate/Donate';
 import Submitted from './components/Apply/Submitted';
-import Links from './components/Links/Links';
+import LinksContainer from './components/Links/LinksContainer';
 import Footer from './components/Footer/Footer';
+import Resources from './components/Resources/Resources';
 
 function App(props) {
   // useEffect(() => {
@@ -94,8 +95,9 @@ function App(props) {
         <Route exact path='/mentors' component={MentorsPage} />
         <Route exact path='/terms' component={Terms} />
         <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/resources' component={Resources} />
+        <Route exact path='/links' component={LinksContainer} />
         <Route exact path='/donate' component={Donate} />
-        <Route exact path='/links' component={Links} />
         <Route exact path='/events/:eventId' component={EventPage} />
 
         {/* Application pages */}
