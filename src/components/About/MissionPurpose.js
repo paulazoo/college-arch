@@ -1,13 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  Divider,
-  Card,
-  Typography,
-  Box,
-  Grid,
-  Paper,
-  Button,
-} from '@material-ui/core';
+import { Card, Typography, Grid } from '@material-ui/core';
 
 // Redux
 import { connect } from 'react-redux';

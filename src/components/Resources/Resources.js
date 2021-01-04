@@ -47,7 +47,7 @@ function Resources(props) {
     switch (selectedResources) {
       case 'Links':
         return <Links />;
-      case 'EssayWritingTips':
+      case 'Essay Writing Tips':
         return <EssayWritingTips />;
       default:
         return <Links />;

@@ -95,8 +95,6 @@ function App(props) {
         <Route exact path='/mentors' component={MentorsPage} />
         <Route exact path='/terms' component={Terms} />
         <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/resources' component={Resources} />
-        <Route exact path='/links' component={LinksContainer} />
         <Route exact path='/donate' component={Donate} />
         <Route exact path='/events/:eventId' component={EventPage} />
 
@@ -108,6 +106,9 @@ function App(props) {
 
         <Route exact path='/testing' component={ContactUs} />
         <Route exact path='/isabela' component={Isabela} />
+
+        <Route exact path='/resources' component={Resources} />
+        <Route exact path='/links' component={LinksContainer} />
 
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/profile' component={Profile} />

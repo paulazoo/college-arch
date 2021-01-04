@@ -40,7 +40,7 @@ function ResourcesDrawer({
 }) {
   const classes = useStyles();
 
-  const aboutChoices = [{ label: 'Links' }, { label: 'EssayWritingTips' }];
+  const aboutChoices = [{ label: 'Links' }, { label: 'Essay Writing Tips' }];
 
   return (
     <div className={classes.drawerContainer}>
