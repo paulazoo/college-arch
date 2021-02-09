@@ -18,18 +18,24 @@ export const executiveTeam = [
 ];
 
 export const outreachTeam = [
-  {
-    name: 'Iandra Ramos',
-    position: 'Outreach Director',
-    text:
-      "Iandra, part of Harvard's Class of 2024, helps to coordinate partnerships with other organizations that have similar goals as College ARCH, and is dedicated to providing unique  academic opportunities to underprivileged students.",
-    image: '',
-  },
+  // {
+  //   name: 'Iandra Ramos',
+  //   position: 'Outreach Director',
+  //   text:
+  //     "Iandra, part of Harvard's Class of 2024, helps to coordinate partnerships with other organizations that have similar goals as College ARCH, and is dedicated to providing unique  academic opportunities to underprivileged students.",
+  //   image: '',
+  // },
   {
     name: 'Brandon Zhang',
     position: 'Outreach Director',
     text:
       'Brandon, part of Stanford’s Class of 2024, helps coordinate panels and partnerships with other organizations seeking to empower students in pursuing their passions. He’s committed to connecting students from underserved and underprivileged backgrounds to resources and other opportunities.',
+    image: '',
+  },
+  {
+    name: 'Faiza Shaik',
+    position: 'Outreach Director',
+    text: '.',
     image: '',
   },
 ];
@@ -44,7 +50,7 @@ export const recruitmentDirectors = [
   },
   {
     name: 'Luis Rubio',
-    position: 'Midwestern Regional Director',
+    position: 'Northeast Regional Director',
     text:
       "Luis, part of Johns Hopkin's Class of 2024, communicates with students across the Mid Western United States and is eager to ease the college application process for many driven and talented students.",
     image: '',
@@ -61,6 +67,24 @@ export const recruitmentDirectors = [
     position: 'Hawaii Regional Director',
     text:
       "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of College ARCH.",
+    image: '',
+  },
+  {
+    name: 'Anthony Ciano',
+    position: 'South and Mid-Atlantic Regional Director',
+    text: '.',
+    image: '',
+  },
+  {
+    name: 'Meadow Jones',
+    position: 'Central and Farmland Regional Director',
+    text: '.',
+    image: '',
+  },
+  {
+    name: 'Iliana Goodhew',
+    position: 'West Coast',
+    text: '.',
     image: '',
   },
 ];
@@ -104,6 +128,12 @@ export const graphicsMarketingTeam = [
     position: 'Graphics/Marketing Director',
     text:
       "Melissa, part of Harvard's Class of 2024, helps to manage the creative aspects and design of College ARCH, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
+    image: '',
+  },
+  {
+    name: 'Michelle Tran',
+    position: 'Graphics/Marketing Director',
+    text: '.',
     image: '',
   },
 ];
