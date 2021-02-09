@@ -36,28 +36,6 @@ export const outreachTeam = [
 
 export const recruitmentDirectors = [
   {
-    name: 'Ireland Parrish',
-    position: 'Northern Regional Director',
-    text:
-      'Ireland Parrish is a member of the Johns Hopkins University class of 2024, and plans to double major in Physics and Astronomy and Applied Mathematics with a minor in Computer Science. She is the co-director for recruitment in the northern region of the United States.',
-    image: '',
-  },
-  {
-    name: 'Violet Wang',
-    position: 'Northern Regional Director',
-    text:
-      'Violet, part of Duke’s class of 2024, works to recruit and communicate with students in the Northern region to access resources to help them in their college admissions journey!',
-    image: '',
-  },
-  {
-    name: 'Sahir Qureshi',
-    team: 'Recruitment Team',
-    position: 'Western Regional Director',
-    text:
-      "Sahir, part of Stanford's Class of 2024, coordinates outreach to the Northern California region for the organization and is excited about helping underserved students in his area get the resources they need to succeed.",
-    image: '',
-  },
-  {
     name: 'Kobi Khong',
     position: 'Western Regional Director',
     text:
@@ -72,13 +50,6 @@ export const recruitmentDirectors = [
     image: '',
   },
   {
-    name: 'Kathleen Beetner',
-    position: 'Midwestern Regional Director',
-    text:
-      "Kathleen, part of University of Illinois at Urbana-Champaign's Class of 2021, identifies and communicates with schools across the Midwest region and is dedicated to facilitating help and instruction to students from all backgrounds.",
-    image: '',
-  },
-  {
     name: 'Rina Nagashima',
     position: 'Hawaii Regional Director',
     text:
@@ -90,12 +61,6 @@ export const recruitmentDirectors = [
     position: 'Hawaii Regional Director',
     text:
       "Natalie, part of Tufts' Class of 2023, coordinates outreach to all schools in the state of Hawaii. She is also in charge of compiling resources for Hawaii students and proactively works with organizations in Hawaii to maximize the breadth and positive impact of College ARCH.",
-    image: '',
-  },
-  {
-    name: 'Brenda Barnetche',
-    position: 'Florida Regional Director',
-    text: '????????',
     image: '',
   },
 ];
@@ -141,24 +106,9 @@ export const graphicsMarketingTeam = [
       "Melissa, part of Harvard's Class of 2024, helps to manage the creative aspects and design of College ARCH, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
   },
-  {
-    name: 'Emily Bennett',
-    position: 'Graphics/Marketing Director',
-    text:
-      'Emily Bennett is a rising senior at Mauldin High School in South Carolina and as the marketing director, she makes all the email flyers and social media graphics for College ARCH. She hopes to go somewhere near home for her first 2 years of college and then transfer out to an art school in Southern California. She plans to major in something related to graphic design with a minor in film studies and cinematography!',
-    image: '',
-  },
 ];
 
-export const curriculumTeam = [
-  {
-    name: 'Ikshu Pandey',
-    team: 'Curriculum Team',
-    position: 'Curriculum Director',
-    text: '????????.',
-    image: '',
-  },
-];
+export const curriculumTeam = [];
 
 export const technicalTeam = [
   {
@@ -171,7 +121,8 @@ export const technicalTeam = [
   {
     name: 'Isabela Sanchez',
     position: 'Technical Director',
-    text: 'She is cool ;D but kinda shy!! Loves to code and play charango(Im going to change this bio as soon as I can)',
+    text:
+      'She is cool ;D but kinda shy!! Loves to code and play charango(Im going to change this bio as soon as I can)',
     image: '',
   },
 ];
