@@ -84,13 +84,13 @@ export const recruitmentDirectors = [
   },
   {
     name: 'Iliana Goodhew',
-    position: 'West Coast Recruitment Director',
+    position: 'West Coast Regional Director',
     text: '.',
     image: '',
   },
   {
     name: 'Natania Nguyen',
-    position: 'Texas Recruitment Director',
+    position: 'Texas Regional Director',
     text: '.',
     image: '',
   },
