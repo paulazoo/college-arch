@@ -57,7 +57,7 @@ export const recruitmentDirectors = [
   },
   {
     name: 'Rina Nagashima',
-    position: 'Hawaii Regional Director',
+    position: 'Non-Contiguous US Regional Director',
     text:
       "Rina, a transfer student from Wellesley to Scripps' Class of 2023, is in charge of mentor outreach and organizational partnership at the Hawaii branch. Having gone through the application process twice, she is enthusiastic in her outreach and mission to Hawaii's rising seniors and their unique situations.",
     image: '',
@@ -83,7 +83,13 @@ export const recruitmentDirectors = [
   },
   {
     name: 'Iliana Goodhew',
-    position: 'West Coast',
+    position: 'West Coast Recruitment Director',
+    text: '.',
+    image: '',
+  },
+  {
+    name: 'Natania Nguyen',
+    position: 'Texas Recruitment Director',
     text: '.',
     image: '',
   },
@@ -148,11 +154,11 @@ export const technicalTeam = [
       "Paula, part of Harvard's Class of 2024, helps to manage the technical aspects and website of College ARCH, and is excited to take part in reaching out to students, regardless of socio-economic background, to help them succeed with their career-oriented goals.",
     image: '',
   },
-  {
-    name: 'Isabela Sanchez',
-    position: 'Technical Director',
-    text:
-      'She is cool ;D but kinda shy!! Loves to code and play charango(Im going to change this bio as soon as I can)',
-    image: '',
-  },
+  // {
+  //   name: 'Isabela Sanchez',
+  //   position: 'Technical Director',
+  //   text:
+  //     'She is cool ;D but kinda shy!! Loves to code and play charango(Im going to change this bio as soon as I can)',
+  //   image: '',
+  // },
 ];
