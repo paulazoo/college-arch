@@ -42,6 +42,14 @@ export const outreachTeam = [
 
 export const recruitmentDirectors = [
   {
+    name: 'Rina Nagashima',
+    position:
+      'Finance Director, Non-Contiguous US and Territories Regional Director',
+    text:
+      "Rina is a transfer student from Wellesley to Scripps College's Class of 2023. She is planning on double majoring in Global Affairs and Math. Raised in Hawaiʻi and having gone through the application process twice, she can relate to the confusing process of applying to college, especially across the ocean. She is enthusiastic about partnering with community organizations and focusing recruitment efforts on the non-contiguous US. As the team's Finance Director, she is tasked with running ARCH's financial foundation and applying for grants to fund operational and programmatic expenses.",
+    image: '',
+  },
+  {
     name: 'Kobi Khong',
     position: 'Western Regional Director',
     text:
@@ -53,13 +61,6 @@ export const recruitmentDirectors = [
     position: 'Northeast Regional Director',
     text:
       "Luis, part of Johns Hopkin's Class of 2024, communicates with students across the Mid Western United States and is eager to ease the college application process for many driven and talented students.",
-    image: '',
-  },
-  {
-    name: 'Rina Nagashima',
-    position: 'Non-Contiguous US Regional Director',
-    text:
-      "Rina, a transfer student from Wellesley to Scripps' Class of 2023, is in charge of mentor outreach and organizational partnership at the Hawaii branch. Having gone through the application process twice, she is enthusiastic in her outreach and mission to Hawaii's rising seniors and their unique situations.",
     image: '',
   },
   {
