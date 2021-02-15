@@ -104,7 +104,7 @@ function App(props) {
         <Route exact path='/apply/mentee' component={MenteeApplication} />
         <Route exact path='/apply/submitted' component={Submitted} />
 
-        <Route exact path='/testing' component={ContactUs} />
+        <Route exact path='/testing' component={Testing} />
         <Route exact path='/isabela' component={Isabela} />
 
         <Route exact path='/resources' component={Resources} />

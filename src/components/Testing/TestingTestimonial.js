@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Testimonials from '../Testimonials/Testimonials';
 
 // Custom Components
+import { testimonialData } from './testimonialData.js';
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -19,19 +20,6 @@ function Testing(props) {
   const handleClick = () => {
     console.log('clicked');
   };
-
-  const testimonialData = [
-    {
-      source: 'hi',
-      author: 'author 1',
-      content: 'content 1',
-    },
-    {
-      source: 'hiya',
-      author: 'author 2',
-      content: 'content 2',
-    },
-  ];
 
   return (
     <>

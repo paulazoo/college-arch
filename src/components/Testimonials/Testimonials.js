@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { string, number, shape, func } from 'prop-types';
-
-import './Testimonials.scss';
 import { Button } from '@material-ui/core';
+import ArrowForwardIos from '@material-ui/icons/ChevronRight';
+import ArrowBackwardIos from '@material-ui/icons/ChevronLeft';
+
+// Style
+import './Testimonials.scss';
 
 const CarouselIndicator = ({ index, activeIndex, onClick }) => (
   <li>
@@ -25,12 +28,14 @@ const CarouselSlide = ({ activeIndex, slide, index }) => (
         : 'carousel__slide'
     }
   >
-    <div className='carousel-slide__content'>{slide.content}</div>
+    <div className='carousel-slide__content'>{`"${slide.content}"`}</div>
 
     <div className='author-source-container'>
       <small className='carousel-slide__source'>
         <div>
-          <strong className='carousel-slide__author'>{slide.author}</strong>
+          <strong className='carousel-slide__author'>
+            {`—${slide.author}`}
+          </strong>
         </div>
         {slide.source}
       </small>
@@ -46,7 +51,7 @@ const CarouselLeftArrow = ({ onClick }) => (
     className='carousel__arrow carousel__arrow--left padding-on-left'
     onClick={onClick}
   >
-    left icon
+    <ArrowBackwardIos fontSize='large' />
   </Button>
 );
 
@@ -56,7 +61,7 @@ const CarouselRightArrow = ({ onClick }) => (
     className='carousel__arrow carousel__arrow--right padding-on-right'
     onClick={onClick}
   >
-    right icon
+    <ArrowForwardIos fontSize='large' />
   </Button>
 );
 
@@ -76,7 +81,7 @@ class Testimonials extends Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.timer, 1700);
+    this.interval = setInterval(this.timer, 5000);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -152,9 +157,9 @@ class Testimonials extends Component {
           <div>
             <CarouselLeftArrow onClick={(e) => goToPrevSlide(e)} />
           </div>
-          <div className='purple__tile'>
-            <div className='carousel--tile'>
-              <ul className='carousel__slides container'>
+          <div className='tile-3'>
+            <div className='tile-2'>
+              <ul className='tile-1'>
                 {this.props.testimonialData.length > 0
                   ? this.props.testimonialData.map((slide, index) => (
                     <CarouselSlide

@@ -36,12 +36,6 @@
   text-align: center;
 }
 
-.carousel-container {
-  display: flex;
-  flex-wrap: nowrap;
-  min-height: 210px;
-}
-
 .carousel {
   position: relative;
   margin-top: 50px;
@@ -56,61 +50,47 @@
   display: none;
   width: 100%;
   max-width: 700px;
-  max-height: 500px;
+  max-height: 400px;
   list-style-type: none;
-  margin: 0 auto;
+  margin: 20px;
   border-radius: 12px;
 }
 
-.carousel--tile {
+
+.tile-1 {
   @include tile-position;
 
-  background-color: rgb(255, 0, 21);
-  height: 300px;
+  background-color: rgb(0, 204, 255);
+  height: 250px;
+  width: 80%;
+  border-radius: 12px;
+  margin: 0;
+  padding: 0px;
+}
+
+.tile-2 {
+  @include tile-position;
+
+  background-color: rgb(0, 132, 255);
+  height: 200px;
   width: 90%;
   border-radius: 12px;
-  margin: 0 auto;
-
-  @media (max-width: 1125px) {
-    & {
-      background-color: rgb(255, 94, 0);
-      height: 350px;
-    }
-  }
-
-  .carousel__slides {
-    @include tile-position;
-
-    background-color: rgb(255, 145, 0);
-    height: 350px;
-    width: 87%;
-    border-radius: 12px;
-  }
+  margin: 0;
+  padding: 0px;
 }
 
-.purple__tile {
+.tile-3 {
   position: relative;
   width: 70%;
-  height: 250px;
+  height: 150px;
 
   border-radius: 12px;
-  margin: 70px 40px 0 50px;
+  margin: 0px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  padding: 0px;
 
-  background-color: rgb(171, 226, 43);
-
-  @media (max-width: 1125px) {
-    & {
-      background-color: lightblue;
-      height: 300px;
-    }
-  }
-}
-
-@media (max-width: 991px) {
-  .carousel__slide {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+  background-color: rgb(61, 43, 226);
 }
 
 .carousel__slide--active {
@@ -121,8 +101,8 @@
   box-sizing: border-box;
   box-shadow: 0 0 30px 4px rgba(#888888, 0.76);
 
-  width: 100%;
-  height: 400px;
+  width: 70%;
+  height: 300px;
 
   background-color: white;
 
@@ -141,14 +121,14 @@
 
 @media (max-width: 1125px) {
   .carousel-slide__content {
-    font-size: 12;
+    font-size: 1.5rem;
     overflow-x: hidden;
   }
 }
 
 @media (max-width: 748px) {
   .carousel-slide__content {
-    max-height: 225px;
+    max-height: 175px;
 
     @include scroll-style(rgb(173, 230, 181), rgb(43, 226, 156));
   }
@@ -157,7 +137,7 @@
 .carousel-slide__author,
 .carousel-slide__source {
   // font-family: work sans;
-  font-size: 10;
+  font-size: 2rem;
   color: black;
   text-align: left;
 }
@@ -191,6 +171,10 @@
   &:hover {
     opacity: .5;
   }
+}
+
+.arrow-fix {
+  z-index: 999;
 }
 
 .carousel__indicators {
