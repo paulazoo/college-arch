@@ -91,7 +91,8 @@ export const recruitmentDirectors = [
   {
     name: 'Natania Nguyen',
     position: 'Texas Regional Director',
-    text: '.',
+    text:
+      'Saint Louis University, Doctorate of Physical Therapy, BA Psychology',
     image: '',
   },
 ];
