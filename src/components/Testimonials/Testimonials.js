@@ -7,6 +7,9 @@ import ArrowBackwardIos from '@material-ui/icons/ChevronLeft';
 // Style
 import './Testimonials.scss';
 
+// Custom Components
+import { testimonialData } from './testimonialData';
+
 const CarouselIndicator = ({ index, activeIndex, onClick }) => (
   <li>
     <a
@@ -96,10 +99,8 @@ class Testimonials extends Component {
   }
 
   timer() {
-    const { testimonialData: data } = this.props;
-
-    if (data) {
-      if (this.state.activeIndex === data.length - 1) {
+    if (testimonialData) {
+      if (this.state.activeIndex === testimonialData.length - 1) {
         this.setState({ activeIndex: -1 });
       }
 
@@ -119,7 +120,6 @@ class Testimonials extends Component {
     e.preventDefault();
 
     const { activeIndex } = this.state;
-    const { testimonialData } = this.props;
 
     if (activeIndex < 1) {
       return this.setState(() => ({
@@ -136,7 +136,6 @@ class Testimonials extends Component {
     e.preventDefault();
 
     const { activeIndex } = this.state;
-    const { testimonialData } = this.props;
 
     if (activeIndex === testimonialData.length - 1) {
       return this.setState({ activeIndex: 0 });
@@ -160,8 +159,8 @@ class Testimonials extends Component {
           <div className='tile-3'>
             <div className='tile-2'>
               <ul className='tile-1'>
-                {this.props.testimonialData.length > 0
-                  ? this.props.testimonialData.map((slide, index) => (
+                {testimonialData.length > 0
+                  ? testimonialData.map((slide, index) => (
                     <CarouselSlide
                         key={`carousel-slide-${index}`}
                         index={index}

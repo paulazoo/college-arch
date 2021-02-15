@@ -29,6 +29,7 @@ import Partners from './Partners';
 import Overview from './Overview';
 import EmailNewsletter from '../EmailNewsletter/EmailNewsletter';
 import Public from '../PublicEvents/Public';
+import Testimonials from '../Testimonials/Testimonials';
 
 const backgroundImage =
   'https://static.wixstatic.com/media/6f9a2f9dd5574440a18d95f4679c14a7.jpg/v1/fit/w_924,h_520/6f9a2f9dd5574440a18d95f4679c14a7.jpg';
@@ -125,6 +126,12 @@ const useStyles = makeStyles((theme) => ({
   mentorsFrom: {
     fontWeight: 'bold',
     fontSize: '1.5vw',
+  },
+  headText: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: theme.palette.common.black,
+    fontSize: 32,
   },
 }));
 
@@ -246,6 +253,9 @@ function Landing(props) {
           </Grid>
         </Box>
       </Card>
+      <div className={classes.spacing} />
+      <Typography className={classes.headText}>WHAT OUR FELLOWS SAY</Typography>
+      <Testimonials />
       <div ref={myRef} className={classes.spacing} />
       <Public />
       <div className={classes.spacing} />
