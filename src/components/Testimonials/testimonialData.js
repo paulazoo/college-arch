@@ -49,7 +49,8 @@ export const testimonialData = [
   {
     source: null,
     author: 'Seya',
-    content: 'Thank you and pls keep up the great work',
+    content:
+      '[College ARCH] was actually helpful so thank you and pls keep up the great work',
   },
   {
     source: null,
