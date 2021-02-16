@@ -49,8 +49,7 @@ export const testimonialData = [
   {
     source: null,
     author: 'Seya',
-    content:
-      'Honestly Luis [College ARCH Director] I love roasting ppl [sic] so I wanted to say your presentaiton was trash but it was actually helpful so thank you and pls keep up the great work',
+    content: 'Thank you and pls keep up the great work',
   },
   {
     source: null,
