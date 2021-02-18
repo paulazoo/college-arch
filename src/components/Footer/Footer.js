@@ -44,7 +44,7 @@ export default function Footer() {
         <Grid item xs={12} md={4}>
           <div className={classes.textContainer}>
             <Typography className={classes.text}>
-              © Copyright 2020 College ARCH
+              © Copyright 2021 College ARCH
             </Typography>
           </div>
         </Grid>
