@@ -73,7 +73,8 @@ export const recruitmentDirectors = [
   {
     name: 'Anthony Ciano',
     position: 'South and Mid-Atlantic Regional Director',
-    text: '.',
+    text:
+      "Anthony, part of NC State's class of 2024, is studying human biology and minoring in Spanish. He is excited to aid as many students as he can by extending outreach and ensuring equity within his region. Regardless of socioeconomic status or background, he is dedicated to College Arch’s mission and is eager to work with as many students that he can so they can achieve their personal and academic goals.",
     image: '',
   },
   {
@@ -140,6 +141,12 @@ export const graphicsMarketingTeam = [
   },
   {
     name: 'Michelle Tran',
+    position: 'Graphics/Marketing Director',
+    text: '.',
+    image: '',
+  },
+  {
+    name: 'Chelsea Yuan',
     position: 'Graphics/Marketing Director',
     text: '.',
     image: '',
