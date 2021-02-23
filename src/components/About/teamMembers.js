@@ -78,7 +78,7 @@ export const recruitmentDirectors = [
   },
   {
     name: 'Meadow Jones',
-    position: 'Central and Farmland Regional Director',
+    position: 'Central Regional Director',
     text: '.',
     image: '',
   },
