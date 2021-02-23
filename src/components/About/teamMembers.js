@@ -146,7 +146,7 @@ export const graphicsMarketingTeam = [
   },
 ];
 
-export const curriculumTeam = [];
+// export const curriculumTeam = [];
 
 export const technicalTeam = [
   {

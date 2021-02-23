@@ -23,7 +23,7 @@ import {
   recruitmentDirectors,
   programTeam,
   graphicsMarketingTeam,
-  curriculumTeam,
+  // curriculumTeam,
   technicalTeam,
 } from './teamMembers';
 
@@ -283,11 +283,11 @@ function Team(props) {
         theme.palette.common.teamOne
       )}
       {renderTeam(programTeam, 'Program Team', theme.palette.common.teamTwo)}
-      {renderTeam(
+      {/* {renderTeam(
         curriculumTeam,
         'Curriculum Team',
         theme.palette.common.teamOne
-      )}
+      )} */}
       {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamTwo)}
       {renderTeam(
         graphicsMarketingTeam,
