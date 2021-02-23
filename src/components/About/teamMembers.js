@@ -80,7 +80,8 @@ export const recruitmentDirectors = [
   {
     name: 'Meadow Jones',
     position: 'Central Regional Director',
-    text: '.',
+    text:
+      'Meadow, Scripps class of 2024, is studying Spanish, Latin American and Caribbean Literatures and Cultures. She is passionate about the Spanish language, ESL, and social and economic justice for immigrants. She is super excited to work with the 16 wonderful states of the Central Region to build community and lasting partnerships!',
     image: '',
   },
   {
