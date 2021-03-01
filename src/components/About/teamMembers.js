@@ -143,7 +143,8 @@ export const graphicsMarketingTeam = [
   {
     name: 'Michelle Tran',
     position: 'Graphics/Marketing Director',
-    text: '.',
+    text:
+      "Michelle, a high school senior and a fellow of ARCH’s 2020 program, is enthusiastic to use design and what she's learned to give back to future fellows. Hopefully, her experiences with applying to college in a pandemic can ease the app process for y’all! Since app season is over, she's looking forward to catching up on her to-be read list, dreading decisions, and making art with photography and design.",
     image: '',
   },
   {
