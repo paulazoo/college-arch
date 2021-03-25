@@ -1,8 +1,10 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useState } from 'react';
 import { Box, Typography, Grid } from '@material-ui/core';
 
 // Theme
 import { useTheme, makeStyles } from '@material-ui/core/styles';
+import './Logos.css';
 
 // Redux
 import { connect } from 'react-redux';
@@ -59,121 +61,139 @@ function Partners(props) {
               <Typography className={classes.headText}>PARTNERS</Typography>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://www.collegeessayguy.com/'
-              >
-                <img
-                  alt='College Essay Guy'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/CollegeEssayGuy.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.collegeessayguy.com/'
+                >
+                  <img
+                    alt='College Essay Guy'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/CollegeEssayGuy.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://www.dearasianyouth.org/home/'
-              >
-                <img
-                  alt='Dear Asian Youth'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/DearAsianYouth.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.dearasianyouth.org/home/'
+                >
+                  <img
+                    alt='Dear Asian Youth'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/DearAsianYouth.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://destineddoctors.wixsite.com/website'
-              >
-                <img
-                  alt='Destined Doctors'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/DestinedDoctors.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://destineddoctors.wixsite.com/website'
+                >
+                  <img
+                    alt='Destined Doctors'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/DestinedDoctors.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://socratespost.com/'
-              >
-                <img
-                  alt='Socrates Post'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/SocratesPost.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://socratespost.com/'
+                >
+                  <img
+                    alt='Socrates Post'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/SocratesPost.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://wrafoundation.org/'
-              >
-                <img
-                  alt='We Rise Above'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/WeRiseAbove.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://wrafoundation.org/'
+                >
+                  <img
+                    alt='We Rise Above'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/WeRiseAbove.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://www.wonsulting.com/'
-              >
-                <img
-                  alt='Wonsulting'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/Wonsulting.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.wonsulting.com/'
+                >
+                  <img
+                    alt='Wonsulting'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/Wonsulting.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://www.ymcahonolulu.org/'
-              >
-                <img
-                  alt='YMCA Honolulu'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/YMCAHonolulu.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.ymcahonolulu.org/'
+                >
+                  <img
+                    alt='YMCA Honolulu'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/YMCAHonolulu.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://girlgeniusmag.tech/'
-              >
-                <img
-                  alt='Girl Genius Magazine'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/GirlGeniusMagazine.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://girlgeniusmag.tech/'
+                >
+                  <img
+                    alt='Girl Genius Magazine'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/GirlGeniusMagazine.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item className={classes.logoItem}>
-              <a
-                rel='noreferrer'
-                target='_blank'
-                href='https://www.girltechboss.com/'
-              >
-                <img
-                  alt='Girl Tech Boss'
-                  className={classes.logoImg}
-                  src={require('../../assets/Partners/GirlTechBoss.PNG')}
-                />
-              </a>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.girltechboss.com/'
+                >
+                  <img
+                    alt='Girl Tech Boss'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/GirlTechBoss.PNG')}
+                  />
+                </a>
+              </div>
             </Grid>
             <Grid item xs={12} />
           </Grid>

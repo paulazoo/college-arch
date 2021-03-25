@@ -9,7 +9,7 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { userLogout, setUser } from '../../store/actions/index';
 
-// Custom Components
+// Custom
 import Navbar from '../Navbar/Navbar';
 import HomepageLayout from './HomepageLayout';
 import Footer from '../Footer/Footer';
@@ -21,6 +21,7 @@ import Overview from './Overview';
 import EmailNewsletter from '../EmailNewsletter/EmailNewsletter';
 import Public from '../PublicEvents/Public';
 import Testimonials from '../Testimonials/Testimonials';
+import Sponsors from './Sponsors';
 
 const backgroundImage =
   'https://static.wixstatic.com/media/6f9a2f9dd5574440a18d95f4679c14a7.jpg/v1/fit/w_924,h_520/6f9a2f9dd5574440a18d95f4679c14a7.jpg';
@@ -280,6 +281,9 @@ function Landing(props) {
       </Grid>
       <Grid item xs={12}>
         <Partners />
+      </Grid>
+      <Grid item xs={12}>
+        <Sponsors />
       </Grid>
       <div className={classes.spacing} />
       <EmailNewsletter />

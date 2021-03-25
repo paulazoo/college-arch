@@ -42,50 +42,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AsSeenIn(props) {
+function Sponsors(props) {
   const classes = useStyles();
   const theme = useTheme();
 
   return (
     <Box bgcolor={theme.palette.common.asSeenIn}>
       <Grid container direction='row' alignItems='center' justify='center'>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <Grid
             container
             direction='row'
             alignItems='center'
             justify='center'
-            spacing={props.onMobile ? 1 : 3}
+            spacing={props.onMobile ? 1 : 4}
           >
             <Grid item xs={12} className={classes.headTextContainer}>
-              <Typography className={classes.headText}>AS SEEN IN</Typography>
+              <Typography className={classes.headText}>SPONSORS</Typography>
             </Grid>
             <Grid item className={classes.logoItem}>
               <div class='logo-image'>
                 <a
                   rel='noreferrer'
                   target='_blank'
-                  href='https://www.civilbeat.org/2020/06/we-must-reimagine-college-guidance-programs/?fbclid=IwAR2Tad_5RBylBf9U99mrej4n4G5f2-EfiZzlHLlFu_R3DIWk4XVrKD7PvJE'
+                  href='https://www.thehersheycompany.com/en_us/sustainability/the-heartwarming-project.html'
                 >
                   <img
-                    alt='Honolulu Civil Beat'
+                    alt="Hershey's Heartwarming Project"
                     className={classes.logoImg}
-                    src={require('../../assets/AsSeenIn/HonoluluCivilBeat.PNG')}
-                  />
-                </a>
-              </div>
-            </Grid>
-            <Grid item className={classes.logoItem}>
-              <div class='logo-image'>
-                <a
-                  rel='noreferrer'
-                  target='_blank'
-                  href='http://casarevista.com/5192/news/we-must-refocus-on-college-guidance-programs/?fbclid=IwAR2lOx_uw8UuV-OtNS58TbNh4jcsY4I-oTithRW0i1o41rRejIPukDyX7W0'
-                >
-                  <img
-                    alt='TheCasaRevista'
-                    className={classes.logoImg}
-                    src={require('../../assets/AsSeenIn/TheCasaRevista.PNG')}
+                    src={require('../../assets/Sponsors/HersheysHeartwarmingProject.PNG')}
                   />
                 </a>
               </div>
@@ -108,4 +93,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AsSeenIn);
+export default connect(mapStateToProps, mapDispatchToProps)(Sponsors);
