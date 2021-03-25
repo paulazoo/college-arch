@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  TextField,
-  Grid,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
+import { Button, Grid, Typography } from '@material-ui/core';
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
@@ -54,6 +49,15 @@ const useStyles = makeStyles((theme) => ({
       width: '6rem',
     },
   },
+  rightLink: {
+    marginTop: '15px',
+    fontSize: 16,
+    color: theme.palette.common.white,
+    fontWeight: 'bold',
+    [theme.breakpoints.down('md')]: {
+      fontSize: 14,
+    },
+  },
 }));
 
 function Three(props) {
@@ -76,9 +80,9 @@ function Three(props) {
           </Grid>
           <Grid item className={classes.textGrid}>
             <Typography className={classes.text}>
-              College ARCH's weekly seminars cover a multitude of
-              subjects, including standardized testing led by a prominent author
-              of Kaplan’s testing material to college apps, led by Admissions
+              College ARCH's weekly seminars cover a multitude of subjects,
+              including standardized testing led by a prominent author of
+              Kaplan’s testing material to college apps, led by Admissions
               Officers from top universities and even financial aid and FAFSA.
             </Typography>
           </Grid>
@@ -134,6 +138,21 @@ function Three(props) {
         </Grid>
       </Grid>
       <Grid item xs={1} />
+      <Grid item xs={12}>
+        <Grid container direction='row' justify='center' alignItems='center'>
+          <Grid item>
+            <Button
+              variant='contained'
+              color='primary'
+              className={classes.rightLink}
+              component={NavLink}
+              to='/fellowship-program'
+            >
+              Learn More
+            </Button>
+          </Grid>
+        </Grid>
+      </Grid>
     </Grid>
   );
 }

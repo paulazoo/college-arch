@@ -1,15 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import {
-  Button,
-  TextField,
-  Grid,
-  CardContent,
-  Typography,
-  Divider,
-  Card,
-  Box,
-} from '@material-ui/core';
+import { Button, Grid, Typography, Card, Box } from '@material-ui/core';
 
 // Theme
 import { useTheme, makeStyles } from '@material-ui/core/styles';
@@ -78,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   landingText3: {
     fontWeight: 'normal',
-    fontSize: '1.5vw',
+    fontSize: '1.25vw',
   },
   textGrid: {
     textAlign: 'center',
@@ -187,6 +178,9 @@ function Landing(props) {
               Higher-Education) was founded on the idea of free, accessible
               guidance to the college application process for those of
               underprivileged backgrounds
+            </Typography>
+            <Typography color='inherit' className={classes.landingText2}>
+              <b>Fellowship Applications Open Now</b>
             </Typography>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Button
