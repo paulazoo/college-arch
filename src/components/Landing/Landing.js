@@ -282,9 +282,9 @@ function Landing(props) {
       <Grid item xs={12}>
         <Partners />
       </Grid>
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <Sponsors />
-      </Grid> */}
+      </Grid>
       <div className={classes.spacing} />
       <EmailNewsletter />
       <div className={classes.spacing} />
