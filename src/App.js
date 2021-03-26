@@ -74,6 +74,7 @@ function App(props) {
         teamOne: 'hsl(213, 99%, 80%)',
         teamTwo: 'hsl(24, 99%, 80%)',
         asSeenIn: 'hsl(24, 99%, 70%)',
+        sponsors: '#B9ECEC',
         admissionsOfficers: 'hsl(24, 99%, 70%)',
         loginout: 'hsl(213, 99%, 20%)',
       },

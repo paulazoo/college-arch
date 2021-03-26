@@ -47,7 +47,7 @@ function Sponsors(props) {
   const theme = useTheme();
 
   return (
-    <Box bgcolor={theme.palette.common.asSeenIn}>
+    <Box bgcolor={theme.palette.common.sponsors}>
       <Grid container direction='row' alignItems='center' justify='center'>
         <Grid item xs={12} md={8}>
           <Grid
