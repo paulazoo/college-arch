@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function MasterApplicantsContainer(props) {
+function AcceptedApplicants(props) {
   const classes = useStyles();
 
   const history = useHistory();
@@ -52,56 +52,58 @@ function MasterApplicantsContainer(props) {
       <Grid item xs={12}>
         <Card className={classes.card}>
           <Typography className={classes.text}>
-            Mentee Applicants: 
-{' '}
-{props.menteeApplicants.length}
+            Accepted Mentee Applicants:
           </Typography>
           <List>
             {props.menteeApplicants &&
-              props.menteeApplicants.map((applicant) => (
-                <ListItem>
-                  <Button
-                    variant='contained'
-                    color={
-                      applicant.applicant_status === 'accepted'
-                        ? 'secondary'
-                        : 'primary'
-                    }
-                    onClick={() =>
-                      history.push(`/master/mentee_applicant/${applicant.id}`)
-                    }
-                  >
-                    {`ID: ${applicant.id} Email: ${applicant.email}`}
-                  </Button>
-                </ListItem>
-              ))}
+              props.menteeApplicants.map(
+                (applicant) =>
+                  applicant.applicant_status === 'accepted' && (
+                    <ListItem>
+                      <Button
+                        variant='contained'
+                        color='primary'
+                        onClick={() =>
+                          history.push(
+                            `/master/mentee_applicant/${applicant.id}`
+                          )}
+                      >
+                        {`ID: ${applicant.id} Email: ${applicant.email}`}
+                      </Button>
+                    </ListItem>
+                  )
+              )}
           </List>
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card className={classes.card}>
           <Typography className={classes.text}>
-            Mentor Applicants: {props.mentorApplicants.length}
+            Accepted Mentor Applicants
           </Typography>
           <List>
             {props.mentorApplicants &&
-              props.mentorApplicants.map((applicant) => (
-                <ListItem>
-                  <Button
-                    variant='contained'
-                    color={
-                      applicant.applicant_status === 'accepted'
-                        ? 'secondary'
-                        : 'primary'
-                    }
-                    onClick={() =>
-                      history.push(`/master/mentor_applicant/${applicant.id}`)
-                    }
-                  >
-                    {`ID: ${applicant.id} Email: ${applicant.email}`}
-                  </Button>
-                </ListItem>
-              ))}
+              props.mentorApplicants.map(
+                (applicant) =>
+                  applicant.applicant_status === 'accepted' && (
+                    <ListItem>
+                      <Button
+                        variant='contained'
+                        color={
+                          applicant.applicant_status === 'accepted'
+                            ? 'secondary'
+                            : 'primary'
+                        }
+                        onClick={() =>
+                          history.push(
+                            `/master/mentor_applicant/${applicant.id}`
+                          )}
+                      >
+                        {`ID: ${applicant.id} Email: ${applicant.email}`}
+                      </Button>
+                    </ListItem>
+                  )
+              )}
           </List>
         </Card>
       </Grid>
@@ -124,7 +126,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MasterApplicantsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptedApplicants);
