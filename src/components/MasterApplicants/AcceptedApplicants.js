@@ -59,17 +59,12 @@ function AcceptedApplicants(props) {
               props.menteeApplicants.map(
                 (applicant) =>
                   applicant.applicant_status === 'accepted' && (
-                    <ListItem>
-                      <Button
-                        variant='contained'
-                        color='primary'
-                        onClick={() =>
-                          history.push(
-                            `/master/mentee_applicant/${applicant.id}`
-                          )}
-                      >
-                        {`ID: ${applicant.id} Email: ${applicant.email}`}
-                      </Button>
+                    <ListItem
+                      onClick={() =>
+                        history.push(`/master/mentee_applicant/${applicant.id}`)
+                      }
+                    >
+                      {applicant.email}
                     </ListItem>
                   )
               )}
@@ -86,21 +81,12 @@ function AcceptedApplicants(props) {
               props.mentorApplicants.map(
                 (applicant) =>
                   applicant.applicant_status === 'accepted' && (
-                    <ListItem>
-                      <Button
-                        variant='contained'
-                        color={
-                          applicant.applicant_status === 'accepted'
-                            ? 'secondary'
-                            : 'primary'
-                        }
-                        onClick={() =>
-                          history.push(
-                            `/master/mentor_applicant/${applicant.id}`
-                          )}
-                      >
-                        {`ID: ${applicant.id} Email: ${applicant.email}`}
-                      </Button>
+                    <ListItem
+                      onClick={() =>
+                        history.push(`/master/mentor_applicant/${applicant.id}`)
+                      }
+                    >
+                      {applicant.email}
                     </ListItem>
                   )
               )}

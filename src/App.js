@@ -42,6 +42,7 @@ import Resources from './components/Resources/Resources';
 import MasterApplicantsContainer from './components/MasterApplicants/MasterApplicantsContainer';
 import MenteeApplicantView from './components/MasterApplicants/MenteeApplicantView';
 import MentorApplicantView from './components/MasterApplicants/MentorApplicantView';
+import AcceptedApplicants from './components/MasterApplicants/AcceptedApplicants';
 
 function App(props) {
   // useEffect(() => {
@@ -132,6 +133,11 @@ function App(props) {
           exact
           path='/master/mentor_applicant/:applicantId'
           component={MentorApplicantView}
+        />
+        <PrivateRoute
+          exact
+          path='/master/applicants/accepted'
+          component={AcceptedApplicants}
         />
         <Redirect to='/' />
       </Switch>

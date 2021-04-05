@@ -975,7 +975,7 @@ export const putApplicantStatus = (
       .then((response) => {
         if (applicantType === 'mentee') {
           dispatch(setCurrentMenteeApplicant(response));
-        } else {
+        } else if (applicantType === 'mentor') {
           dispatch(setCurrentMentorApplicant(response));
         }
         dispatch(
