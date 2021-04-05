@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Template(props) {
+function MasterNewsletterContainer(props) {
   const classes = useStyles();
 
   useEffect(() => {
@@ -71,4 +71,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Template);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MasterNewsletterContainer);

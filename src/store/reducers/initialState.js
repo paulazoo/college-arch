@@ -21,6 +21,10 @@ const initialState = {
     mentors: {},
     mentees: {},
     newsletterEmails: [],
+    menteeApplicants: [],
+    mentorApplicants: [],
+    currentMenteeApplicant: {},
+    currentMentorApplicant: {},
   },
   events: {
     publicEvents: {},

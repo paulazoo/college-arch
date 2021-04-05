@@ -39,6 +39,9 @@ import Submitted from './components/Apply/Submitted';
 import LinksContainer from './components/Links/LinksContainer';
 import Footer from './components/Footer/Footer';
 import Resources from './components/Resources/Resources';
+import MasterApplicantsContainer from './components/MasterApplicants/MasterApplicantsContainer';
+import MenteeApplicantView from './components/MasterApplicants/MenteeApplicantView';
+import MentorApplicantView from './components/MasterApplicants/MentorApplicantView';
 
 function App(props) {
   // useEffect(() => {
@@ -115,6 +118,21 @@ function App(props) {
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/profile' component={Profile} />
         <PrivateRoute exact path='/master' component={Master} />
+        <PrivateRoute
+          exact
+          path='/master/applicants'
+          component={MasterApplicantsContainer}
+        />
+        <PrivateRoute
+          exact
+          path='/master/mentee_applicant/:applicantId'
+          component={MenteeApplicantView}
+        />
+        <PrivateRoute
+          exact
+          path='/master/mentor_applicant/:applicantId'
+          component={MentorApplicantView}
+        />
         <Redirect to='/' />
       </Switch>
       <Footer />

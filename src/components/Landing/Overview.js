@@ -69,7 +69,7 @@ function Overview(props) {
           <div className={classes.headTextContainer}>
             <Typography className={classes.headText}>WHO ARE WE?</Typography>
             <Typography className={classes.mainText}>
-              College ARCH is an incorporated non-profit organization led by
+              College ARCH is a 501(c)(3) non-profit organization led by
               low-income and minority students. The organization was founded
               with the intent of helping underrepresented students aim high and
               guide them through the complex process of college admissions.

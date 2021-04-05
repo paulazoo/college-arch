@@ -53,7 +53,7 @@ export default function Donate() {
           >
             <Grid item xs={12} className={classes.donationMessage}>
               <Typography variant='h4'>
-                <b>We need your help to keep this nonprofit running! 🥺</b>
+                <b>We need your help to keep this nonprofit running!</b>
               </Typography>
               <Typography>
                 <br />

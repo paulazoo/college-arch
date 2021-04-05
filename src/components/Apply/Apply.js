@@ -130,7 +130,7 @@ function Apply(props) {
               <Grid item>
                 <Button
                   variant='contained'
-                  color='secondary'
+                  color='primary'
                   className={classes.applyButton}
                   onClick={goToMenteeApplication}
                   // disabled
@@ -146,7 +146,7 @@ function Apply(props) {
               <Grid item>
                 <Button
                   variant='contained'
-                  color='secondary'
+                  color='primary'
                   className={classes.applyButton}
                   onClick={goToMentorApplication}
                   // disabled

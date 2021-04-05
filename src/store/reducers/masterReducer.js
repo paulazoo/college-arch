@@ -26,6 +26,30 @@ export default function masterReducer(state = initialState.master, action) {
         newsletterEmails: action.payload,
       };
 
+    case 'SET_MENTEEAPPLICANTS':
+      return {
+        ...state,
+        menteeApplicants: action.payload,
+      };
+
+    case 'SET_MENTORAPPLICANTS':
+      return {
+        ...state,
+        mentorApplicants: action.payload,
+      };
+
+    case 'SET_CURRENTMENTEEAPPLICANT':
+      return {
+        ...state,
+        currentMenteeApplicant: action.payload,
+      };
+
+    case 'SET_CURRENTMENTORAPPLICANT':
+      return {
+        ...state,
+        currentMentorApplicant: action.payload,
+      };
+
     default:
       return state;
   }

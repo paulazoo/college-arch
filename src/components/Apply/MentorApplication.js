@@ -53,7 +53,7 @@ function MentorApplication(props) {
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
   const [eligible, setEligible] = useState(false);
-  const [gradYear, setGradYear] = useState(2020);
+  const [gradYear, setGradYear] = useState(2021);
 
   const [usBoolean, setUsBoolean] = useState(true);
 

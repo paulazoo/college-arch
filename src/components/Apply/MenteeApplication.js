@@ -167,7 +167,7 @@ function MenteeApplication(props) {
         family_name: lastName,
         school: highschool,
         us_living: usBoolean,
-        grad_year: 2020,
+        grad_year: 2021,
       });
     }
   };
@@ -307,7 +307,7 @@ function MenteeApplication(props) {
             <Grid item xs={12}>
               <Typography>
                 Optional: What High School do you go to? (This helps us to
-                better connect you with relevant opportunities and networks.
+                better connect you with relevant opportunities and networks.)
               </Typography>
               <TextField
                 fullWidth

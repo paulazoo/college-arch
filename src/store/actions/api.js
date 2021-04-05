@@ -9,6 +9,10 @@ import {
   setMentors,
   setUsers,
   setNewsletterEmails,
+  setMenteeApplicants,
+  setMentorApplicants,
+  setCurrentMenteeApplicant,
+  setCurrentMentorApplicant,
   setCurrentlyLoading,
   setPublicEvents,
   setEvents,
@@ -150,6 +154,86 @@ export const getNewsletterEmails = () => {
     api(`newsletter_emails`, requestOptions)
       .then((response) => {
         dispatch(setNewsletterEmails(response));
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
+export const getMenteeApplicants = () => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+      },
+    };
+    api(`mentee_applicants`, requestOptions)
+      .then((response) => {
+        dispatch(setMenteeApplicants(response));
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
+export const getMentorApplicants = () => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+      },
+    };
+    api(`mentor_applicants`, requestOptions)
+      .then((response) => {
+        dispatch(setMentorApplicants(response));
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
+export const getMenteeApplicant = (id) => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+      },
+    };
+    api(`mentee_applicants/${id}`, requestOptions)
+      .then((response) => {
+        dispatch(setCurrentMenteeApplicant(response));
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
+export const getMentorApplicant = (id) => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+      },
+    };
+    api(`mentor_applicants/${id}`, requestOptions)
+      .then((response) => {
+        dispatch(setCurrentMentorApplicant(response));
       })
       .catch((error) => {
         console.error('API Error: ', error);

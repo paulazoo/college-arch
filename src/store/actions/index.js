@@ -42,6 +42,22 @@ export function setNewsletterEmails(payload) {
   return { type: 'SET_NEWSLETTEREMAILS', payload };
 }
 
+export function setMenteeApplicants(payload) {
+  return { type: 'SET_MENTEEAPPLICANTS', payload };
+}
+
+export function setMentorApplicants(payload) {
+  return { type: 'SET_MENTORAPPLICANTS', payload };
+}
+
+export function setCurrentMenteeApplicant(payload) {
+  return { type: 'SET_CURRENTMENTEEAPPLICANT', payload };
+}
+
+export function setCurrentMentorApplicant(payload) {
+  return { type: 'SET_CURRENTMENTORAPPLICANT', payload };
+}
+
 export function setPublicEvents(payload) {
   return { type: 'SET_PUBLICEVENTS', payload };
 }
