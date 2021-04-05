@@ -61,8 +61,7 @@ function AcceptedApplicants(props) {
                   applicant.applicant_status === 'accepted' && (
                     <ListItem
                       onClick={() =>
-                        history.push(`/master/mentee_applicant/${applicant.id}`)
-                      }
+                        history.push(`/master/mentee_applicant/${applicant.id}`)}
                     >
                       {applicant.email}
                     </ListItem>
@@ -83,8 +82,7 @@ function AcceptedApplicants(props) {
                   applicant.applicant_status === 'accepted' && (
                     <ListItem
                       onClick={() =>
-                        history.push(`/master/mentor_applicant/${applicant.id}`)
-                      }
+                        history.push(`/master/mentor_applicant/${applicant.id}`)}
                     >
                       {applicant.email}
                     </ListItem>
@@ -92,6 +90,15 @@ function AcceptedApplicants(props) {
               )}
           </List>
         </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Button
+          variant='contained'
+          color='primary'
+          onClick={() => history.push('/master/applicants')}
+        >
+          Back to Applicants List
+        </Button>
       </Grid>
     </>
   ) : (
