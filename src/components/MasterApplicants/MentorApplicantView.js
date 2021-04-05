@@ -7,7 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { getMentorApplicant } from '../../store/actions/api';
+import {
+  getMentorApplicant,
+  putApplicantStatus,
+} from '../../store/actions/api';
 
 // Custom Components
 
@@ -37,19 +40,96 @@ function MentorApplicantView(props) {
     props.getMentorApplicant(applicantId);
   }, []);
 
+  const acceptApplicant = () => {
+    props.putApplicantStatus(
+      'mentor',
+      props.currentMentorApplicant.id,
+      'accepted'
+    );
+  };
+
+  const rejectApplicant = () => {
+    props.putApplicantStatus(
+      'mentor',
+      props.currentMentorApplicant.id,
+      'rejected'
+    );
+  };
+
   return props.isMaster === true ? (
     <>
       <Grid item xs={12}>
         <Card className={classes.card}>
           {props.currentMentorApplicant && (
-            <Grid container direction='row'>
+            <Grid container direction='row' spacing={3}>
               <Grid item xs={12}>
-                <Typography className={classes.text}>
+                <Typography variant='h2'>
                   {`Viewing Mentor Applicant: ${props.currentMentorApplicant.id}`}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                {`${props.currentMentorApplicant.first_name} ${props.currentMentorApplicant.last_name}`}
+                <Typography variant='h2'>
+                  {`${props.currentMentorApplicant.first_name} ${props.currentMentorApplicant.family_name}`}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant='h4'>
+                  <b>APPLICANT STATUS: </b>
+                  <b>{props.currentMentorApplicant.applicant_status}</b>
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Email: </b>
+                  {props.currentMentorApplicant.email}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Location: </b>
+                  {props.currentMentorApplicant.location}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>School: </b>
+                  {props.currentMentorApplicant.school || 'N/A'}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Graduation Year : </b>
+                  {props.currentMentorApplicant.grad_year || 'N/A'}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Essay:</b>
+                </Typography>
+                <Typography>{props.currentMentorApplicant.essay}</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Button
+                  variant='contained'
+                  color='secondary'
+                  onClick={acceptApplicant}
+                >
+                  Accept
+                </Button>
+              </Grid>
+              <Grid item xs={6}>
+                <Button variant='contained' onClick={rejectApplicant}>
+                  Reject
+                </Button>
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  variant='contained'
+                  color='primary'
+                  onClick={() => history.push('/master/applicants')}
+                >
+                  Back to Applicants List
+                </Button>
               </Grid>
             </Grid>
           )}
@@ -57,18 +137,20 @@ function MentorApplicantView(props) {
       </Grid>
     </>
   ) : (
-    <Redirect to='/' />
+    <p>{applicantId}</p>
   );
 }
 
 const mapStateToProps = (state) => ({
-  currentMentorApplicant: state.mentor.currentMentorApplicant,
+  currentMentorApplicant: state.master.currentMentorApplicant,
   isMaster: state.user.isMaster,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
     getMentorApplicant: (id) => dispatch(getMentorApplicant(id)),
+    putApplicantStatus: (type, id, status) =>
+      dispatch(putApplicantStatus(type, id, status)),
   };
 }
 

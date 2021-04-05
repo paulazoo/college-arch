@@ -956,6 +956,41 @@ export const putEvent = (eventId, body) => {
   };
 };
 
+export const putApplicantStatus = (
+  applicantType,
+  applicantId,
+  applicantStatus
+) => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+      },
+      body: JSON.stringify({ applicant_status: applicantStatus }),
+    };
+    api(`${applicantType}_applicants/${applicantId}`, requestOptions)
+      .then((response) => {
+        if (applicantType === 'mentee') {
+          dispatch(setCurrentMenteeApplicant(response));
+        } else {
+          dispatch(setCurrentMentorApplicant(response));
+        }
+        dispatch(
+          setPersonalSnackbar({
+            open: true,
+            content: 'Applicant status updated!',
+          })
+        );
+      })
+      .catch((error) => {
+        console.error('API Error: ', error);
+      });
+  };
+};
+
 // DELETE Calls:
 export const deleteEventApi = (eventId) => {
   return (dispatch, getState) => {

@@ -58,7 +58,11 @@ function MasterApplicantsContainer(props) {
                 <ListItem>
                   <Button
                     variant='contained'
-                    color='primary'
+                    color={
+                      applicant.applicant_status === 'accepted'
+                        ? 'secondary'
+                        : 'primary'
+                    }
                     onClick={() =>
                       history.push(`/master/mentee_applicant/${applicant.id}`)}
                   >
@@ -78,7 +82,11 @@ function MasterApplicantsContainer(props) {
                 <ListItem>
                   <Button
                     variant='contained'
-                    color='primary'
+                    color={
+                      applicant.applicant_status === 'accepted'
+                        ? 'secondary'
+                        : 'primary'
+                    }
                     onClick={() =>
                       history.push(`/master/mentor_applicant/${applicant.id}`)}
                   >

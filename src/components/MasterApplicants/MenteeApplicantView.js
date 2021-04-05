@@ -7,7 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { getMenteeApplicant } from '../../store/actions/api';
+import {
+  getMenteeApplicant,
+  putApplicantStatus,
+} from '../../store/actions/api';
 
 // Custom Components
 
@@ -38,11 +41,19 @@ function MenteeApplicantView(props) {
   }, []);
 
   const acceptApplicant = () => {
-    console.log('accepted');
+    props.putApplicantStatus(
+      'mentee',
+      props.currentMenteeApplicant.id,
+      'accepted'
+    );
   };
 
   const rejectApplicant = () => {
-    console.log('rejected');
+    props.putApplicantStatus(
+      'mentee',
+      props.currentMenteeApplicant.id,
+      'rejected'
+    );
   };
 
   return props.isMaster === true ? (
@@ -50,7 +61,7 @@ function MenteeApplicantView(props) {
       <Grid item xs={12}>
         <Card className={classes.card}>
           {props.currentMenteeApplicant && (
-            <Grid container direction='row'>
+            <Grid container direction='row' spacing={3}>
               <Grid item xs={12}>
                 <Typography variant='h2'>
                   {`Viewing Mentee Applicant: ${props.currentMenteeApplicant.id}`}
@@ -59,6 +70,12 @@ function MenteeApplicantView(props) {
               <Grid item xs={12}>
                 <Typography variant='h2'>
                   {`${props.currentMenteeApplicant.first_name} ${props.currentMenteeApplicant.family_name}`}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant='h4'>
+                  <b>APPLICANT STATUS: </b>
+                  <b>{props.currentMenteeApplicant.applicant_status}</b>
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -91,9 +108,6 @@ function MenteeApplicantView(props) {
                 </Typography>
                 <Typography>{props.currentMenteeApplicant.essay}</Typography>
               </Grid>
-              <Grid item xs={12}>
-                {JSON.stringify(props.currentMenteeApplicant)}
-              </Grid>
               <Grid item xs={6}>
                 <Button
                   variant='contained'
@@ -106,6 +120,15 @@ function MenteeApplicantView(props) {
               <Grid item xs={6}>
                 <Button variant='contained' onClick={rejectApplicant}>
                   Reject
+                </Button>
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  variant='contained'
+                  color='primary'
+                  onClick={() => history.push('/master/applicants')}
+                >
+                  Back to Applicants List
                 </Button>
               </Grid>
             </Grid>
@@ -126,6 +149,8 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     getMenteeApplicant: (id) => dispatch(getMenteeApplicant(id)),
+    putApplicantStatus: (type, id, status) =>
+      dispatch(putApplicantStatus(type, id, status)),
   };
 }
 
