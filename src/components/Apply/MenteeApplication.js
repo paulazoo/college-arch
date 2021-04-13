@@ -42,6 +42,7 @@ function MenteeApplication(props) {
   const classes = useStyles();
 
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [city, setCity] = useState('');
@@ -60,27 +61,6 @@ function MenteeApplication(props) {
       case 'email':
         setEmail(event.target.value);
         break;
-      case 'firstName':
-        setFirstName(event.target.value);
-        break;
-      case 'lastName':
-        setLastName(event.target.value);
-        break;
-      case 'essay':
-        setEssay(event.target.value);
-        break;
-      case 'city':
-        setCity(event.target.value);
-        break;
-      case 'highschool':
-        setHighschool(event.target.value);
-        break;
-      case 'country':
-        setCountry(event.target.value);
-        break;
-      default:
-        break;
-    }
   };
 
   const handleUsBooleanChange = (event) => {
@@ -134,6 +114,7 @@ function MenteeApplication(props) {
       essay === '' ||
       city === '' ||
       email === '' ||
+      phone === '' ||
       background ===
         {
           first_gen: false,
@@ -158,6 +139,7 @@ function MenteeApplication(props) {
       // api call
       props.postMenteeApplicants({
         email,
+        phone,
         city,
         state,
         country,
@@ -195,10 +177,17 @@ function MenteeApplication(props) {
                 College ARCH is focused on increasing accessibility of resources
                 and providing guidance to underrepresented students going
                 through the college application process with the goal of
-                decreasing the achievement gap in higher educaiton and fix
+                decreasing the achievement gap in higher education and fix
                 inequalities in college guidance that disparately impact
                 arginalized communities and lead to cycles of inaccessibility
                 and stratification.
+              </Typography>
+              <Typography>
+                The fellowship program will take place between July 7-August 6.
+                All mandatory meetings will occur between 1pm EST-9pm EST Monday
+                through Friday, with a total commitment of 3 to 4 hours a week.
+                The priority deadline is June 25 and the final deadline is July
+                2.
               </Typography>
             </Grid>
           </Grid>
@@ -240,6 +229,16 @@ function MenteeApplication(props) {
                 fullWidth
                 variant='outlined'
                 label='Email'
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                value={phone}
+                onChange={handleChange}
+                id='phone'
+                fullWidth
+                variant='outlined'
+                label='Phone Number'
               />
             </Grid>
             <Grid item xs={12}>
@@ -294,11 +293,11 @@ function MenteeApplication(props) {
             </Grid>
             <Grid item xs={12}>
               <Typography>
-                Are you a rising senior in high school? (Only High School
-                seniors for the school year of 2021-2022 may register as
-                fellows. If you are in college or beyond, please contact
-                contact@collegearch@gmail.com to register as a higher-ed follow
-                or mentor)
+                Will you be graduating high school in 2022? (Only the Class of
+                2022 may register as fellows. If you are in college or following
+                an alternative education path, please contact
+                contact.collegearch@gmail.com to determine eligibility as a
+                fellow.)
               </Typography>
               <RadioGroup value={eligible} onChange={handleEligibleChange}>
                 <FormControlLabel value control={<Radio />} label='Yes' />
@@ -307,7 +306,7 @@ function MenteeApplication(props) {
             <Grid item xs={12}>
               <Typography>
                 Optional: What High School do you go to? (This helps us to
-                better connect you with relevant opportunities and networks.)
+                better connect you with relevant opportunities and networks)
               </Typography>
               <TextField
                 fullWidth
@@ -331,133 +330,133 @@ function MenteeApplication(props) {
               <FormControl component='fieldset' className={classes.formControl}>
                 <FormGroup>
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='first_gen'
                         checked={background.first_gen}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='First-generation college student'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='low_income'
                         checked={background.low_income}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Low-income household'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='stem_girl'
                         checked={background.stem_girl}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Womxn in STEM'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='lgbt'
                         checked={background.lgbt}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='LGBTQ+'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='disabled'
                         checked={background.disabled}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Disabled'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='immigrant'
                         checked={background.immigrant}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Immigrant'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='undoc'
                         checked={background.undoc}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Undocumented/DACA/Mixed Status Family'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='black'
                         checked={background.black}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Black'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='hispanic'
                         checked={background.hispanic}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Latinx or Hispanic'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='native'
                         checked={background.native}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Indigenous or Native American'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='asian'
                         checked={background.asian}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Asian'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='pi'
                         checked={background.pi}
                         onChange={handleBackgroundChange}
                       />
-                    }
-                    label='Pacific Islander'
+                    )}
+                    label='Native Hawaiian/Pacific Islander'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='me_na'
                         checked={background.me_na}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Middle Eastern and/or North African'
                   />
                 </FormGroup>
@@ -504,6 +503,15 @@ function MenteeApplication(props) {
                   the questions.
                 </p>
               )}
+            </Grid>
+            <Grid item xs={12}>
+              <Typography>
+                Thank you so much for filling this form out, and we will be in
+                contact with you soon! Please share the form link with anyone
+                else that you believe would be a good fit. Also, if you have any
+                questions or concerns, email us at contact.collegearch@gmail.com
+                or DM us on Instagram @collegearch.
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <Grid

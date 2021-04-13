@@ -45,6 +45,7 @@ function MentorApplication(props) {
   const classes = useStyles();
 
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [city, setCity] = useState('');
@@ -63,6 +64,9 @@ function MentorApplication(props) {
     switch (event.target.id) {
       case 'email':
         setEmail(event.target.value);
+        break;
+      case 'phone':
+        setPhone(event.target.value);
         break;
       case 'firstName':
         setFirstName(event.target.value);
@@ -138,6 +142,7 @@ function MentorApplication(props) {
       essay === '' ||
       city === '' ||
       email === '' ||
+      phone === '' ||
       college === ''
     ) {
       setError(true);
@@ -146,6 +151,7 @@ function MentorApplication(props) {
       // api call
       props.postMentorApplicants({
         email,
+        phone,
         city,
         state,
         country,
@@ -183,7 +189,7 @@ function MentorApplication(props) {
                 College ARCH is focused on increasing accessibility of resources
                 and providing guidance to underrepresented students going
                 through the college application process with the goal of
-                decreasing the achievement gap in higher educaiton and fix
+                decreasing the achievement gap in higher education and fix
                 inequalities in college guidance that disparately impact
                 arginalized communities and lead to cycles of inaccessibility
                 and stratification.
@@ -228,6 +234,16 @@ function MentorApplication(props) {
                 fullWidth
                 variant='outlined'
                 label='Email'
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                value={phone}
+                onChange={handleChange}
+                id='phone'
+                fullWidth
+                variant='outlined'
+                label='Phone Number'
               />
             </Grid>
             <Grid item xs={12}>
@@ -452,7 +468,7 @@ function MentorApplication(props) {
                         onChange={handleBackgroundChange}
                       />
                     }
-                    label='Pacific Islander'
+                    label='Native Hawaiian/Pacific Islander'
                   />
                   <FormControlLabel
                     control={(
@@ -504,6 +520,15 @@ function MentorApplication(props) {
                   the questions.
                 </p>
               )}
+            </Grid>
+            <Grid item xs={12}>
+              <Typography>
+                Thank you so much for filling this form out, and we will be in
+                contact with you soon! Please share the form link with anyone
+                else that you believe would be a good fit. Also, if you have any
+                questions or concerns, email us at contact.collegearch@gmail.com
+                or DM us on Instagram @collegearch.
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <Grid
