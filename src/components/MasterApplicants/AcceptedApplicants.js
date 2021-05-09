@@ -7,7 +7,6 @@ import {
   Card,
   List,
   ListItem,
-  ListItemText,
 } from '@material-ui/core';
 
 // Theme
@@ -61,7 +60,8 @@ function AcceptedApplicants(props) {
                   applicant.applicant_status === 'accepted' && (
                     <ListItem
                       onClick={() =>
-                        history.push(`/master/mentee_applicant/${applicant.id}`)}
+                        history.push(`/master/mentee_applicant/${applicant.id}`)
+                      }
                     >
                       {applicant.email}
                     </ListItem>
@@ -82,7 +82,8 @@ function AcceptedApplicants(props) {
                   applicant.applicant_status === 'accepted' && (
                     <ListItem
                       onClick={() =>
-                        history.push(`/master/mentor_applicant/${applicant.id}`)}
+                        history.push(`/master/mentor_applicant/${applicant.id}`)
+                      }
                     >
                       {applicant.email}
                     </ListItem>

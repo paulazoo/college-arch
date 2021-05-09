@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Redirect, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { Button, Grid, Typography, Card } from '@material-ui/core';
 
 // Theme
