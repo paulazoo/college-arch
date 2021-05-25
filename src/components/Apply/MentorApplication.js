@@ -39,7 +39,45 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const gradYearList = [2025, 2024, 2023];
+const gradYearList = [
+  2026,
+  2025,
+  2024,
+  2023,
+  2022,
+  2021,
+  2020,
+  2019,
+  2018,
+  2017,
+  2016,
+  2015,
+  2014,
+  2013,
+  2012,
+  2011,
+  2010,
+  2009,
+  2008,
+  2007,
+  2006,
+  2005,
+  2004,
+  2003,
+  2002,
+  2001,
+  2000,
+  1999,
+  1998,
+  1997,
+  1996,
+  1995,
+  1994,
+  1993,
+  1992,
+  1991,
+  1990,
+];
 
 function MentorApplication(props) {
   const classes = useStyles();
@@ -351,133 +389,133 @@ function MentorApplication(props) {
               <FormControl component='fieldset' className={classes.formControl}>
                 <FormGroup>
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='first_gen'
                         checked={background.first_gen}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='First-generation college student'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='low_income'
                         checked={background.low_income}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Low-income household'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='stem_girl'
                         checked={background.stem_girl}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Womxn in STEM'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='lgbt'
                         checked={background.lgbt}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='LGBTQ+'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='disabled'
                         checked={background.disabled}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Disabled'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='immigrant'
                         checked={background.immigrant}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Immigrant'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='black'
                         checked={background.black}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Black'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='hispanic'
                         checked={background.hispanic}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Latinx or Hispanic'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='native'
                         checked={background.native}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Indigenous or Native American'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='undoc'
                         checked={background.undoc}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Undocumented/DACA/Mixed Status Family'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='asian'
                         checked={background.asian}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Asian'
                   />
                   <FormControlLabel
-                    control={
+                    control={(
                       <Checkbox
                         name='pi'
                         checked={background.pi}
                         onChange={handleBackgroundChange}
                       />
-                    }
+                    )}
                     label='Native Hawaiian/Pacific Islander'
                   />
                   <FormControlLabel
-                    control={(
+                    control={
                       <Checkbox
                         name='me_na'
                         checked={background.me_na}
                         onChange={handleBackgroundChange}
                       />
-                    )}
+                    }
                     label='Middle Eastern and/or North African'
                   />
                 </FormGroup>

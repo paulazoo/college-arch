@@ -45,7 +45,7 @@ function MenteeApplication(props) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [city, setCity] = useState('');
-  const [highschool, setHighschool] = useState('');
+  const [school, setSchool] = useState('');
   const [essay, setEssay] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
@@ -75,11 +75,11 @@ function MenteeApplication(props) {
       case 'city':
         setCity(event.target.value);
         break;
-      case 'college':
-        setHighschool(event.target.value);
-        break;
       case 'country':
         setCountry(event.target.value);
+        break;
+      case 'highschool':
+        setSchool(event.target.value);
         break;
       default:
         break;
@@ -170,7 +170,7 @@ function MenteeApplication(props) {
         ...background,
         first_name: firstName,
         family_name: lastName,
-        school: highschool,
+        school,
         us_living: usBoolean,
         grad_year: 2021,
       });
@@ -335,7 +335,7 @@ function MenteeApplication(props) {
                 fullWidth
                 variant='outlined'
                 label='High School'
-                value={highschool}
+                value={school}
                 onChange={handleChange}
                 id='highschool'
               />
