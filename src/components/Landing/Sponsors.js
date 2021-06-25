@@ -75,6 +75,36 @@ function Sponsors(props) {
                 </a>
               </div>
             </Grid>
+            <Grid item className={classes.logoItem}>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://store.thecoop.com/'
+                >
+                  <img
+                    alt='The Harvard COOP'
+                    className={classes.logoImg}
+                    src={require('../../assets/Sponsors/TheHarvardCoop.jpg')}
+                  />
+                </a>
+              </div>
+            </Grid>
+            <Grid item className={classes.logoItem}>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.wholefoodsmarket.com/'
+                >
+                  <img
+                    alt='Whole Foods'
+                    className={classes.logoImg}
+                    src={require('../../assets/Sponsors/WholeFoods.png')}
+                  />
+                </a>
+              </div>
+            </Grid>
             <Grid item xs={12} />
           </Grid>
         </Grid>
