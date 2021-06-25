@@ -80,12 +80,12 @@ function AsSeenIn(props) {
                 <a
                   rel='noreferrer'
                   target='_blank'
-                  href='http://casarevista.com/5192/news/we-must-refocus-on-college-guidance-programs/?fbclid=IwAR2lOx_uw8UuV-OtNS58TbNh4jcsY4I-oTithRW0i1o41rRejIPukDyX7W0'
+                  href='https://www.stanforddaily.com/2020/07/17/stanford-undergraduates-help-run-free-summer-f[…]lp-underrepresented-rising-seniors-with-college-admission/'
                 >
                   <img
-                    alt='TheCasaRevista'
+                    alt='TheStanfordDaily'
                     className={classes.logoImg}
-                    src={require('../../assets/AsSeenIn/TheCasaRevista.PNG')}
+                    src={require('../../assets/AsSeenIn/StanfordDaily.png')}
                   />
                 </a>
               </div>
@@ -95,12 +95,12 @@ function AsSeenIn(props) {
                 <a
                   rel='noreferrer'
                   target='_blank'
-                  href='https://www.stanforddaily.com/2020/07/17/stanford-undergraduates-help-run-free-summer-f[…]lp-underrepresented-rising-seniors-with-college-admission/'
+                  href='http://casarevista.com/5192/news/we-must-refocus-on-college-guidance-programs/?fbclid=IwAR2lOx_uw8UuV-OtNS58TbNh4jcsY4I-oTithRW0i1o41rRejIPukDyX7W0'
                 >
                   <img
-                    alt='TheStanfordDaily'
+                    alt='TheCasaRevista'
                     className={classes.logoImg}
-                    src={require('../../assets/AsSeenIn/StanfordDaily.png')}
+                    src={require('../../assets/AsSeenIn/TheCasaRevista.PNG')}
                   />
                 </a>
               </div>
