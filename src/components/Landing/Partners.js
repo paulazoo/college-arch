@@ -210,6 +210,21 @@ function Partners(props) {
                 </a>
               </div>
             </Grid>
+            <Grid item className={classes.logoItem}>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://scholarsforimmigration.org/'
+                >
+                  <img
+                    alt='Scholars For Immigration'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/ScholarForImmigration.png')}
+                  />
+                </a>
+              </div>
+            </Grid>
             <Grid item xs={12} />
           </Grid>
         </Grid>

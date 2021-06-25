@@ -68,7 +68,7 @@ function AsSeenIn(props) {
                   href='https://www.civilbeat.org/2020/06/we-must-reimagine-college-guidance-programs/?fbclid=IwAR2Tad_5RBylBf9U99mrej4n4G5f2-EfiZzlHLlFu_R3DIWk4XVrKD7PvJE'
                 >
                   <img
-                    alt='Honolulu Civil Beat'
+                    alt='HonoluluCivilBeat'
                     className={classes.logoImg}
                     src={require('../../assets/AsSeenIn/HonoluluCivilBeat.PNG')}
                   />
@@ -98,7 +98,7 @@ function AsSeenIn(props) {
                   href='https://www.stanforddaily.com/2020/07/17/stanford-undergraduates-help-run-free-summer-f[…]lp-underrepresented-rising-seniors-with-college-admission/'
                 >
                   <img
-                    alt='The Stanford Daily'
+                    alt='TheStanfordDaily'
                     className={classes.logoImg}
                     src={require('../../assets/AsSeenIn/StanfordDaily.png')}
                   />
