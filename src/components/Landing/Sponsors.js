@@ -80,12 +80,12 @@ function Sponsors(props) {
                 <a
                   rel='noreferrer'
                   target='_blank'
-                  href='https://store.thecoop.com/'
+                  href='https://www.wholefoodsmarket.com/'
                 >
                   <img
-                    alt='The Harvard COOP'
+                    alt='Whole Foods'
                     className={classes.logoImg}
-                    src={require('../../assets/Sponsors/TheHarvardCoop.jpg')}
+                    src={require('../../assets/Sponsors/WholeFoods.png')}
                   />
                 </a>
               </div>
@@ -95,12 +95,12 @@ function Sponsors(props) {
                 <a
                   rel='noreferrer'
                   target='_blank'
-                  href='https://www.wholefoodsmarket.com/'
+                  href='https://store.thecoop.com/'
                 >
                   <img
-                    alt='Whole Foods'
+                    alt='The Harvard COOP'
                     className={classes.logoImg}
-                    src={require('../../assets/Sponsors/WholeFoods.png')}
+                    src={require('../../assets/Sponsors/TheHarvardCoop.jpg')}
                   />
                 </a>
               </div>
