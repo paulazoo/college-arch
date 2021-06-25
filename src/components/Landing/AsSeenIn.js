@@ -90,6 +90,21 @@ function AsSeenIn(props) {
                 </a>
               </div>
             </Grid>
+            <Grid item className={classes.logoItem}>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.stanforddaily.com/2020/07/17/stanford-undergraduates-help-run-free-summer-f[…]lp-underrepresented-rising-seniors-with-college-admission/'
+                >
+                  <img
+                    alt='The Stanford Daily'
+                    className={classes.logoImg}
+                    src={require('../../assets/AsSeenIn/StanfordDaily.png')}
+                  />
+                </a>
+              </div>
+            </Grid>
             <Grid item xs={12} />
           </Grid>
         </Grid>
