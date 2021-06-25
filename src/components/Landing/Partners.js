@@ -195,6 +195,21 @@ function Partners(props) {
                 </a>
               </div>
             </Grid>
+            <Grid item className={classes.logoItem}>
+              <div class='logo-image'>
+                <a
+                  rel='noreferrer'
+                  target='_blank'
+                  href='https://www.instagram.com/pathways_to_college2021/'
+                >
+                  <img
+                    alt='Pathways to College'
+                    className={classes.logoImg}
+                    src={require('../../assets/Partners/PathwaysToCollege.png')}
+                  />
+                </a>
+              </div>
+            </Grid>
             <Grid item xs={12} />
           </Grid>
         </Grid>
