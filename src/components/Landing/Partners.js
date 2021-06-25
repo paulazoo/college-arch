@@ -205,7 +205,7 @@ function Partners(props) {
                   <img
                     alt='Pathways to College'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/PathwaysToCollege.png')}
+                    src={require('../../assets/Partners/PathwaystoCollege.png')}
                   />
                 </a>
               </div>
