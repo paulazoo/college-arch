@@ -220,7 +220,7 @@ function Partners(props) {
                   <img
                     alt='Scholars For Immigration'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/ScholarForImmigration.png')}
+                    src={require('../../assets/Partners/ScholarsForImmigration.png')}
                   />
                 </a>
               </div>
