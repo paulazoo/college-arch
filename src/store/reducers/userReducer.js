@@ -10,6 +10,8 @@ export default function userReducer(state = initialState.user, action) {
         action.payload === 'tech.collegearch@gmail.com' ||
         action.payload === 'team.collegearch@gmail.com' ||
         action.payload === 'programming.collegearch@gmail.com' ||
+        action.payload === 'lleanza01@gmail.com' ||
+        action.payload === 'rina.nagashima@gmail.com' ||
         action.payload === 'snalani731@gmail.com' ||
         action.payload === 'llin1@college.harvard.edu' ||
         action.payload === 'lindalin2812@gmail.com'

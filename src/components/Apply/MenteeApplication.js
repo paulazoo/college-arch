@@ -83,6 +83,8 @@ function MenteeApplication(props) {
 
   const [error, setError] = useState(false);
 
+  const [submitting, setSubmitting] = useState(false);
+
   const handleChange = (event) => {
     switch (event.target.id) {
       case 'email':
@@ -192,7 +194,6 @@ function MenteeApplication(props) {
     } else {
       setError(false);
       // api call
-      console.log(interests);
       props.postMenteeApplicants({
         email,
         phone,
@@ -208,6 +209,11 @@ function MenteeApplication(props) {
         grad_year: 2021,
         interests: interests.toString(),
       });
+
+      setSubmitting(true);
+      setTimeout(function () {
+        setSubmitting(false);
+      }, 3000);
     }
   };
 
@@ -603,6 +609,7 @@ function MenteeApplication(props) {
                     onClick={handleSubmit}
                     color='primary'
                     variant='contained'
+                    disabled={submitting}
                   >
                     Submit
                   </Button>
