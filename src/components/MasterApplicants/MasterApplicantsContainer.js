@@ -65,6 +65,8 @@ function MasterApplicantsContainer(props) {
                     color={
                       applicant.applicant_status === 'accepted'
                         ? 'secondary'
+                        : applicant.applicant_status === 'rejected'
+                        ? 'gray'
                         : 'primary'
                     }
                     onClick={() =>
@@ -92,6 +94,8 @@ function MasterApplicantsContainer(props) {
                     color={
                       applicant.applicant_status === 'accepted'
                         ? 'secondary'
+                        : applicant.applicant_status === 'rejected'
+                        ? 'gray'
                         : 'primary'
                     }
                     onClick={() =>

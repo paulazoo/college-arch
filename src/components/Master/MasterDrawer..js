@@ -51,6 +51,7 @@ function MasterDrawer({ selectedMaster, setSelectedMaster, ...props }) {
     { label: 'Users' },
     { label: 'Newsletter Emails' },
     { label: 'Events' },
+    { label: 'Applicants' },
   ];
 
   return (

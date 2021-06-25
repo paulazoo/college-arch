@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Button,
   TextField,
@@ -79,6 +80,8 @@ const useStyles = makeStyles((theme) => ({
 function Master(props) {
   const classes = useStyles();
 
+  const history = useHistory();
+
   const [selectedMaster, setSelectedMaster] = useState('Users');
 
   const renderMaster = () => {
@@ -89,6 +92,9 @@ function Master(props) {
         return <MasterNewsletterContainer />;
       case 'Events':
         return <MasterEventsContainer />;
+      case 'Applicants':
+        history.push('/master/applicants');
+        break;
       default:
         return <MasterUsersContainer />;
     }
