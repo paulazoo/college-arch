@@ -93,7 +93,7 @@ function FellowshipGeneral(props) {
           However, we will be extremely flexible and accommodating because of
           the current circumstances.
         </p>
-        {/* <p>DEADLINE TO SUBMIT YOUR APPLICATION: June 30 @ 11:59 PM, EST</p> */}
+        <p>DEADLINE TO SUBMIT YOUR APPLICATION: JULY 2nd @ 11:59 PM, EST</p>
         <p>FOLLOW US ON INSTAGRAM @collegearch TO RECEIVE UPDATES!</p>
         <br />
       </Typography>

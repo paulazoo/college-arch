@@ -195,9 +195,9 @@ function Landing(props) {
               APPLY NOW
             </Button>
             <Grid item xs={0} md={12} className={classes.textGrid} />
-            {/* <Typography className={classes.dueDate}>
-              Fellowship applications will be open again in January 2021
-            </Typography> */}
+            <Typography className={classes.dueDate}>
+              Applications will be due July 2, 2021
+            </Typography>
           </Grid>
           <Grid item xs={12} className={classes.textGrid}>
             <Grid
@@ -270,9 +270,9 @@ function Landing(props) {
         </Grid>
         <Grid item xs={12} className={classes.dueDateContainer}>
           <br />
-          {/* <Typography className={classes.dueDate}>
-            Fellowship applications will be open again in January 2021
-          </Typography> */}
+          <Typography className={classes.dueDate}>
+            Applications will be due July 2, 2021
+          </Typography>
         </Grid>
       </Grid>
       <div className={classes.spacing} />

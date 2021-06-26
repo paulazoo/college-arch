@@ -232,7 +232,7 @@ function MenteeApplication(props) {
           >
             <Grid item>
               <Typography variant='h3'>
-                College ARCH Fellowship Mentor Application
+                College ARCH Fellowship Application
               </Typography>
             </Grid>
             <Grid item>
@@ -242,14 +242,14 @@ function MenteeApplication(props) {
                 through the college application process with the goal of
                 decreasing the achievement gap in higher education and fix
                 inequalities in college guidance that disparately impact
-                arginalized communities and lead to cycles of inaccessibility
+                marginalized communities and lead to cycles of inaccessibility
                 and stratification.
               </Typography>
               <Typography>
                 The fellowship program will take place between July 7-August 6.
                 All mandatory meetings will occur between 1pm EST-9pm EST Monday
                 through Friday, with a total commitment of 3 to 4 hours a week.
-                The priority deadline is June 25 and the final deadline is July
+                The priority deadline is June 30 and the final deadline is July
                 2.
               </Typography>
             </Grid>

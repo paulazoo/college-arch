@@ -122,10 +122,9 @@ function Apply(props) {
                 <Typography className={classes.applyText}>
                   Apply to be a College ARCH Fellow or Mentor!
                 </Typography>
-                {/* <Typography className={classes.dueDate}>
-                  Fellowship applications will be open again in January
-                  2021
-                </Typography> */}
+                <Typography className={classes.dueDate}>
+                  Fellowship applications will be due July 2, 2021
+                </Typography>
               </Grid>
               <Grid item>
                 <Button
