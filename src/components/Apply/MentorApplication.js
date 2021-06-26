@@ -13,6 +13,7 @@ import {
   Select,
   TextField,
   Typography,
+  CircularProgress,
 } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
@@ -647,6 +648,7 @@ function MentorApplication(props) {
                     disabled={submitting}
                   >
                     Submit
+                    {submitting && <CircularProgress />}
                   </Button>
                 </Grid>
               </Grid>
