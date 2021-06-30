@@ -86,13 +86,25 @@ function MentorApplicantView(props) {
               </Grid>
               <Grid item xs={12}>
                 <Typography>
+                  <b>Phone: </b>
+                  {props.currentMenteeApplicant.phone}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
                   <b>Location: </b>
                   {props.currentMentorApplicant.location}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
                 <Typography>
-                  <b>School: </b>
+                  <b>City: </b>
+                  {props.currentMenteeApplicant.city}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>College: </b>
                   {props.currentMentorApplicant.school || 'N/A'}
                 </Typography>
               </Grid>
@@ -100,6 +112,38 @@ function MentorApplicantView(props) {
                 <Typography>
                   <b>Graduation Year : </b>
                   {props.currentMentorApplicant.grad_year || 'N/A'}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Underrepresented Category: </b>
+                </Typography>
+                <Typography>
+                  {props.currentMenteeApplicant.hispanic && `hispanic, `}
+                  {props.currentMenteeApplicant.native && `native, `}
+                  {props.currentMenteeApplicant.asian && `asian, `}
+                  {props.currentMenteeApplicant.black && `black, `}
+                  {props.currentMenteeApplicant.me_na &&
+                    `middle eastern or north african, `}
+                  {props.currentMenteeApplicant.pi && `pacific islander, `}
+                  {props.currentMenteeApplicant.multiracial && `multiracial, `}
+                  {props.currentMenteeApplicant.low_income && `low income, `}
+                  {props.currentMenteeApplicant.first_gen && `first gen, `}
+                  {props.currentMenteeApplicant.immigrant && `immigrant, `}
+                  {props.currentMenteeApplicant.undoc && `u, `}
+                  {props.currentMenteeApplicant.stem_girl && `girl in stem, `}
+                  {props.currentMenteeApplicant.single_parent &&
+                    `single parent, `}
+                  {props.currentMenteeApplicant.disabled && `disabled, `}
+                  {props.currentMenteeApplicant.lgbt && `lgbtq+, `}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography>
+                  <b>Major:</b>
+                </Typography>
+                <Typography>
+                  {props.currentMenteeApplicant.interests}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
