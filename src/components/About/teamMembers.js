@@ -130,6 +130,22 @@ export const programTeam = [
       "Sarah, part of Washington University in St. Louis's Class of 2024, works alongside her fellow Program Team members to organize College ARCH events. She is excited to coordinate informative and helpful panels to guide students in their application process.",
     image: '',
   },
+  {
+    name: 'Nicole Xu',
+    team: 'Program Team',
+    position: 'Program Designer',
+    text:
+      "Nicole Xu is part of Rutgers University's Class of 2025. As a fellow of the 2020 program, she is eager to give back the knowledge she has learned to best support future applicants. With her college application experience, she hope to be able to assist the fellows through the variety of events and panels that are planned out by the program team.",
+    image: '',
+  },
+  {
+    name: 'Sneha Sairam',
+    team: 'Program Team',
+    position: 'Program Designer',
+    text:
+      "Sneha Sairam, part of The University of California, San Diego's Class of 2025, is majoring in Cognitive Science while on the premed track. She was born and raised in India but currently lives in Texas. Coming from a different continent and educational system, Sneha understands the adversities faced by international students who hope to complete their higher education in America. With her college application experiences, she hopes to support the incoming high school seniors as a part of the programming team.",
+    image: '',
+  },
 ];
 
 export const graphicsMarketingTeam = [
@@ -150,7 +166,8 @@ export const graphicsMarketingTeam = [
   {
     name: 'Chelsea Yuan',
     position: 'Graphics/Marketing Director',
-    text: '.',
+    text:
+      'Chelsea, a part of Washington University in St. Louis’ class of 2024, helps the Graphics and Marketing team with designs and is looking forward to creating an engaging visual experience for everyone at College ARCH! ',
     image: '',
   },
 ];
