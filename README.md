@@ -113,6 +113,8 @@ _ROUTE: https://www.collegearch.org/master_
       - llin1@college.harvard.edu
       - lindalin2812@gmail.com
       - snalani731@gmail.com
+      - lleanza01@gmail.com
+      - rina.nagashima@gmail.com
   - Otherwise will give `YOU ARE UNAUTHORIZED`
 - Add accepted emails for both mentees and mentors
 - Match together mentees with mentors
