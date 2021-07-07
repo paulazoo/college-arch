@@ -38,7 +38,7 @@ function MentorDashboard(props) {
 
   return (
     <>
-      <Typography className={classes.cardsIntro}>Your Mentees:</Typography>
+      {/* <Typography className={classes.cardsIntro}>Your Mentees:</Typography>
       <Grid container direction='row' spacing={1} className={classes.dashboard}>
         {props.account.mentees &&
           props.account.mentees.map((mentee) => (
@@ -64,7 +64,7 @@ function MentorDashboard(props) {
               </Grid>
             </>
           ))}
-      </Grid>
+      </Grid> */}
     </>
   );
 }
