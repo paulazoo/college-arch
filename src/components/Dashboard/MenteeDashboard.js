@@ -31,12 +31,14 @@ function MenteeDashboard(props) {
 
   return (
     <>
-      {/* <Typography className={classes.cardsIntro}>Your Google Classroom:</Typography> */}
-      {/* <Grid container direction='row' alignItems='center' justify='center'>
+      <Typography className={classes.cardsIntro}>
+        Your Google Classroom:
+      </Typography>
+      <Grid container direction='row' alignItems='center' justify='center'>
         <Grid item>
-          <Button variant='contained' color='secondary'>
+          {/* <Button variant='contained' color='secondary'>
             Go To Google Classroom
-          </Button>
+          </Button> */}
         </Grid>
       </Grid>
       <Typography className={classes.cardsIntro}>Your Mentor:</Typography>
@@ -48,7 +50,7 @@ function MenteeDashboard(props) {
             </Grid>
           </>
         )}
-      </Grid> */}
+      </Grid>
     </>
   );
 }
