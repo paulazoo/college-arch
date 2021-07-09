@@ -367,6 +367,52 @@ export const postGoogleLogin = (googleToken, callback) => {
   };
 };
 
+export const postApplicantGoogleLogin = (googleToken, callback) => {
+  return (dispatch) => {
+    dispatch(setCurrentlyLoading(true));
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        google_token: googleToken,
+      }),
+    };
+    api(`applicant_google_login`, requestOptions)
+      .then((response) => {
+        if (response.message === 'Logged in!') {
+          sessionStorage.setItem('refresh_token', response.refresh_token);
+          sessionStorage.setItem('applicant_token', response.applicant_token);
+
+          dispatch(setPersonalSnackbar({ open: false, content: '' }));
+          dispatch(setUser(response.user));
+
+          dispatch(setCurrentlyLoading(false));
+
+          // callback(response.user);
+        } else if (response.message) {
+          dispatch(
+            setPersonalSnackbar({ open: true, content: response.message })
+          );
+          dispatch(setCurrentlyLoading(false));
+        }
+      })
+      .catch((error) => {
+        // dispatch(
+        //   setPersonalSnackbar({
+        //     open: true,
+        //     content: 'Log in error, please refresh the page',
+        //   })
+        // );
+        dispatch(setCurrentlyLoading(false));
+        console.error('API Error: ', error);
+      });
+  };
+};
+
 export const postMenteeApplicants = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
