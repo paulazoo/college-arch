@@ -6,20 +6,16 @@ import { Snackbar } from '@material-ui/core';
 
 // Redux
 import { connect } from 'react-redux';
-import { postGoogleLogin } from '../../store/actions/api';
+import { postApplicantGoogleLogin } from '../../store/actions/api';
 
 // Theme
 import { withStyles } from '@material-ui/core/styles';
 
-function GoogleLoginButton(props) {
-  const history = useHistory();
-  const location = useLocation();
+function ApplicantGoogleLoginButton(props) {
   const [errorDisplayOpen, setErrorDisplayOpen] = useState(false);
   const [errorText, setErrorText] = useState(
     'Login error. Please refresh the page to try again'
   );
-
-  const postGoogleLoginCallback = (data) => {};
 
   const handleSnackbarClose = (e, reason) => {
     if (reason === 'clickaway') {
@@ -29,7 +25,7 @@ function GoogleLoginButton(props) {
   };
 
   const responseGoogle = (response) => {
-    props.postGoogleLogin(response.tokenId, postGoogleLoginCallback);
+    props.postApplicantGoogleLogin(response.tokenId);
   };
 
   const responseGoogleErrors = (response) => {
@@ -77,9 +73,12 @@ const mapStateToProps = (state) => ({});
 
 function mapDispatchToProps(dispatch) {
   return {
-    postGoogleLogin: (googleToken, callback) =>
-      dispatch(postGoogleLogin(googleToken, callback)),
+    postApplicantGoogleLogin: (googleToken, callback) =>
+      dispatch(postApplicantGoogleLogin(googleToken, callback)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GoogleLoginButton);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ApplicantGoogleLoginButton);

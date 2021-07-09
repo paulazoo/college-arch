@@ -30,7 +30,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // Custom Components
 import Navbar from '../Navbar/Navbar';
 import statesList from './statesList.js';
-import GoogleLoginButton from '../LoginPage/GoogleLoginButton';
+import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
   intro: {
@@ -79,7 +79,6 @@ const allInterests = [
 function MenteeApplication(props) {
   const classes = useStyles();
 
-  const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -99,9 +98,6 @@ function MenteeApplication(props) {
 
   const handleChange = (event) => {
     switch (event.target.id) {
-      case 'email':
-        setEmail(event.target.value);
-        break;
       case 'phone':
         setPhone(event.target.value);
         break;
@@ -182,7 +178,6 @@ function MenteeApplication(props) {
       eligible === false ||
       essay === '' ||
       city === '' ||
-      email === '' ||
       phone === '' ||
       background ===
         {
@@ -212,12 +207,12 @@ function MenteeApplication(props) {
       });
 
       props.postMenteeApplicants({
-        email,
         phone,
         city,
         state,
         country,
         essay,
+        email: props.user.email,
         backgrounds: activeBackgrounds.toString(),
         first_name: firstName,
         family_name: lastName,
@@ -268,7 +263,9 @@ function MenteeApplication(props) {
           <div className={classes.spacing} />
         </Grid>
         <Grid item>
-          <Box>{/* <GoogleLoginButton /> */}</Box>
+          <Box>
+            <ApplicantGoogleLoginButton />
+          </Box>
         </Grid>
       </>
     );
@@ -278,7 +275,7 @@ function MenteeApplication(props) {
     <>
       <Navbar />
       <div className={classes.main}>
-        {sessionStorage.getItem('access_token') && props.user.id ? (
+        {sessionStorage.getItem('applicant_token') && props.user.id ? (
           <>
             <Card>
               <Grid
@@ -323,6 +320,11 @@ function MenteeApplication(props) {
                 justify='center'
                 alignItems='center'
               >
+                <Grid item xs={12}>
+                  <Typography>
+                    <b>{`Email: ${props.user.email}`}</b>
+                  </Typography>
+                </Grid>
                 <Grid item xs={6}>
                   <TextField
                     id='firstName'
@@ -341,16 +343,6 @@ function MenteeApplication(props) {
                     variant='outlined'
                     fullWidth
                     label='Last Name'
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    value={email}
-                    onChange={handleChange}
-                    id='email'
-                    fullWidth
-                    variant='outlined'
-                    label='Email'
                   />
                 </Grid>
                 <Grid item xs={12}>
