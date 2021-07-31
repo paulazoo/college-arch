@@ -21,7 +21,7 @@ import { Autocomplete } from '@material-ui/lab';
 
 // Redux
 import { connect } from 'react-redux';
-import { postMenteeApplicants } from '../../store/actions/api';
+import { putMenteeApplicants } from '../../store/actions/api';
 import { setCurrentlyLoading } from '../../store/actions/index';
 
 // Theme
@@ -30,6 +30,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // Custom Components
 import Navbar from '../Navbar/Navbar';
 import statesList from './statesList.js';
+import allInterests from './allInterests.js';
 import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,33 +49,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     fontSize: 24,
   },
+  spacing: {
+    padding: 25,
+  },
 }));
-
-const allInterests = [
-  'prelaw',
-  'business',
-  'biology',
-  'physics',
-  'chemistry',
-  'math',
-  'history',
-  'literature',
-  'computer science',
-  'foreign languages',
-  'psychology',
-  'journalism',
-  'education',
-  'engineering',
-  'visual and performing arts',
-  'prehealth',
-  'premed',
-  'social sciences',
-  'finance',
-  'sociology',
-  'political science',
-  'architecture',
-  'philosophy',
-];
 
 function MenteeApplication(props) {
   const classes = useStyles();
@@ -206,7 +184,7 @@ function MenteeApplication(props) {
         return background[v];
       });
 
-      props.postMenteeApplicants({
+      props.putMenteeApplicants({
         phone,
         city,
         state,
@@ -220,6 +198,7 @@ function MenteeApplication(props) {
         us_living: usBoolean,
         grad_year: 2021,
         interests: interests.toString(),
+        applicant_type: 'Mentee',
       });
 
       setSubmitting(true);
@@ -233,7 +212,7 @@ function MenteeApplication(props) {
     if (props.currentlyLoading === true) {
       return (
         <Grid item xs={12}>
-          <Grid container direction='row' alignItem='center' justify='center'>
+          <Grid container direction='row' alignItems='center' justify='center'>
             <Grid item>
               <Typography>Please wait while logging in...</Typography>
             </Grid>
@@ -254,18 +233,24 @@ function MenteeApplication(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <div className={classes.spacing} />
-        </Grid>
-        <Grid item xs={12}>
           <Divider />
         </Grid>
         <Grid item xs={12}>
           <div className={classes.spacing} />
         </Grid>
-        <Grid item>
-          <Box>
-            <ApplicantGoogleLoginButton />
-          </Box>
+        <Grid item xs={12}>
+          <Grid
+            container
+            direction='column'
+            alignItems='center'
+            justify='center'
+          >
+            <Grid item>
+              <Box className={classes.spacing}>
+                <ApplicantGoogleLoginButton />
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
       </>
     );
@@ -471,133 +456,133 @@ function MenteeApplication(props) {
                   >
                     <FormGroup>
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='first_gen'
                             checked={background.first_gen}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='First-generation college student'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='low_income'
                             checked={background.low_income}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Low-income household'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='stem_girl'
                             checked={background.stem_girl}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Womxn in STEM'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='lgbt'
                             checked={background.lgbt}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='LGBTQ+'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='disabled'
                             checked={background.disabled}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Disabled'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='immigrant'
                             checked={background.immigrant}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Immigrant'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='undoc'
                             checked={background.undoc}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Undocumented/DACA/Mixed Status Family'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='black'
                             checked={background.black}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Black'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='hispanic'
                             checked={background.hispanic}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Latinx or Hispanic'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='native'
                             checked={background.native}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Indigenous or Native American'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='asian'
                             checked={background.asian}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Asian'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='pi'
                             checked={background.pi}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Native Hawaiian/Pacific Islander'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='me_na'
                             checked={background.me_na}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Middle Eastern and/or North African'
                       />
                     </FormGroup>
@@ -695,7 +680,7 @@ const mapStateToProps = (state) => ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    postMenteeApplicants: (body) => dispatch(postMenteeApplicants(body)),
+    putMenteeApplicants: (body) => dispatch(putMenteeApplicants(body)),
     setCurrentlyLoading: (currentlyLoading) =>
       dispatch(setCurrentlyLoading(currentlyLoading)),
   };

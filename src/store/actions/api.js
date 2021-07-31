@@ -21,6 +21,7 @@ import {
   deleteEvent,
   setMasterUser,
   setIsMaster,
+  userLogout,
 } from './index';
 import { wsConnect } from './websocket';
 
@@ -413,17 +414,18 @@ export const postApplicantGoogleLogin = (googleToken, callback) => {
   };
 };
 
-export const postMenteeApplicants = (body) => {
+export const putMenteeApplicants = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('applicant_token')}`,
       },
       body: JSON.stringify(body),
     };
-    api(`mentee_applicants`, requestOptions)
+    api(`users/applicant_update`, requestOptions)
       .then((response) => {
         dispatch(
           setPersonalSnackbar({
@@ -432,6 +434,7 @@ export const postMenteeApplicants = (body) => {
           })
         );
         history.push('/apply/submitted');
+        dispatch(userLogout());
         window.location.reload();
       })
       .catch((error) => {
@@ -440,17 +443,18 @@ export const postMenteeApplicants = (body) => {
   };
 };
 
-export const postMentorApplicants = (body) => {
+export const putMentorApplicants = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('applicant_token')}`,
       },
       body: JSON.stringify(body),
     };
-    api(`mentor_applicants`, requestOptions)
+    api(`users/applicant_update`, requestOptions)
       .then((response) => {
         dispatch(
           setPersonalSnackbar({
@@ -459,6 +463,7 @@ export const postMentorApplicants = (body) => {
           })
         );
         history.push('/apply/submitted');
+        dispatch(userLogout());
         window.location.reload();
       })
       .catch((error) => {
