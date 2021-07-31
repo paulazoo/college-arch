@@ -492,7 +492,8 @@ function MentorApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Please select the closest to your major.
+                    Please select your major/area of study/academic and career
+                    interests.
                   </Typography>
                   <Autocomplete
                     multiple

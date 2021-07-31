@@ -421,8 +421,8 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Please select the closest to what you are interested in
-                    majoring in.
+                    Please select your academic and career interests and/or
+                    possible future major(s).
                   </Typography>
                   <Autocomplete
                     multiple
