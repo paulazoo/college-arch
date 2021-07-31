@@ -395,8 +395,8 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Will you be graduating high school in 2022? (Only the Class
-                    of 2022 may register as fellows. If you are in college or
+                    Will you be graduating high school in 2023? (Only the Class
+                    of 2023 may register as fellows. If you are in college or
                     following an alternative education path, please contact
                     contact.collegearch@gmail.com to determine eligibility as a
                     fellow.)
@@ -456,133 +456,133 @@ function MenteeApplication(props) {
                   >
                     <FormGroup>
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='first_gen'
                             checked={background.first_gen}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='First-generation college student'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='low_income'
                             checked={background.low_income}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Low-income household'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='stem_girl'
                             checked={background.stem_girl}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Womxn in STEM'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='lgbt'
                             checked={background.lgbt}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='LGBTQ+'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='disabled'
                             checked={background.disabled}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Disabled'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='immigrant'
                             checked={background.immigrant}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Immigrant'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='undoc'
                             checked={background.undoc}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Undocumented/DACA/Mixed Status Family'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='black'
                             checked={background.black}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Black'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='hispanic'
                             checked={background.hispanic}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Latinx or Hispanic'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='native'
                             checked={background.native}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Indigenous or Native American'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='asian'
                             checked={background.asian}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Asian'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='pi'
                             checked={background.pi}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Native Hawaiian/Pacific Islander'
                       />
                       <FormControlLabel
-                        control={
+                        control={(
                           <Checkbox
                             name='me_na'
                             checked={background.me_na}
                             onChange={handleBackgroundChange}
                           />
-                        }
+                        )}
                         label='Middle Eastern and/or North African'
                       />
                     </FormGroup>
