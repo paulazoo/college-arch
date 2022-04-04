@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import GoogleLogin from 'react-google-login';
 import { useHistory, useLocation } from 'react-router-dom';
 import MuiAlert from '@material-ui/lab/Alert';
-import LogRocket from 'logrocket';
 import { Snackbar } from '@material-ui/core';
 
 // Redux
@@ -21,11 +20,6 @@ function GoogleLoginButton(props) {
   );
 
   const postGoogleLoginCallback = (data) => {
-    LogRocket.identify(data.id, {
-      name: data.name,
-      email: data.email,
-      google_id: data.google_id,
-    });
   };
 
   const handleSnackbarClose = (e, reason) => {

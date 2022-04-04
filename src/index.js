@@ -7,8 +7,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import AppStateProvider from './state';
-import LogRocket from 'logrocket';
-import setupLogRocketReact from 'logrocket-react';
 import dotenv from 'dotenv';
 import history from './store/history';
 
