@@ -885,7 +885,7 @@ We may use third-party
             <strong>TERMS OF USE</strong>
           </h1>
           <p id='755158b9-8385-4948-b666-30b95530e330' className={classes.p}>
-            <strong>Last updated: JApril 5th, 2021</strong>
+            <strong>Last updated: April 5th, 2021</strong>
           </p>
           <p id='ccb649cf-5fec-4393-9452-926485cc2525' className={classes.p}>
             <strong>AGREEMENT TO TERMS</strong>

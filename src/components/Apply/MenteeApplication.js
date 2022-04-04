@@ -207,7 +207,7 @@ function MenteeApplication(props) {
         family_name: lastName,
         school,
         us_living: usBoolean,
-        grad_year: 2021,
+        grad_year: 2022,
         interests: interests.toString(),
       });
 
