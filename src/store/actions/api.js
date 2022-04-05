@@ -21,6 +21,7 @@ import {
   deleteEvent,
   setMasterUser,
   setIsMaster,
+  userLogout,
 } from './index';
 import { wsConnect } from './websocket';
 
@@ -367,17 +368,64 @@ export const postGoogleLogin = (googleToken, callback) => {
   };
 };
 
-export const postMenteeApplicants = (body) => {
-  return (dispatch, getState) => {
+export const postApplicantGoogleLogin = (googleToken, callback) => {
+  return (dispatch) => {
+    dispatch(setCurrentlyLoading(true));
+
     const requestOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
+      body: JSON.stringify({
+        google_token: googleToken,
+      }),
+    };
+    api(`applicant_google_login`, requestOptions)
+      .then((response) => {
+        if (response.message === 'Logged in!') {
+          sessionStorage.setItem('refresh_token', response.refresh_token);
+          sessionStorage.setItem('applicant_token', response.applicant_token);
+
+          dispatch(setPersonalSnackbar({ open: false, content: '' }));
+          dispatch(setUser(response.user));
+
+          dispatch(setCurrentlyLoading(false));
+
+          // callback(response.user);
+        } else if (response.message) {
+          dispatch(
+            setPersonalSnackbar({ open: true, content: response.message })
+          );
+          dispatch(setCurrentlyLoading(false));
+        }
+      })
+      .catch((error) => {
+        // dispatch(
+        //   setPersonalSnackbar({
+        //     open: true,
+        //     content: 'Log in error, please refresh the page',
+        //   })
+        // );
+        dispatch(setCurrentlyLoading(false));
+        console.error('API Error: ', error);
+      });
+  };
+};
+
+export const putMenteeApplicants = (body) => {
+  return (dispatch, getState) => {
+    const requestOptions = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('applicant_token')}`,
+      },
       body: JSON.stringify(body),
     };
-    api(`mentee_applicants`, requestOptions)
+    api(`users/applicant_update`, requestOptions)
       .then((response) => {
         dispatch(
           setPersonalSnackbar({
@@ -386,6 +434,7 @@ export const postMenteeApplicants = (body) => {
           })
         );
         history.push('/apply/submitted');
+        dispatch(userLogout());
         window.location.reload();
       })
       .catch((error) => {
@@ -394,17 +443,18 @@ export const postMenteeApplicants = (body) => {
   };
 };
 
-export const postMentorApplicants = (body) => {
+export const putMentorApplicants = (body) => {
   return (dispatch, getState) => {
     const requestOptions = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('applicant_token')}`,
       },
       body: JSON.stringify(body),
     };
-    api(`mentor_applicants`, requestOptions)
+    api(`users/applicant_update`, requestOptions)
       .then((response) => {
         dispatch(
           setPersonalSnackbar({
@@ -413,6 +463,7 @@ export const postMentorApplicants = (body) => {
           })
         );
         history.push('/apply/submitted');
+        dispatch(userLogout());
         window.location.reload();
       })
       .catch((error) => {

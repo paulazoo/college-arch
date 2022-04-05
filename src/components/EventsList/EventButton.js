@@ -16,14 +16,6 @@ import {
   SvgIcon,
   Box,
 } from '@material-ui/core';
-import FolderIcon from '@material-ui/icons/Folder';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { NavLink } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import moment from 'moment';
 
 // Redux
 import { connect } from 'react-redux';

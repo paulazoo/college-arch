@@ -1,0 +1,27 @@
+const allInterests = [
+  'prelaw',
+  'business',
+  'biology',
+  'physics',
+  'chemistry',
+  'math',
+  'history',
+  'literature',
+  'computer science',
+  'foreign languages',
+  'psychology',
+  'journalism',
+  'education',
+  'engineering',
+  'visual and performing arts',
+  'prehealth',
+  'premed',
+  'social sciences',
+  'finance',
+  'sociology',
+  'political science',
+  'architecture',
+  'philosophy',
+];
+
+export default allInterests;

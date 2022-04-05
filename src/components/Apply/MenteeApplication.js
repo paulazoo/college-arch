@@ -14,12 +14,15 @@ import {
   TextField,
   Typography,
   CircularProgress,
+  Divider,
+  Box,
 } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 
 // Redux
 import { connect } from 'react-redux';
-import { postMenteeApplicants } from '../../store/actions/api';
+import { putMenteeApplicants } from '../../store/actions/api';
+import { setCurrentlyLoading } from '../../store/actions/index';
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,6 +30,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // Custom Components
 import Navbar from '../Navbar/Navbar';
 import statesList from './statesList.js';
+import allInterests from './allInterests.js';
+import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
   intro: {
@@ -37,38 +42,21 @@ const useStyles = makeStyles((theme) => ({
     padding: '50px',
     backgroundColor: theme.palette.common.teamOne,
   },
+  loginTextContainer: {
+    textAlign: 'center',
+  },
+  loginText: {
+    fontWeight: 'bold',
+    fontSize: 24,
+  },
+  spacing: {
+    padding: 25,
+  },
 }));
-
-const allInterests = [
-  'prelaw',
-  'business',
-  'biology',
-  'physics',
-  'chemistry',
-  'math',
-  'history',
-  'literature',
-  'computer science',
-  'foreign languages',
-  'psychology',
-  'journalism',
-  'education',
-  'engineering',
-  'visual and performing arts',
-  'prehealth',
-  'premed',
-  'social sciences',
-  'finance',
-  'sociology',
-  'political science',
-  'architecture',
-  'philosophy',
-];
 
 function MenteeApplication(props) {
   const classes = useStyles();
 
-  const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -88,9 +76,6 @@ function MenteeApplication(props) {
 
   const handleChange = (event) => {
     switch (event.target.id) {
-      case 'email':
-        setEmail(event.target.value);
-        break;
       case 'phone':
         setPhone(event.target.value);
         break;
@@ -171,7 +156,6 @@ function MenteeApplication(props) {
       eligible === false ||
       essay === '' ||
       city === '' ||
-      email === '' ||
       phone === '' ||
       background ===
         {
@@ -195,20 +179,26 @@ function MenteeApplication(props) {
     } else {
       setError(false);
       // api call
-      props.postMenteeApplicants({
-        email,
+      const identifiers = Object.keys(background);
+      const activeBackgrounds = identifiers.filter(function (v) {
+        return background[v];
+      });
+
+      props.putMenteeApplicants({
         phone,
         city,
         state,
         country,
         essay,
-        ...background,
+        email: props.user.email,
+        backgrounds: activeBackgrounds.toString(),
         first_name: firstName,
         family_name: lastName,
         school,
         us_living: usBoolean,
         grad_year: 2022,
         interests: interests.toString(),
+        applicant_type: 'Mentee',
       });
 
       setSubmitting(true);
@@ -218,359 +208,412 @@ function MenteeApplication(props) {
     }
   };
 
+  const renderLogin = () => {
+    if (props.currentlyLoading === true) {
+      return (
+        <Grid item xs={12}>
+          <Grid container direction='row' alignItems='center' justify='center'>
+            <Grid item>
+              <Typography>Please wait while logging in...</Typography>
+            </Grid>
+            <Grid item xs={12} />
+            <Grid item>
+              <CircularProgress />
+            </Grid>
+          </Grid>
+        </Grid>
+      );
+    }
+
+    return (
+      <>
+        <Grid item xs={12} className={classes.loginTextContainer}>
+          <Typography className={classes.loginText}>
+            Fellowship Application Login
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Divider />
+        </Grid>
+        <Grid item xs={12}>
+          <div className={classes.spacing} />
+        </Grid>
+        <Grid item xs={12}>
+          <Grid
+            container
+            direction='column'
+            alignItems='center'
+            justify='center'
+          >
+            <Grid item>
+              <Box className={classes.spacing}>
+                <ApplicantGoogleLoginButton />
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+      </>
+    );
+  };
+
   return (
     <>
       <Navbar />
       <div className={classes.main}>
-        <Card>
-          <Grid
-            container
-            direction='row'
-            alignItems='center'
-            spacing={4}
-            justify='center'
-            className={classes.intro}
-          >
-            <Grid item>
-              <Typography variant='h3'>
-                College ARCH Fellowship Application
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography>
-                College ARCH is focused on increasing accessibility of resources
-                and providing guidance to underrepresented students going
-                through the college application process with the goal of
-                decreasing the achievement gap in higher education and fix
-                inequalities in college guidance that disparately impact
-                marginalized communities and lead to cycles of inaccessibility
-                and stratification.
-              </Typography>
-              <Typography>
-                The fellowship program will take place between July 7-August 6.
-                All mandatory meetings will occur between 1pm EST-9pm EST Monday
-                through Friday, with a total commitment of 3 to 4 hours a week.
-                The priority deadline is June 30 and the final deadline is July
-                2.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-        <div style={{ height: 25 }} />
-        <Card style={{ padding: 25 }}>
-          <Grid
-            container
-            spacing={3}
-            direction='row'
-            justify='center'
-            alignItems='center'
-          >
-            <Grid item xs={6}>
-              <TextField
-                id='firstName'
-                value={firstName}
-                onChange={handleChange}
-                variant='outlined'
-                fullWidth
-                label='First Name'
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                value={lastName}
-                onChange={handleChange}
-                id='lastName'
-                variant='outlined'
-                fullWidth
-                label='Last Name'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                value={email}
-                onChange={handleChange}
-                id='email'
-                fullWidth
-                variant='outlined'
-                label='Email'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                value={phone}
-                onChange={handleChange}
-                id='phone'
-                fullWidth
-                variant='outlined'
-                label='Phone Number'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>Are you living in the U.S.?</Typography>
-              <FormControl component='fieldset'>
-                <RadioGroup value={usBoolean} onChange={handleUsBooleanChange}>
-                  <FormControlLabel value control={<Radio />} label='Yes' />
-                  <FormControlLabel
-                    value={false}
-                    control={<Radio />}
-                    label='No'
-                  />
-                </RadioGroup>
-              </FormControl>
-            </Grid>
-            {usBoolean ? (
-              <Grid item xs={12}>
-                <Typography>Select your state or U.S. territory</Typography>
-                <Select
-                  fullWidth
-                  variant='outlined'
-                  value={state}
-                  onChange={handleStateChange}
-                >
-                  {statesList.map((option) => (
-                    <MenuItem value={option}>{option}</MenuItem>
-                  ))}
-                </Select>
+        {sessionStorage.getItem('applicant_token') && props.user.id ? (
+          <>
+            <Card>
+              <Grid
+                container
+                direction='row'
+                alignItems='center'
+                spacing={4}
+                justify='center'
+                className={classes.intro}
+              >
+                <Grid item>
+                  <Typography variant='h3'>
+                    College ARCH Fellowship Application
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography>
+                    College ARCH is focused on increasing accessibility of
+                    resources and providing guidance to underrepresented
+                    students going through the college application process with
+                    the goal of decreasing the achievement gap in higher
+                    education and fix inequalities in college guidance that
+                    disparately impact marginalized communities and lead to
+                    cycles of inaccessibility and stratification.
+                  </Typography>
+                  <Typography>
+                    The fellowship program will take place between July 7-August
+                    6. All mandatory meetings will occur between 1pm EST-9pm EST
+                    Monday through Friday, with a total commitment of 3 to 4
+                    hours a week. The priority deadline is June 30 and the final
+                    deadline is July 2.
+                  </Typography>
+                </Grid>
               </Grid>
-            ) : (
-              <Grid item xs={12}>
-                <Typography>Enter your country</Typography>
-                <TextField
-                  fullWidth
-                  value={country}
-                  id='country'
-                  onChange={handleChange}
-                  variant='outlined'
-                  label='Country'
-                />
-              </Grid>
-            )}
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                variant='outlined'
-                label='City or Town'
-                id='city'
-                value={city}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>
-                Will you be graduating high school in 2022? (Only the Class of
-                2022 may register as fellows. If you are in college or following
-                an alternative education path, please contact
-                contact.collegearch@gmail.com to determine eligibility as a
-                fellow.)
-              </Typography>
-              <RadioGroup value={eligible} onChange={handleEligibleChange}>
-                <FormControlLabel value control={<Radio />} label='Yes' />
-              </RadioGroup>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>
-                Optional: What High School do you go to? (This helps us to
-                better connect you with relevant opportunities and networks)
-              </Typography>
-              <TextField
-                fullWidth
-                variant='outlined'
-                label='High School'
-                value={school}
-                onChange={handleChange}
-                id='highschool'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>
-                Please select the closest to what you are interested in majoring
-                in.
-              </Typography>
-              <Autocomplete
-                multiple
-                getOptionLabel={(option) => String(option)}
-                options={allInterests}
-                value={interests}
-                renderInput={(params) => (
+            </Card>
+            <div style={{ height: 25 }} />
+            <Card style={{ padding: 25 }}>
+              <Grid
+                container
+                spacing={3}
+                direction='row'
+                justify='center'
+                alignItems='center'
+              >
+                <Grid item xs={12}>
+                  <Typography>
+                    <b>{`Email: ${props.user.email}`}</b>
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
                   <TextField
-                    {...params}
+                    id='firstName'
+                    value={firstName}
+                    onChange={handleChange}
                     variant='outlined'
-                    label='Interests'
                     fullWidth
+                    label='First Name'
                   />
+                </Grid>
+                <Grid item xs={6}>
+                  <TextField
+                    value={lastName}
+                    onChange={handleChange}
+                    id='lastName'
+                    variant='outlined'
+                    fullWidth
+                    label='Last Name'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    value={phone}
+                    onChange={handleChange}
+                    id='phone'
+                    fullWidth
+                    variant='outlined'
+                    label='Phone Number'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>Are you living in the U.S.?</Typography>
+                  <FormControl component='fieldset'>
+                    <RadioGroup
+                      value={usBoolean}
+                      onChange={handleUsBooleanChange}
+                    >
+                      <FormControlLabel value control={<Radio />} label='Yes' />
+                      <FormControlLabel
+                        value={false}
+                        control={<Radio />}
+                        label='No'
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </Grid>
+                {usBoolean ? (
+                  <Grid item xs={12}>
+                    <Typography>Select your state or U.S. territory</Typography>
+                    <Select
+                      fullWidth
+                      variant='outlined'
+                      value={state}
+                      onChange={handleStateChange}
+                    >
+                      {statesList.map((option) => (
+                        <MenuItem value={option}>{option}</MenuItem>
+                      ))}
+                    </Select>
+                  </Grid>
+                ) : (
+                  <Grid item xs={12}>
+                    <Typography>Enter your country</Typography>
+                    <TextField
+                      fullWidth
+                      value={country}
+                      id='country'
+                      onChange={handleChange}
+                      variant='outlined'
+                      label='Country'
+                    />
+                  </Grid>
                 )}
-                onChange={selectInterests}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>
-                College ARCH is currently only accepting those students of
-                underrepresented backgrounds. Please select the backgrounds with
-                which you identify as
-              </Typography>
-              <Typography variant='h6'>
-                We do not report or use this information for anything other than
-                checking your eligibility status.
-              </Typography>
-              <FormControl component='fieldset' className={classes.formControl}>
-                <FormGroup>
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='first_gen'
-                        checked={background.first_gen}
-                        onChange={handleBackgroundChange}
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    variant='outlined'
+                    label='City or Town'
+                    id='city'
+                    value={city}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Will you be graduating high school in 2023? (Only the Class
+                    of 2023 may register as fellows. If you are in college or
+                    following an alternative education path, please contact
+                    contact.collegearch@gmail.com to determine eligibility as a
+                    fellow.)
+                  </Typography>
+                  <RadioGroup value={eligible} onChange={handleEligibleChange}>
+                    <FormControlLabel value control={<Radio />} label='Yes' />
+                  </RadioGroup>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Optional: What High School do you go to? (This helps us to
+                    better connect you with relevant opportunities and networks)
+                  </Typography>
+                  <TextField
+                    fullWidth
+                    variant='outlined'
+                    label='High School'
+                    value={school}
+                    onChange={handleChange}
+                    id='highschool'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Please select your academic and career interests and/or
+                    possible future major(s).
+                  </Typography>
+                  <Autocomplete
+                    multiple
+                    getOptionLabel={(option) => String(option)}
+                    options={allInterests}
+                    value={interests}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant='outlined'
+                        label='Interests'
+                        fullWidth
                       />
                     )}
-                    label='First-generation college student'
+                    onChange={selectInterests}
                   />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='low_income'
-                        checked={background.low_income}
-                        onChange={handleBackgroundChange}
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    College ARCH is currently only accepting those students of
+                    underrepresented backgrounds. Please select the backgrounds
+                    with which you identify as
+                  </Typography>
+                  <Typography variant='h6'>
+                    We do not report or use this information for anything other
+                    than checking your eligibility status.
+                  </Typography>
+                  <FormControl
+                    component='fieldset'
+                    className={classes.formControl}
+                  >
+                    <FormGroup>
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='first_gen'
+                            checked={background.first_gen}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='First-generation college student'
                       />
-                    )}
-                    label='Low-income household'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='stem_girl'
-                        checked={background.stem_girl}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='low_income'
+                            checked={background.low_income}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Low-income household'
                       />
-                    )}
-                    label='Womxn in STEM'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='lgbt'
-                        checked={background.lgbt}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='stem_girl'
+                            checked={background.stem_girl}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Womxn in STEM'
                       />
-                    )}
-                    label='LGBTQ+'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='disabled'
-                        checked={background.disabled}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='lgbt'
+                            checked={background.lgbt}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='LGBTQ+'
                       />
-                    )}
-                    label='Disabled'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='immigrant'
-                        checked={background.immigrant}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='disabled'
+                            checked={background.disabled}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Disabled'
                       />
-                    )}
-                    label='Immigrant'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='undoc'
-                        checked={background.undoc}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='immigrant'
+                            checked={background.immigrant}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Immigrant'
                       />
-                    )}
-                    label='Undocumented/DACA/Mixed Status Family'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='black'
-                        checked={background.black}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='undoc'
+                            checked={background.undoc}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Undocumented/DACA/Mixed Status Family'
                       />
-                    )}
-                    label='Black'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='hispanic'
-                        checked={background.hispanic}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='black'
+                            checked={background.black}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Black'
                       />
-                    )}
-                    label='Latinx or Hispanic'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='native'
-                        checked={background.native}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='hispanic'
+                            checked={background.hispanic}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Latinx or Hispanic'
                       />
-                    )}
-                    label='Indigenous or Native American'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='asian'
-                        checked={background.asian}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='native'
+                            checked={background.native}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Indigenous or Native American'
                       />
-                    )}
-                    label='Asian'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='pi'
-                        checked={background.pi}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='asian'
+                            checked={background.asian}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Asian'
                       />
-                    )}
-                    label='Native Hawaiian/Pacific Islander'
-                  />
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        name='me_na'
-                        checked={background.me_na}
-                        onChange={handleBackgroundChange}
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='pi'
+                            checked={background.pi}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Native Hawaiian/Pacific Islander'
                       />
-                    )}
-                    label='Middle Eastern and/or North African'
+                      <FormControlLabel
+                        control={(
+                          <Checkbox
+                            name='me_na'
+                            checked={background.me_na}
+                            onChange={handleBackgroundChange}
+                          />
+                        )}
+                        label='Middle Eastern and/or North African'
+                      />
+                    </FormGroup>
+                  </FormControl>
+                  <Typography>
+                    If you do not see your background in the following list, but
+                    believe you are still eligible for the College ARCH
+                    Fellowship, please contact us at
+                    contact.collegearch@gmail.com.
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Why do you want to join as a fellow? (max character count:
+                    1000)
+                  </Typography>
+                  <TextField
+                    fullWidth
+                    variant='outlined'
+                    multiline
+                    rowsMax={4}
+                    rows={4}
+                    value={essay}
+                    onChange={handleChange}
+                    id='essay'
+                    inputProps={{
+                      maxLength: 1000,
+                    }}
                   />
-                </FormGroup>
-              </FormControl>
-              <Typography>
-                If you do not see your background in the following list, but
-                believe you are still eligible for the College ARCH Fellowship,
-                please contact us at contact.collegearch@gmail.com.
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>
-                Why do you want to join as a fellow? (max character count: 1000)
-              </Typography>
-              <TextField
-                fullWidth
-                variant='outlined'
-                multiline
-                rowsMax={4}
-                rows={4}
-                value={essay}
-                onChange={handleChange}
-                id='essay'
-                inputProps={{
-                  maxLength: 1000,
-                }}
-              />
-            </Grid>
-            {/* <Grid item xs={12}>
+                </Grid>
+                {/* <Grid item xs={12}>
               <Typography>
                 Optional: Please submit your resume or CV. Please note that this
                 is optional and not submitting a resume or CV will not
@@ -581,55 +624,65 @@ function MenteeApplication(props) {
                 <input type='file' style={{ display: 'none' }} />
               </Button>
             </Grid> */}
-            <Grid item xs={12}>
-              {error && (
-                <p style={{ color: 'red' }}>
-                  You did not answer all the questions. Please finish answering
-                  the questions.
-                </p>
-              )}
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>
-                Thank you so much for filling this form out, and we will be in
-                contact with you soon! Please share the form link with anyone
-                else that you believe would be a good fit. Also, if you have any
-                questions or concerns, email us at contact.collegearch@gmail.com
-                or DM us on Instagram @collegearch.
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Grid
-                container
-                direction='row'
-                justify='center'
-                alignItems='center'
-              >
-                <Grid item>
-                  <Button
-                    onClick={handleSubmit}
-                    color='primary'
-                    variant='contained'
-                    disabled={submitting}
+                <Grid item xs={12}>
+                  {error && (
+                    <p style={{ color: 'red' }}>
+                      You did not answer all the questions. Please finish
+                      answering the questions.
+                    </p>
+                  )}
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Thank you so much for filling this form out, and we will be
+                    in contact with you soon! Please share the form link with
+                    anyone else that you believe would be a good fit. Also, if
+                    you have any questions or concerns, email us at
+                    contact.collegearch@gmail.com or DM us on Instagram
+                    @collegearch.
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    direction='row'
+                    justify='center'
+                    alignItems='center'
                   >
-                    Submit
-                    {submitting && <CircularProgress />}
-                  </Button>
+                    <Grid item>
+                      <Button
+                        onClick={handleSubmit}
+                        color='primary'
+                        variant='contained'
+                        disabled={submitting}
+                      >
+                        Submit
+                        {submitting && <CircularProgress />}
+                      </Button>
+                    </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-          </Grid>
-        </Card>
+            </Card>
+          </>
+        ) : (
+          <Card>{renderLogin()}</Card>
+        )}
       </div>
     </>
   );
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+  currentlyLoading: state.home.currentlyLoading,
+});
 
 function mapDispatchToProps(dispatch) {
   return {
-    postMenteeApplicants: (body) => dispatch(postMenteeApplicants(body)),
+    putMenteeApplicants: (body) => dispatch(putMenteeApplicants(body)),
+    setCurrentlyLoading: (currentlyLoading) =>
+      dispatch(setCurrentlyLoading(currentlyLoading)),
   };
 }
 

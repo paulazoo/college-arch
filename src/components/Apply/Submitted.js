@@ -65,7 +65,14 @@ function Submitted(props) {
               <Grid item xs={12} className={classes.applyTextContainer}>
                 <Typography className={classes.applyText}>
                   Thank you for applying! We will review your application and
-                  get back to you by email :)
+                  get back to you by email.
+                </Typography>
+                <Typography className={classes.applyText}>
+                  <br />
+                  Please note that you can resubmit a new, updated application
+                  anytime before the deadline by going back to the apply page
+                  and logging in again with the same gmail. For questions email
+                  contact.collegearch@gmail.com.
                 </Typography>
               </Grid>
             </Grid>
