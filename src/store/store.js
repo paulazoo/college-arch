@@ -1,5 +1,3 @@
-import LogRocket from 'logrocket';
-
 // Redux Setup
 import { createStore, applyMiddleware, compose } from 'redux';
 
@@ -29,8 +27,7 @@ let store;
 if (process.env.REACT_APP_APP_ENV === 'production') {
   store = createStore(
     persistedReducer,
-    composeEnhancers(applyMiddleware(thunk, socketMiddleware)),
-    applyMiddleware(LogRocket.reduxMiddleware())
+    composeEnhancers(applyMiddleware(thunk, socketMiddleware))
   );
 } else {
   store = createStore(

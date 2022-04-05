@@ -14,6 +14,12 @@ The first time you run this locally, you will need to run `npm i` to install dep
 
 Then `npm start` to start the server on http://localhost:3000/
 
+### Currently (220404) works with
+- node: v16.14.2
+- npm: 8.5.0
+- react: 16.13.1
+- react-dom: 16.13.1
+
 ## Public Pages
 
 ### Landing
