@@ -158,12 +158,9 @@ function MenteeApplication(props) {
 
   const selectDreamCollege1 = (event, value) => {
     setDreamCollege1(value);
-    console.log(event)
-    console.log(dreamCollege1)
   };
   const selectDreamCollege2 = (event, value) => {
     setDreamCollege2(value);
-    console.log(dreamCollege1)
   };
 
   const [background, setBackground] = useState({
@@ -439,10 +436,10 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                  Will you be graduating high school in 2023? 
-                  (Only the Class of 2023 may register as fellows. 
-                  If you are in college or following an alternative education path, 
-                  please contact contact.collegearch@gmail.com to determine eligibility as a fellow.)
+                    Will you be graduating high school in 2023? 
+                    (Only the Class of 2023 may register as fellows. 
+                    If you are in college or following an alternative education path, 
+                    please contact contact.collegearch@gmail.com to determine eligibility as a fellow.)
                   </Typography>
                   <RadioGroup value={eligible} onChange={handleEligibleChange}>
                     <FormControlLabel value control={<Radio />} label='Yes' />
@@ -450,28 +447,28 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                  What is your age?
+                    What is your age?
                   </Typography>
                   <TextField
-                  type={"number"}
-                  variant="outlined"
-                  value={age}
-                  id='age'
-                  onChange={handleChange}
+                    type={"number"}
+                    variant="outlined"
+                    value={age}
+                    id='age'
+                    onChange={handleChange}
                   />
                 </Grid>
                 {age<16 &&
                 <Grid item xs={12}>
-                <Typography>Fellows under the age of 16 require parental/guardian permission. 
+                  <Typography>Fellows under the age of 16 require parental/guardian permission. 
                   If under 16, please have a parent/guardian sign here:
                 </Typography>
-                <TextField
-                  fullWidth
-                  value={parentSignature}
-                  id='parentSignature'
-                  onChange={handleChange}
-                  variant='standard'
-                  label='Parent Signature'
+                  <TextField
+                    fullWidth
+                    value={parentSignature}
+                    id='parentSignature'
+                    onChange={handleChange}
+                    variant='standard'
+                    label='Parent Signature'
                 />
                 </Grid>
                 }
@@ -533,36 +530,21 @@ function MenteeApplication(props) {
                     of applying to. This helps us pair you with an appropriate
                     mentor.
                   </Typography>
-                  <Autocomplete
-                    freeSolo
-                    getOptionLabel={(option) => String(option)}
-                    options={allDreamColleges}
+                  <br />
+                  <TextField
                     value={dreamCollege1}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        variant='outlined'
-                        label='Potential College 1'
-                        fullWidth
-                      />
-                    )}
                     onChange={selectDreamCollege1}
+                    variant='outlined'
+                    label='Potential College 1'
+                    fullWidth
                   />
                   <br />
-                  <Autocomplete
-                    freeSolo
-                    getOptionLabel={(option) => String(option)}
-                    options={allDreamColleges}
+                  <TextField
                     value={dreamCollege2}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        variant='outlined'
-                        label='Potential College 2'
-                        fullWidth
-                      />
-                    )}
                     onChange={selectDreamCollege2}
+                    variant='outlined'
+                    label='Potential College 2'
+                    fullWidth
                   />
                 </Grid>
                 <Grid item xs={12}>
