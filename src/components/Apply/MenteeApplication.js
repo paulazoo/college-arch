@@ -66,6 +66,8 @@ function MenteeApplication(props) {
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
   const [eligible, setEligible] = useState(false);
+  const [ofAge, setOfAge] = useState(false);
+  const [parentSignature, setParentSignature] = useState('');
   const [interests, setInterests] = useState([]);
 
   const [usBoolean, setUsBoolean] = useState(true);
@@ -97,6 +99,9 @@ function MenteeApplication(props) {
       case 'highschool':
         setSchool(event.target.value);
         break;
+      case 'parentSignature':
+        setParentSignature(event.target.value);
+        break;
       default:
         break;
     }
@@ -119,6 +124,14 @@ function MenteeApplication(props) {
       setEligible(true);
     } else {
       setEligible(false);
+    }
+  };
+
+  const handleOfAgeChange = (event) => {
+    if (event.target.value === 'true') {
+      setOfAge(true);
+    } else {
+      setOfAge(false);
     }
   };
 
@@ -154,6 +167,7 @@ function MenteeApplication(props) {
       (state === '' && usBoolean === true) ||
       (country === '' && usBoolean === false) ||
       eligible === false ||
+      (ofAge === false && parentSignature == '') ||
       essay === '' ||
       city === '' ||
       phone === '' ||
@@ -404,6 +418,33 @@ function MenteeApplication(props) {
                     <FormControlLabel value control={<Radio />} label='Yes' />
                   </RadioGroup>
                 </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                  Are you at least 16 years old?
+                  </Typography>
+                  <RadioGroup value={ofAge} notValue={!ofAge} onChange={handleOfAgeChange}>
+                  <FormControlLabel value control={<Radio />} label='Yes' />
+                      <FormControlLabel
+                        value={false}
+                        control={<Radio />}
+                        label='No'
+                      />
+                  </RadioGroup>
+                </Grid>
+                {!ofAge &&
+                <Grid item xs={12}>
+                <Typography>Fellows under the age of 16 require parental/guardian permission. 
+                  If under 16, please have a parent/guardian sign here:</Typography>
+                <TextField
+                  fullWidth
+                  value={parentSignature}
+                  id='parentSignature'
+                  onChange={handleChange}
+                  variant='standard'
+                  label='Parent Signature'
+                />
+              </Grid>
+                }
                 <Grid item xs={12}>
                   <Typography>
                     Optional: What High School do you go to? (This helps us to
