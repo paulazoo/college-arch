@@ -158,10 +158,12 @@ function MenteeApplication(props) {
 
   const selectDreamCollege1 = (event, value) => {
     setDreamCollege1(value);
-    console.log(dreamCollege1.toString())
+    console.log(event)
+    console.log(dreamCollege1)
   };
   const selectDreamCollege2 = (event, value) => {
     setDreamCollege2(value);
+    console.log(dreamCollege1)
   };
 
   const [background, setBackground] = useState({
@@ -532,6 +534,7 @@ function MenteeApplication(props) {
                     mentor.
                   </Typography>
                   <Autocomplete
+                    freeSolo
                     getOptionLabel={(option) => String(option)}
                     options={allDreamColleges}
                     value={dreamCollege1}
@@ -547,6 +550,7 @@ function MenteeApplication(props) {
                   />
                   <br />
                   <Autocomplete
+                    freeSolo
                     getOptionLabel={(option) => String(option)}
                     options={allDreamColleges}
                     value={dreamCollege2}
