@@ -103,6 +103,7 @@ function MentorApplication(props) {
   const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [altSchoolEmail, setAltSchoolEmail] = useState('');
   const [city, setCity] = useState('');
   const [school, setSchool] = useState('');
   const [essay, setEssay] = useState('');
@@ -129,6 +130,9 @@ function MentorApplication(props) {
         break;
       case 'lastName':
         setLastName(event.target.value);
+        break;
+      case 'altSchoolEmail':
+        setAltSchoolEmail(event.target.value);
         break;
       case 'essay':
         setEssay(event.target.value);
@@ -223,6 +227,7 @@ function MentorApplication(props) {
         backgrounds: activeBackgrounds.toString(),
         first_name: firstName,
         family_name: lastName,
+        alt_school_email: altSchoolEmail,
         school,
         us_living: usBoolean,
         grad_year: 2021,
@@ -261,6 +266,7 @@ function MentorApplication(props) {
           <Typography className={classes.loginText}>
             College ARCH Mentorship Application Login
           </Typography>
+          <Typography>Login: College ARCH requires mentors to have access to Google Workspace.</Typography>
         </Grid>
         <Grid item xs={12}>
           <Divider />
@@ -359,6 +365,21 @@ function MentorApplication(props) {
                     variant='outlined'
                     fullWidth
                     label='Last Name'
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography>
+                  If the email used to login to this application is not your school email, 
+                  please enter your school email. This is used to verify that you attend(ed) the 
+                  college listed on your application.
+                  </Typography>
+                  <TextField
+                    id='altSchoolEmail'
+                    value={altSchoolEmail}
+                    onChange={handleChange}
+                    variant='outlined'
+                    fullWidth
+                    label='School Email if not Gmail'
                   />
                 </Grid>
                 <Grid item xs={12}>

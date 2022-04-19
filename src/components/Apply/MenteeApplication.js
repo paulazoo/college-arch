@@ -31,6 +31,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../Navbar/Navbar';
 import statesList from './statesList.js';
 import allInterests from './allInterests.js';
+import allDreamColleges from './allDreamColleges.js';
 import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -67,11 +68,14 @@ function MenteeApplication(props) {
   const [country, setCountry] = useState('');
 
   const [eligible, setEligible] = useState(false);
-  const [ofAge, setOfAge] = useState(false);
   const [parentSignature, setParentSignature] = useState('');
   const [infoShare, setInfoShare] = useState(false);
 
+  const [age, setAge] = useState(18)
+
   const [interests, setInterests] = useState([]);
+  const [dreamCollege1, setDreamCollege1] = useState([]);
+  const [dreamCollege2, setDreamCollege2] = useState([]);
 
   const [usBoolean, setUsBoolean] = useState(true);
 
@@ -80,6 +84,8 @@ function MenteeApplication(props) {
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (event) => {
+    const re = /^[0-9\b]+$/; //for checking age as a number
+
     switch (event.target.id) {
       case 'phone':
         setPhone(event.target.value);
@@ -104,6 +110,14 @@ function MenteeApplication(props) {
         break;
       case 'parentSignature':
         setParentSignature(event.target.value);
+        break;
+      case 'age':
+        if (re.test(event.target.value)) {
+          setAge(event.target.value);
+        }
+        if (event.target.value < 0) {
+          setAge(event.target.value);
+        }
         break;
       default:
         break;
@@ -138,16 +152,15 @@ function MenteeApplication(props) {
     }
   };
 
-  const handleOfAgeChange = (event) => {
-    if (event.target.value === 'true') {
-      setOfAge(true);
-    } else {
-      setOfAge(false);
-    }
-  };
-
   const selectInterests = (event, value) => {
     setInterests(value);
+  };
+
+  const selectDreamCollege1 = (event, value) => {
+    setDreamCollege1(value);
+  };
+  const selectDreamCollege2 = (event, value) => {
+    setDreamCollege2(value);
   };
 
   const [background, setBackground] = useState({
@@ -178,7 +191,7 @@ function MenteeApplication(props) {
       (state === '' && usBoolean === true) ||
       (country === '' && usBoolean === false) ||
       eligible === false ||
-      (ofAge === false && parentSignature == '') ||
+      (age < 16 && parentSignature === '') ||
       essay === '' ||
       city === '' ||
       phone === '' ||
@@ -215,6 +228,7 @@ function MenteeApplication(props) {
         state,
         country,
         essay,
+        age,
         email: props.user.email,
         backgrounds: activeBackgrounds.toString(),
         first_name: firstName,
@@ -222,7 +236,9 @@ function MenteeApplication(props) {
         school,
         us_living: usBoolean,
         grad_year: 2022,
+        info_share: infoShare,
         interests: interests.toString(),
+        dreamColleges: dreamCollege1.toString(),
         applicant_type: 'Mentee',
       });
 
@@ -431,21 +447,21 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                  Are you at least 16 years old?
+                  What is your age?
                   </Typography>
-                  <RadioGroup value={ofAge} notValue={!ofAge} onChange={handleOfAgeChange}>
-                  <FormControlLabel value control={<Radio />} label='Yes' />
-                      <FormControlLabel
-                        value={false}
-                        control={<Radio />}
-                        label='No'
-                      />
-                  </RadioGroup>
+                  <TextField
+                  type={"number"}
+                  variant="outlined"
+                  value={age}
+                  id='age'
+                  onChange={handleChange}
+                  />
                 </Grid>
-                {!ofAge &&
+                {age<16 &&
                 <Grid item xs={12}>
                 <Typography>Fellows under the age of 16 require parental/guardian permission. 
-                  If under 16, please have a parent/guardian sign here:</Typography>
+                  If under 16, please have a parent/guardian sign here:
+                </Typography>
                 <TextField
                   fullWidth
                   value={parentSignature}
@@ -454,7 +470,7 @@ function MenteeApplication(props) {
                   variant='standard'
                   label='Parent Signature'
                 />
-              </Grid>
+                </Grid>
                 }
                 <Grid item xs={12}>
                   <Typography>Consent: One of the most rewarding aspects of the College ARCH summer fellowship that each of the fellows are paired with their own college-aged mentor. Do you give us permission to share your contact information with your potential mentor? If you select no, you will not be paired with a mentor but are welcome to join the panels.</Typography>
@@ -506,6 +522,44 @@ function MenteeApplication(props) {
                       />
                     )}
                     onChange={selectInterests}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Please give up to two colleges/universities you are thinking
+                    of applying to. This helps us pair you with an appropriate
+                    mentor.
+                  </Typography>
+                  <Autocomplete
+                    multiple
+                    getOptionLabel={(option) => String(option)}
+                    options={allDreamColleges}
+                    value={dreamCollege1}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant='outlined'
+                        label='Potential College 1'
+                        fullWidth
+                      />
+                    )}
+                    onChange={selectDreamCollege1}
+                  />
+                  <br />
+                  <Autocomplete
+                    multiple
+                    getOptionLabel={(option) => String(option)}
+                    options={allDreamColleges}
+                    value={dreamCollege2}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant='outlined'
+                        label='Potential College 2'
+                        fullWidth
+                      />
+                    )}
+                    onChange={selectDreamCollege2}
                   />
                 </Grid>
                 <Grid item xs={12}>
