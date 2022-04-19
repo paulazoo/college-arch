@@ -114,6 +114,8 @@ function MentorApplication(props) {
   const [interests, setInterests] = useState([]);
   const [multiMentees, setMultiMentees] = useState(1);
 
+  const [age, setAge] = useState(18)
+
   const [usBoolean, setUsBoolean] = useState(true);
 
   const [error, setError] = useState(false);
@@ -121,6 +123,8 @@ function MentorApplication(props) {
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (event) => {
+    const re = /^[0-9\b]+$/; //for checking age as a number
+
     switch (event.target.id) {
       case 'phone':
         setPhone(event.target.value);
@@ -145,6 +149,14 @@ function MentorApplication(props) {
         break;
       case 'country':
         setCountry(event.target.value);
+        break;
+      case 'age':
+        if (re.test(event.target.value)) {
+          setAge(event.target.value);
+        }
+        if (event.target.value < 0) {
+          setAge(event.target.value);
+        }
         break;
       default:
         break;
@@ -202,6 +214,7 @@ function MentorApplication(props) {
       lastName === '' ||
       (state === '' && usBoolean === true) ||
       (country === '' && usBoolean === false) ||
+      age > 27 ||
       eligible === false ||
       essay === '' ||
       city === '' ||
@@ -223,6 +236,7 @@ function MentorApplication(props) {
         state,
         country,
         essay,
+        age,
         email: props.user.email,
         backgrounds: activeBackgrounds.toString(),
         first_name: firstName,
@@ -488,6 +502,18 @@ function MentorApplication(props) {
                         fullWidth
                       />
                     )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                  Mentors must be 27 years old or younger to ensure that they can develop a peer-to-peer relationship with their fellows. What is your age?
+                  </Typography>
+                  <TextField
+                    type={"number"}
+                    variant="outlined"
+                    value={age}
+                    id='age'
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12}>

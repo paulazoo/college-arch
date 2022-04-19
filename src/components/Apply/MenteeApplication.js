@@ -71,7 +71,7 @@ function MenteeApplication(props) {
   const [parentSignature, setParentSignature] = useState('');
   const [infoShare, setInfoShare] = useState(false);
 
-  const [age, setAge] = useState(18)
+  const [age, setAge] = useState(17)
 
   const [interests, setInterests] = useState([]);
   const [dreamCollege1, setDreamCollege1] = useState('');
@@ -235,7 +235,7 @@ function MenteeApplication(props) {
         family_name: lastName,
         school,
         us_living: usBoolean,
-        grad_year: 2022,
+        grad_year: 2023,
         info_share: infoShare,
         interests: interests.toString(),
         dream_colleges: `${dreamCollege1},${dreamCollege2}`,
