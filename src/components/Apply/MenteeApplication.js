@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Card,
@@ -229,7 +229,7 @@ function MenteeApplication(props) {
       <>
         <Grid item xs={12} className={classes.loginTextContainer}>
           <Typography className={classes.loginText}>
-            Fellowship Application Login
+            College ARCH Fellowship Application Login
           </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -287,11 +287,11 @@ function MenteeApplication(props) {
                     cycles of inaccessibility and stratification.
                   </Typography>
                   <Typography>
-                    The fellowship program will take place between July 7-August
-                    6. All mandatory meetings will occur between 1pm EST-9pm EST
+                    The fellowship program will take place between Saturday July 9 - Saturday August 6. 
+                    All mandatory meetings will occur between 1pm EST-9pm EST
                     Monday through Friday, with a total commitment of 3 to 4
-                    hours a week. The priority deadline is June 30 and the final
-                    deadline is July 2.
+                    hours a week. The application deadline is June 26, 2022. 
+                    College ARCH fellows must be graduating high school in the 2022-2023 academic year.
                   </Typography>
                 </Grid>
               </Grid>
@@ -395,11 +395,10 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Will you be graduating high school in 2023? (Only the Class
-                    of 2023 may register as fellows. If you are in college or
-                    following an alternative education path, please contact
-                    contact.collegearch@gmail.com to determine eligibility as a
-                    fellow.)
+                  Will you be graduating high school in 2023? 
+                  (Only the Class of 2023 may register as fellows. 
+                  If you are in college or following an alternative education path, 
+                  please contact contact.collegearch@gmail.com to determine eligibility as a fellow.)
                   </Typography>
                   <RadioGroup value={eligible} onChange={handleEligibleChange}>
                     <FormControlLabel value control={<Radio />} label='Yes' />
@@ -533,7 +532,7 @@ function MenteeApplication(props) {
                             onChange={handleBackgroundChange}
                           />
                         )}
-                        label='Black'
+                        label='African or African American'
                       />
                       <FormControlLabel
                         control={(
@@ -553,7 +552,7 @@ function MenteeApplication(props) {
                             onChange={handleBackgroundChange}
                           />
                         )}
-                        label='Indigenous or Native American'
+                        label='Native American or Alaska Native'
                       />
                       <FormControlLabel
                         control={(
@@ -563,7 +562,7 @@ function MenteeApplication(props) {
                             onChange={handleBackgroundChange}
                           />
                         )}
-                        label='Asian'
+                        label='Asian or Asian American'
                       />
                       <FormControlLabel
                         control={(
@@ -596,7 +595,7 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Why do you want to join as a fellow? (max character count:
+                    Why do you want to be a College ARCH summer fellow? (max character count:
                     1000)
                   </Typography>
                   <TextField

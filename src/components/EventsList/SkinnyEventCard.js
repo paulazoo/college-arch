@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import {
-  Typography,
   Card,
   CardHeader,
-  CardContent,
   CardActionArea,
-  CardActions,
-  CardMedia,
-  Box,
   Grid,
   IconButton,
 } from '@material-ui/core';
 import InfoIcon from '@material-ui/icons/Info';
-import { NavLink } from 'react-router-dom';
 import moment from 'moment';
 
 // Redux

@@ -1,9 +1,6 @@
 import React from 'react';
 import {
   Grid,
-  Container,
-  Typography,
-  Link,
   IconButton,
   Icon,
 } from '@material-ui/core';
@@ -12,7 +9,6 @@ import {
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
-import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
 
 // Custom Components
 import WhiteFacebookSvg from '../../assets/SocialMedia/whiteFacebook.svg';

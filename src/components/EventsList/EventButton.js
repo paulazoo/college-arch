@@ -1,19 +1,7 @@
 import React from 'react';
 import {
   Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  Divider,
-  IconButton,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Typography,
   Grid,
-  SvgIcon,
   Box,
 } from '@material-ui/core';
 

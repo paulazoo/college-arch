@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Typography,
   Card,
@@ -7,11 +7,8 @@ import {
   Grid,
   Button,
   Dialog,
-  Box,
   CardActions,
 } from '@material-ui/core';
-import InfoIcon from '@material-ui/icons/Info';
-import { NavLink } from 'react-router-dom';
 import moment from 'moment';
 
 // Redux

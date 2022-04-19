@@ -259,7 +259,7 @@ function MentorApplication(props) {
       <>
         <Grid item xs={12} className={classes.loginTextContainer}>
           <Typography className={classes.loginText}>
-            Fellow Mentorship Application Login
+            College ARCH Mentorship Application Login
           </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -303,7 +303,7 @@ function MentorApplication(props) {
               >
                 <Grid item>
                   <Typography variant='h3'>
-                    College ARCH Fellowship Application
+                    College ARCH Mentorship Application
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -318,10 +318,11 @@ function MentorApplication(props) {
                     inaccessibility and stratification.
                   </Typography>
                   <Typography>
-                    The fellowship program will take place between July 7-August
-                    6 with a minimum time commitment of 1 hour per week for
-                    mentors. The priority deadline is June 30 and the final
-                    deadline is July 2.
+                  The fellowship program will take place between Saturday July 9 - Saturday August 6. 
+                  All mandatory meetings will occur between 1pm EST-9pm EST Monday through Friday, 
+                  with a total commitment of 3 to 4 hours a week. The application deadline is 
+                  June 26, 2022. Mentors must be incoming, current, or recently graduated college 
+                  students no older than 27 years old.
                   </Typography>
                 </Grid>
               </Grid>
@@ -593,7 +594,7 @@ function MentorApplication(props) {
                             onChange={handleBackgroundChange}
                           />
                         )}
-                        label='Black'
+                        label='African or African American'
                       />
                       <FormControlLabel
                         control={(
@@ -613,7 +614,7 @@ function MentorApplication(props) {
                             onChange={handleBackgroundChange}
                           />
                         )}
-                        label='Indigenous or Native American'
+                        label='Native American or Alaska Native'
                       />
                       <FormControlLabel
                         control={
@@ -633,7 +634,7 @@ function MentorApplication(props) {
                             onChange={handleBackgroundChange}
                           />
                         )}
-                        label='Asian'
+                        label='Asian or Asian American'
                       />
                       <FormControlLabel
                         control={
@@ -660,7 +661,7 @@ function MentorApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Why do you want to join as a College ARCH mentor? (max
+                    Why do you want to be a College ARCH mentor? (max
                     character count: 1000)
                   </Typography>
                   <TextField

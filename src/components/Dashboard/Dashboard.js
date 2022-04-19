@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import GoogleLogin from 'react-google-login';
-import MuiAlert from '@material-ui/lab/Alert';
 import {
-  Button,
   Grid,
-  Box,
-  Container,
   Typography,
-  Snackbar,
   Card,
-  Divider,
 } from '@material-ui/core';
 
 // Theme
@@ -18,16 +11,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
 import { getUser } from '../../store/actions/api';
 
 // Custom Components
-import WordDivider from '../Shared/WordDivider';
-import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import MentorDashboard from './MentorDashboard';
 import MenteeDashboard from './MenteeDashboard';
-import EventsList from '../EventsList/EventsList';
 import Upcoming from '../EventsList/Upcoming';
 import Past from '../EventsList/Past';
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Grid, Container, Typography, Link } from '@material-ui/core';
+import { Grid, Typography, Link } from '@material-ui/core';
 
 // Redux
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
-import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
 import FooterSocialMedia from './FooterSocialMedia';
 
 // Custom Components

@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import {
-  Divider,
   Card,
   Typography,
-  Box,
   Grid,
-  Paper,
   Button,
 } from '@material-ui/core';
 
 // Redux
-import { connect } from 'react-redux';
 
 // Theme
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 // Custom Components
 import WordDivider from '../Shared/WordDivider';
-import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import FellowshipGeneral from './FellowshipGeneral';
 import ReadyApply from './ReadyApply';
@@ -221,7 +216,7 @@ function FellowshipProgram(props) {
                   <Grid xs={12} />
                   <Grid item className={classes.dueDateContainer}>
                     <Typography className={classes.dueDate}>
-                      Applications will be due July 2, 2022
+                      Applications will be due June 26, 2022
                     </Typography>
                   </Grid>
                 </Grid>
