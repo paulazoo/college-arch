@@ -65,9 +65,12 @@ function MenteeApplication(props) {
   const [essay, setEssay] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
+
   const [eligible, setEligible] = useState(false);
   const [ofAge, setOfAge] = useState(false);
   const [parentSignature, setParentSignature] = useState('');
+  const [infoShare, setInfoShare] = useState(false);
+
   const [interests, setInterests] = useState([]);
 
   const [usBoolean, setUsBoolean] = useState(true);
@@ -112,6 +115,14 @@ function MenteeApplication(props) {
       setUsBoolean(true);
     } else {
       setUsBoolean(false);
+    }
+  };
+
+  const handleInfoShareChange = (event) => {
+    if (event.target.value === 'true') {
+      setInfoShare(true);
+    } else {
+      setInfoShare(false);
     }
   };
 
@@ -445,6 +456,23 @@ function MenteeApplication(props) {
                 />
               </Grid>
                 }
+                <Grid item xs={12}>
+                  <Typography>Consent: One of the most rewarding aspects of the College ARCH summer fellowship that each of the fellows are paired with their own college-aged mentor. Do you give us permission to share your contact information with your potential mentor? If you select no, you will not be paired with a mentor but are welcome to join the panels.</Typography>
+                  <FormControl component='fieldset'>
+                    <RadioGroup
+                      value={infoShare}
+                      onChange={handleInfoShareChange}
+                    >
+                      <FormControlLabel value control={<Radio />} label='Yes' />
+                      <FormControlLabel
+                        value={false}
+                        control={<Radio />}
+                        label='No'
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                  <Typography><i>Please keep in mind that our mentorship program is a fundamental component of the ARCH summer fellowship and much of the program centers around it.</i></Typography>
+                </Grid>
                 <Grid item xs={12}>
                   <Typography>
                     Optional: What High School do you go to? (This helps us to
