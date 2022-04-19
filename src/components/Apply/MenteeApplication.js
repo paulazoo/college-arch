@@ -158,6 +158,7 @@ function MenteeApplication(props) {
 
   const selectDreamCollege1 = (event, value) => {
     setDreamCollege1(value);
+    console.log(dreamCollege1.toString())
   };
   const selectDreamCollege2 = (event, value) => {
     setDreamCollege2(value);
@@ -531,7 +532,6 @@ function MenteeApplication(props) {
                     mentor.
                   </Typography>
                   <Autocomplete
-                    multiple
                     getOptionLabel={(option) => String(option)}
                     options={allDreamColleges}
                     value={dreamCollege1}
@@ -547,7 +547,6 @@ function MenteeApplication(props) {
                   />
                   <br />
                   <Autocomplete
-                    multiple
                     getOptionLabel={(option) => String(option)}
                     options={allDreamColleges}
                     value={dreamCollege2}
