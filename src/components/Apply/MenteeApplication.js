@@ -74,8 +74,8 @@ function MenteeApplication(props) {
   const [age, setAge] = useState(18)
 
   const [interests, setInterests] = useState([]);
-  const [dreamCollege1, setDreamCollege1] = useState([]);
-  const [dreamCollege2, setDreamCollege2] = useState([]);
+  const [dreamCollege1, setDreamCollege1] = useState('');
+  const [dreamCollege2, setDreamCollege2] = useState('');
 
   const [usBoolean, setUsBoolean] = useState(true);
 
@@ -157,10 +157,10 @@ function MenteeApplication(props) {
   };
 
   const selectDreamCollege1 = (event, value) => {
-    setDreamCollege1(value);
+    setDreamCollege1(event.target.value);
   };
   const selectDreamCollege2 = (event, value) => {
-    setDreamCollege2(value);
+    setDreamCollege2(event.target.value);
   };
 
   const [background, setBackground] = useState({
@@ -238,7 +238,7 @@ function MenteeApplication(props) {
         grad_year: 2022,
         info_share: infoShare,
         interests: interests.toString(),
-        dreamColleges: dreamCollege1.toString(),
+        dream_colleges: `${dreamCollege1},${dreamCollege2}`,
         applicant_type: 'Mentee',
       });
 
@@ -532,11 +532,11 @@ function MenteeApplication(props) {
                   </Typography>
                   <br />
                   <TextField
-                    value={dreamCollege1}
-                    onChange={selectDreamCollege1}
+                    fullWidth
                     variant='outlined'
                     label='Potential College 1'
-                    fullWidth
+                    value={dreamCollege1}
+                    onChange={selectDreamCollege1}
                   />
                   <br />
                   <TextField
