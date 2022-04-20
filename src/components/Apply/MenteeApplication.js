@@ -107,6 +107,7 @@ function MenteeApplication(props) {
         break;
       case 'highschool':
         setSchool(event.target.value);
+        console.log(infoShare);
         break;
       case 'parentSignature':
         setParentSignature(event.target.value);
@@ -138,6 +139,7 @@ function MenteeApplication(props) {
     } else {
       setInfoShare(false);
     }
+    console.log(infoShare);
   };
 
   const handleStateChange = (event) => {

@@ -381,18 +381,18 @@ function MentorApplication(props) {
                     label='Last Name'
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <Typography>
                   If the email used to login to this application is not your school email, 
                   please enter your school email. This is used to verify that you attend(ed) the 
                   college listed on your application.
                   </Typography>
                   <TextField
+                    fullWidth
                     id='altSchoolEmail'
                     value={altSchoolEmail}
                     onChange={handleChange}
                     variant='outlined'
-                    fullWidth
                     label='School Email if not Gmail'
                   />
                 </Grid>
