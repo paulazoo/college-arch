@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import {
-  IconButton,
   Button,
   Grid,
   Tooltip,
-  Link,
   Toolbar,
-  Typography,
 } from '@material-ui/core';
 import MuiAppBar from '@material-ui/core/AppBar';
 

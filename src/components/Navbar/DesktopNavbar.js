@@ -1,14 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
-import {
-  IconButton,
-  Button,
-  Grid,
-  Tooltip,
-  Link,
-  Toolbar,
-} from '@material-ui/core';
-import MuiAppBar from '@material-ui/core/AppBar';
+import React, { useEffect } from 'react';
 
 // Redux
 import { connect } from 'react-redux';
@@ -30,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function DesktopNavbar({ ...props }) {
-  const classes = useStyles();
-  const history = useHistory();
-
   const theme = useTheme();
 
   useEffect(() => {

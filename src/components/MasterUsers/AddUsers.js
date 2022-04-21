@@ -3,9 +3,7 @@ import {
   Button,
   TextField,
   Grid,
-  CardContent,
   Typography,
-  Card,
 } from '@material-ui/core';
 
 // Theme
@@ -13,13 +11,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
+import { userLogout } from '../../store/actions/index';
 import { postMentors, postMentees } from '../../store/actions/api';
 
 // Custom Components
-import PersonalSnackbar from '../PersonalSnackbar/PersonalSnackbar';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 
 const useStyles = makeStyles((theme) => ({
   card: {

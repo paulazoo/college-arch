@@ -3,11 +3,8 @@ import {
   Button,
   TextField,
   Grid,
-  CardContent,
   Typography,
-  Card,
   MenuItem,
-  Select,
 } from '@material-ui/core';
 import Autocomplete, {
   createFilterOptions,
@@ -18,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
+import { userLogout } from '../../store/actions/index';
 import { postUnmatch } from '../../store/actions/api';
 
 // Custom Components

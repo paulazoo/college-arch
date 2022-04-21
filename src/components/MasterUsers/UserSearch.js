@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Autocomplete, {
   createFilterOptions,
 } from '@material-ui/lab/Autocomplete';
 import {
-  InputAdornment,
   Grid,
   TextField,
   Typography,
@@ -15,7 +14,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { connect } from 'react-redux';
 
 // Theme
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Custom Components
 

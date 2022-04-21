@@ -450,6 +450,13 @@ function MentorApplication(props) {
                   </Grid>
                 )}
                 <Grid item xs={12}>
+                  <Typography>
+                    If you live in multiple places, please select where you most
+                    identify as “home.” We use this information to pair you with
+                    a fellow from a similar geographical upbringing.
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
                   <TextField
                     fullWidth
                     variant='outlined'

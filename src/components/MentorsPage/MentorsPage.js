@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
-import {
-  Button,
-  TextField,
-  Grid,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
+import React from 'react';
+import { Button } from '@material-ui/core';
 
 // Theme
 import { makeStyles } from '@material-ui/core/styles';
 
 // Redux
 import { connect } from 'react-redux';
-import { userLogout, setUser } from '../../store/actions/index';
+import { userLogout } from '../../store/actions/index';
 
 // Custom Components
-import WordDivider from '../Shared/WordDivider';
 import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 
 const useStyles = makeStyles((theme) => ({
   wordDivider: {

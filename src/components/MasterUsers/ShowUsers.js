@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -6,24 +6,17 @@ import {
   TablePagination,
   TableRow,
   Box,
-  Button,
   Typography,
-  List,
-  ListItem,
-  Popover,
   IconButton,
 } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import CheckIcon from '@material-ui/icons/Check';
 
 // Redux
 import { connect } from 'react-redux';
 import { getUsers } from '../../store/actions/api';
 
 // Theme
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Custom Components
 import ProfilePic from '../ProfilePic/ProfilePic';
@@ -132,7 +125,7 @@ function ShowUsers({ people, ...props }) {
             <TableBody key='table-body'>
               {stableSort(people, getSorting(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((person, index) => (
+                .map((person) => (
                   <TableRow hover tabIndex={-1} key={people.id}>
                     <TableCell
                       component='th'
