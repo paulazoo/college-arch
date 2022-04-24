@@ -17,7 +17,9 @@ import {
   Divider,
   Box,
 } from '@material-ui/core';
-import { Autocomplete } from '@material-ui/lab';
+import Autocomplete, {
+  createFilterOptions,
+} from '@material-ui/lab/Autocomplete';
 
 // Redux
 import { connect } from 'react-redux';
@@ -33,6 +35,7 @@ import statesList from './statesList.js';
 import allInterests from './allInterests.js';
 import allDreamColleges from './allDreamColleges.js';
 import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
+import DreamCollegesAutocomplete from './DreamCollegesAutocomplete';
 
 const useStyles = makeStyles((theme) => ({
   intro: {
@@ -55,6 +58,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const filter = createFilterOptions();
+
 function MenteeApplication(props) {
   const classes = useStyles();
 
@@ -71,7 +76,7 @@ function MenteeApplication(props) {
   const [parentSignature, setParentSignature] = useState('');
   const [infoShare, setInfoShare] = useState(false);
 
-  const [age, setAge] = useState(17)
+  const [age, setAge] = useState(17);
 
   const [interests, setInterests] = useState([]);
   const [dreamCollege1, setDreamCollege1] = useState('');
@@ -158,11 +163,11 @@ function MenteeApplication(props) {
     setInterests(value);
   };
 
-  const selectDreamCollege1 = (event, value) => {
-    setDreamCollege1(event.target.value);
+  const selectDreamCollege1 = (value) => {
+    setDreamCollege1(value);
   };
-  const selectDreamCollege2 = (event, value) => {
-    setDreamCollege2(event.target.value);
+  const selectDreamCollege2 = (value) => {
+    setDreamCollege2(value);
   };
 
   const [background, setBackground] = useState({
@@ -330,11 +335,12 @@ function MenteeApplication(props) {
                     cycles of inaccessibility and stratification.
                   </Typography>
                   <Typography>
-                    The fellowship program will take place between Saturday July 9 - Saturday August 6. 
-                    All mandatory meetings will occur between 1pm EST-9pm EST
-                    Monday through Friday, with a total commitment of 3 to 4
-                    hours a week. The application deadline is June 26, 2022. 
-                    College ARCH fellows must be graduating high school in the 2022-2023 academic year.
+                    The fellowship program will take place between Saturday July
+                    9 - Saturday August 6. All mandatory meetings will occur
+                    between 1pm EST-9pm EST Monday through Friday, with a total
+                    commitment of 3 to 4 hours a week. The application deadline
+                    is June 26, 2022. College ARCH fellows must be graduating
+                    high school in the 2022-2023 academic year.
                   </Typography>
                 </Grid>
               </Grid>
@@ -438,44 +444,52 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Will you be graduating high school in 2023? 
-                    (Only the Class of 2023 may register as fellows. 
-                    If you are in college or following an alternative education path, 
-                    please contact contact.collegearch@gmail.com to determine eligibility as a fellow.)
+                    Will you be graduating high school in 2023? (Only the Class
+                    of 2023 may register as fellows. If you are in college or
+                    following an alternative education path, please contact
+                    contact.collegearch@gmail.com to determine eligibility as a
+                    fellow.)
                   </Typography>
                   <RadioGroup value={eligible} onChange={handleEligibleChange}>
                     <FormControlLabel value control={<Radio />} label='Yes' />
                   </RadioGroup>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography>
-                    What is your age?
-                  </Typography>
+                  <Typography>What is your age?</Typography>
                   <TextField
-                    type={"number"}
-                    variant="outlined"
+                    type={'number'}
+                    variant='outlined'
                     value={age}
                     id='age'
                     onChange={handleChange}
                   />
                 </Grid>
-                {age<16 &&
+                {age < 16 && (
+                  <Grid item xs={12}>
+                    <Typography>
+                      Fellows under the age of 16 require parental/guardian
+                      permission. If under 16, please have a parent/guardian
+                      sign here:
+                    </Typography>
+                    <TextField
+                      fullWidth
+                      value={parentSignature}
+                      id='parentSignature'
+                      onChange={handleChange}
+                      variant='standard'
+                      label='Parent Signature'
+                    />
+                  </Grid>
+                )}
                 <Grid item xs={12}>
-                  <Typography>Fellows under the age of 16 require parental/guardian permission. 
-                  If under 16, please have a parent/guardian sign here:
-                </Typography>
-                  <TextField
-                    fullWidth
-                    value={parentSignature}
-                    id='parentSignature'
-                    onChange={handleChange}
-                    variant='standard'
-                    label='Parent Signature'
-                />
-                </Grid>
-                }
-                <Grid item xs={12}>
-                  <Typography>Consent: One of the most rewarding aspects of the College ARCH summer fellowship that each of the fellows are paired with their own college-aged mentor. Do you give us permission to share your contact information with your potential mentor? If you select no, you will not be paired with a mentor but are welcome to join the panels.</Typography>
+                  <Typography>
+                    Consent: One of the most rewarding aspects of the College
+                    ARCH summer fellowship that each of the fellows are paired
+                    with their own college-aged mentor. Do you give us
+                    permission to share your contact information with your
+                    potential mentor? If you select no, you will not be paired
+                    with a mentor but are welcome to join the panels.
+                  </Typography>
                   <FormControl component='fieldset'>
                     <RadioGroup
                       value={infoShare}
@@ -489,7 +503,13 @@ function MenteeApplication(props) {
                       />
                     </RadioGroup>
                   </FormControl>
-                  <Typography><i>Please keep in mind that our mentorship program is a fundamental component of the ARCH summer fellowship and much of the program centers around it.</i></Typography>
+                  <Typography>
+                    <i>
+                      Please keep in mind that our mentorship program is a
+                      fundamental component of the ARCH summer fellowship and
+                      much of the program centers around it.
+                    </i>
+                  </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
@@ -528,27 +548,68 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Please select up to two colleges/universities you are thinking
-                    thinking of applying to. If a college/university does not
-                    show up in the drop-down, please manually type it in the
-                    This helps us pair you with an appropriate
-                    mentor.
+                    Please select up to two colleges/universities you are
+                    thinking thinking of applying to. This helps us pair you
+                    with an appropriate mentor.
                   </Typography>
-                  <br />
-                  <TextField
-                    fullWidth
-                    variant='outlined'
-                    label='Potential College 1'
+                  <Autocomplete
                     value={dreamCollege1}
-                    onChange={selectDreamCollege1}
+                    onChange={(event, newValue) => {
+                      selectDreamCollege1(newValue);
+                    }}
+                    filterOptions={(options, params) => {
+                      const filtered = filter(options, params);
+
+                      const { inputValue } = params;
+                      // Suggest the creation of a new value
+                      const isExisting = options.some(
+                        (option) => inputValue === option
+                      );
+                      if (inputValue !== '' && !isExisting) {
+                        filtered.push(`${inputValue}`);
+                      }
+
+                      return filtered;
+                    }}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
+                    options={allDreamColleges}
+                    getOptionLabel={(option) => String(option)}
+                    freeSolo
+                    renderInput={(params) => (
+                      <TextField {...params} label='Potential College 1' />
+                    )}
                   />
                   <br />
-                  <TextField
+                  <Autocomplete
                     value={dreamCollege2}
-                    onChange={selectDreamCollege2}
-                    variant='outlined'
-                    label='Potential College 2'
-                    fullWidth
+                    onChange={(event, newValue) => {
+                      selectDreamCollege2(newValue);
+                    }}
+                    filterOptions={(options, params) => {
+                      const filtered = filter(options, params);
+
+                      const { inputValue } = params;
+                      // Suggest the creation of a new value
+                      const isExisting = options.some(
+                        (option) => inputValue === option
+                      );
+                      if (inputValue !== '' && !isExisting) {
+                        filtered.push(`${inputValue}`);
+                      }
+
+                      return filtered;
+                    }}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
+                    options={allDreamColleges}
+                    getOptionLabel={(option) => String(option)}
+                    freeSolo
+                    renderInput={(params) => (
+                      <TextField {...params} label='Potential College 2' />
+                    )}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -567,133 +628,133 @@ function MenteeApplication(props) {
                   >
                     <FormGroup>
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='first_gen'
                             checked={background.first_gen}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='First-generation college student'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='low_income'
                             checked={background.low_income}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Low-income household'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='stem_girl'
                             checked={background.stem_girl}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Womxn in STEM'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='lgbt'
                             checked={background.lgbt}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='LGBTQ+'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='disabled'
                             checked={background.disabled}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Disabled'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='immigrant'
                             checked={background.immigrant}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Immigrant'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='undoc'
                             checked={background.undoc}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Undocumented/DACA/Mixed Status Family'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='black'
                             checked={background.black}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='African or African American'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='hispanic'
                             checked={background.hispanic}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Latinx or Hispanic'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='native'
                             checked={background.native}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Native American or Alaska Native'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='asian'
                             checked={background.asian}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Asian or Asian American'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='pi'
                             checked={background.pi}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Native Hawaiian/Pacific Islander'
                       />
                       <FormControlLabel
-                        control={(
+                        control={
                           <Checkbox
                             name='me_na'
                             checked={background.me_na}
                             onChange={handleBackgroundChange}
                           />
-                        )}
+                        }
                         label='Middle Eastern and/or North African'
                       />
                     </FormGroup>
@@ -707,8 +768,8 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Why do you want to be a College ARCH summer fellow? (max character count:
-                    1000)
+                    Why do you want to be a College ARCH summer fellow? (max
+                    character count: 1000)
                   </Typography>
                   <TextField
                     fullWidth
