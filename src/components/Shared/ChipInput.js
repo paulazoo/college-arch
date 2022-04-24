@@ -1,7 +1,3 @@
-/**
- * Notice: Some code was adapted from Material-UI's text field.
- *         Copyright (c) 2014 Call-Em-All (https://github.com/callemall/material-ui)
- */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';

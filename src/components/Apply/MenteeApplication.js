@@ -528,8 +528,10 @@ function MenteeApplication(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    Please give up to two colleges/universities you are thinking
-                    of applying to. This helps us pair you with an appropriate
+                    Please select up to two colleges/universities you are thinking
+                    thinking of applying to. If a college/university does not
+                    show up in the drop-down, please manually type it in the
+                    This helps us pair you with an appropriate
                     mentor.
                   </Typography>
                   <br />
