@@ -35,7 +35,6 @@ import statesList from './statesList.js';
 import allInterests from './allInterests.js';
 import allDreamColleges from './allDreamColleges.js';
 import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
-import DreamCollegesAutocomplete from './DreamCollegesAutocomplete';
 
 const useStyles = makeStyles((theme) => ({
   intro: {
