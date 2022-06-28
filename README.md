@@ -19,7 +19,8 @@ Then `npm start` to start the server on http://localhost:3000/
 - npm: 8.11.0
 - react: 16.13.1
 - react-dom: 16.13.1
-- react-native: 0.62.0
+- react-native: 0.63.0
+- redux: 4.0.1
 
 ## Public Pages
 
