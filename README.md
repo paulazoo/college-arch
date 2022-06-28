@@ -14,13 +14,14 @@ The first time you run this locally, you will need to run `npm i` to install dep
 
 Then `npm start` to start the server on http://localhost:3000/
 
-### Currently (220404) works with
+### Currently (220628) works with
 - node: v16.15.1
 - npm: 8.11.0
 - react: 16.13.1
 - react-dom: 16.13.1
 - react-native: 0.63.0
 - redux: 4.0.1
+- don't include package-lock.json when deploying through heroku
 
 ## Public Pages
 
