@@ -216,7 +216,7 @@ function FellowshipProgram(props) {
                   <Grid xs={12} />
                   <Grid item className={classes.dueDateContainer}>
                     <Typography className={classes.dueDate}>
-                      Applications will be due June 26, 2022
+                      Applications will be due July 3, 2022 (extended)
                     </Typography>
                   </Grid>
                 </Grid>

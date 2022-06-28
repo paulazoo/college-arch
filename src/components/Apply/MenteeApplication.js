@@ -338,7 +338,7 @@ function MenteeApplication(props) {
                     9 - Saturday August 6. All mandatory meetings will occur
                     between 1pm EST-9pm EST Monday through Friday, with a total
                     commitment of 3 to 4 hours a week. The application deadline
-                    is June 26, 2022. College ARCH fellows must be graduating
+                    is July 3, 2022 (extended). College ARCH fellows must be graduating
                     high school in the 2022-2023 academic year.
                   </Typography>
                 </Grid>
