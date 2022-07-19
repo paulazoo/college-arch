@@ -1,5 +1,8 @@
 # College Arch Frontend
 
+## TODO:
+For mentees, you are accepted, rank importance of location vs interests vs background vs dream colleges (also need backend column)
+
 ## General
 
 [collegearch.org](https://www.collegearch.org) - non-profit devoted to helping FGLI students achieve their academic potential.
