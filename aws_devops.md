@@ -13,3 +13,7 @@
 - verify works locally with `npm start`
 - `npm ci` errors:
     - fix explicitly within package.json
+- delete node_modules and old package-lock.json again
+- `npm cache clean --force` again
+- `npm install` again
+- verify `npm ci` works this time
