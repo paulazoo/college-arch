@@ -181,7 +181,8 @@ function Landing(props) {
               underprivileged backgrounds
             </Typography>
             <Typography color='inherit' className={classes.landingText2}>
-              <b>Fellowship Applications Open Now</b>
+              <b>Fellowship Applications</b>
+              {/* <b>Fellowship Applications Open Now</b> */}
             </Typography>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Button
