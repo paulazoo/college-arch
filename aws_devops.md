@@ -17,3 +17,9 @@
 - `npm cache clean --force` again
 - `npm install` again
 - verify `npm ci` works this time
+- ready to push to github/deploy on aws amplify
+
+## todo:
+- point google domain
+- push updated api that communicates with aws website
+- eventually: host college-arch-api outside of heroku as well
