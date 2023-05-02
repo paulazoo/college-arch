@@ -19,6 +19,7 @@
 - `npm install` again
 - verify `npm ci` works this time
 - ready to push to github/deploy on aws amplify
+    - Amplify automatically deploys with pushes to github
 
 ## changes to close/open up application
 - disabled or not disabled Mentor and Fellow Apply buttons
