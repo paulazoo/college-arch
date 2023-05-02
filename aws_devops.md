@@ -7,6 +7,7 @@
 - if node doesn't exist error, `nvm install 16.15.1`
 
 ## building on aws amplify
+- using us-east-2.console.aws.amazon.com
 - delete node_modules and old package-lock.json
 - `npm cache clean --force`
 - `npm install`
@@ -20,8 +21,8 @@
 - ready to push to github/deploy on aws amplify
 
 ## changes to close/open up application
-- Mentor and Fellow Apply buttons: lines 133 and 149 of Apply.js
-- 
+- disabled or not disabled Mentor and Fellow Apply buttons
+    - lines 133 and 149 of Apply.js
 
 ## Env vars on aws website
 AWS Amplify>All apps>college-arch>App settings:Environment variables

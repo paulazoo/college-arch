@@ -70,7 +70,7 @@ function Partners(props) {
                   <img
                     alt='College Essay Guy'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/CollegeEssayGuy.PNG')}
+                    src={require('../../assets/Partners/CollegeEssayGuy.png')}
                   />
                 </a>
               </div>
@@ -85,7 +85,7 @@ function Partners(props) {
                   <img
                     alt='Dear Asian Youth'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/DearAsianYouth.PNG')}
+                    src={require('../../assets/Partners/DearAsianYouth.png')}
                   />
                 </a>
               </div>
@@ -100,7 +100,7 @@ function Partners(props) {
                   <img
                     alt='Destined Doctors'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/DestinedDoctors.PNG')}
+                    src={require('../../assets/Partners/DestinedDoctors.png')}
                   />
                 </a>
               </div>
@@ -115,7 +115,7 @@ function Partners(props) {
                   <img
                     alt='Socrates Post'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/SocratesPost.PNG')}
+                    src={require('../../assets/Partners/SocratesPost.png')}
                   />
                 </a>
               </div>
@@ -130,7 +130,7 @@ function Partners(props) {
                   <img
                     alt='We Rise Above'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/WeRiseAbove.PNG')}
+                    src={require('../../assets/Partners/WeRiseAbove.png')}
                   />
                 </a>
               </div>
@@ -145,7 +145,7 @@ function Partners(props) {
                   <img
                     alt='Wonsulting'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/Wonsulting.PNG')}
+                    src={require('../../assets/Partners/Wonsulting.png')}
                   />
                 </a>
               </div>
@@ -160,7 +160,7 @@ function Partners(props) {
                   <img
                     alt='YMCA Honolulu'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/YMCAHonolulu.PNG')}
+                    src={require('../../assets/Partners/YMCAHonolulu.png')}
                   />
                 </a>
               </div>
@@ -175,7 +175,7 @@ function Partners(props) {
                   <img
                     alt='Girl Genius Magazine'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/GirlGeniusMagazine.PNG')}
+                    src={require('../../assets/Partners/GirlGeniusMagazine.png')}
                   />
                 </a>
               </div>
@@ -190,7 +190,7 @@ function Partners(props) {
                   <img
                     alt='Girl Tech Boss'
                     className={classes.logoImg}
-                    src={require('../../assets/Partners/GirlTechBoss.PNG')}
+                    src={require('../../assets/Partners/GirlTechBoss.png')}
                   />
                 </a>
               </div>

@@ -70,7 +70,7 @@ function AsSeenIn(props) {
                   <img
                     alt='HonoluluCivilBeat'
                     className={classes.logoImg}
-                    src={require('../../assets/AsSeenIn/HonoluluCivilBeat.PNG')}
+                    src={require('../../assets/AsSeenIn/HonoluluCivilBeat.png')}
                   />
                 </a>
               </div>
@@ -100,7 +100,7 @@ function AsSeenIn(props) {
                   <img
                     alt='TheCasaRevista'
                     className={classes.logoImg}
-                    src={require('../../assets/AsSeenIn/TheCasaRevista.PNG')}
+                    src={require('../../assets/AsSeenIn/TheCasaRevista.png')}
                   />
                 </a>
               </div>

@@ -70,7 +70,7 @@ function Sponsors(props) {
                   <img
                     alt="Hershey's Heartwarming Project"
                     className={classes.logoImg}
-                    src={require('../../assets/Sponsors/HersheysHeartwarmingProject.PNG')}
+                    src={require('../../assets/Sponsors/HersheysHeartwarmingProject.png')}
                   />
                 </a>
               </div>

@@ -67,7 +67,7 @@ function AdmissionsOfficers(props) {
                 <img
                   alt='UH Manoa'
                   className={classes.logoImg}
-                  src={require('../../assets/AdmissionsOfficers/HonoluluCivilBeat.PNG')}
+                  src={require('../../assets/AdmissionsOfficers/HonoluluCivilBeat.png')}
                 />
               </a>
             </Grid>
@@ -80,7 +80,7 @@ function AdmissionsOfficers(props) {
                 <img
                   alt='Hawaii Pacific University'
                   className={classes.logoImg}
-                  src={require('../../assets/AdmissionsOfficers/TheCasaRevista.PNG')}
+                  src={require('../../assets/AdmissionsOfficers/TheCasaRevista.png')}
                 />
               </a>
             </Grid>
@@ -93,7 +93,7 @@ function AdmissionsOfficers(props) {
                 <img
                   alt='University of Maryland'
                   className={classes.logoImg}
-                  src={require('../../assets/AdmissionsOfficers/TheCasaRevista.PNG')}
+                  src={require('../../assets/AdmissionsOfficers/TheCasaRevista.png')}
                 />
               </a>
             </Grid>

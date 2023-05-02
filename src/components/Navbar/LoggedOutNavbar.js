@@ -83,7 +83,7 @@ function LoggedOutNavbar({ ...props }) {
             >
               <Grid item xs={12}>
                 <img
-                  src={require('../../assets/Logos/NavbarLogo.JPG')}
+                  src={require('../../assets/Logos/NavbarLogo.jpg')}
                   alt='fancy banner :D'
                   width='60%'
                   onClick={logoClick}

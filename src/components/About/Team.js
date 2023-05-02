@@ -236,7 +236,7 @@ function Team(props) {
                       >
                         <img
                           className={classes.memberImg}
-                          src={require(`../../assets/TeamMembers/${member.name}.JPG`)}
+                          src={require(`../../assets/TeamMembers/${member.name}.jpg`)}
                           alt={member.name}
                         />
                       </Button>
