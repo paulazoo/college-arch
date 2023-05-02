@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   applyText: {
     fontWeight: 'bold',
-    fontSize: 28,
+    fontSize: 20,
     [theme.breakpoints.down('sm')]: {
-      fontSize: 24,
+      fontSize: 14,
     },
   },
   main: {
