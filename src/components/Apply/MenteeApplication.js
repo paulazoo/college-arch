@@ -800,7 +800,7 @@ function MenteeApplication(props) {
                   <Typography>
                     Help us get better at matching!
                     Please rank the importance of the following characteristics 
-                    for a hypothetical mentor (from most to least important):
+                    for a hypothetical mentor for you, personally (from most to least important):
                   </Typography>
                   <Typography>
                     1) College, 2) Academic/Career Interests, 3) Background Identity, 4) Hometown Location
