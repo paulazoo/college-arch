@@ -25,7 +25,7 @@ import {
   graphicsMarketingTeam,
   // curriculumTeam,
   technicalTeam,
-} from './teamMembers';
+} from './teamMembers.js';
 
 const useStyles = makeStyles((theme) => ({
   googleButton: {
