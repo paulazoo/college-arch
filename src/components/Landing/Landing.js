@@ -235,7 +235,7 @@ function Landing(props) {
           textAlign='center'
         >
           <Typography className={classes.memberCount}>
-            250+ Fellows and 250+ Mentors
+            750+ Fellows and 750+ Mentors
           </Typography>
           <Grid container direction='row' alignItems='center' justify='center'>
             <Grid item xs={8}>
