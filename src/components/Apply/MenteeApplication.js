@@ -333,13 +333,15 @@ function MenteeApplication(props) {
                     disparately impact marginalized communities and lead to
                     cycles of inaccessibility and stratification.
                   </Typography>
-                  <Typography>
+                  <Typography
+                  // class year to change
+                  >
                     The fellowship program will take place between Saturday July
                     9 - Saturday August 6. All mandatory meetings will occur
                     between 1pm EST-9pm EST Monday through Friday, with a total
                     commitment of 3 to 4 hours a week. The application deadline
-                    is July 3, 2022 (extended). College ARCH fellows must be graduating
-                    high school in the 2022-2023 academic year.
+                    is July 1, 2023. College ARCH fellows must be graduating
+                    high school in the 2023-2024 academic year.
                   </Typography>
                 </Grid>
               </Grid>
@@ -442,9 +444,11 @@ function MenteeApplication(props) {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography>
-                    Will you be graduating high school in 2023? (Only the Class
-                    of 2023 may register as fellows. If you are in college or
+                  <Typography
+                  // class year to change
+                  >
+                    Will you be graduating high school in 2024? (Only the Class
+                    of 2024 may register as fellows. If you are in college or
                     following an alternative education path, please contact
                     contact.collegearch@gmail.com to determine eligibility as a
                     fellow.)

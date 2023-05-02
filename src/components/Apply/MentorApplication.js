@@ -55,7 +55,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// class year to change
 const gradYearList = [
+  2027,
   2026,
   2025,
   2024,
@@ -82,17 +84,7 @@ const gradYearList = [
   2003,
   2002,
   2001,
-  2000,
-  1999,
-  1998,
-  1997,
-  1996,
-  1995,
-  1994,
-  1993,
-  1992,
-  1991,
-  1990,
+  2000
 ];
 
 const multiMenteesList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -110,7 +102,8 @@ function MentorApplication(props) {
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
   const [eligible, setEligible] = useState(false);
-  const [gradYear, setGradYear] = useState(2022);
+  // class year to change
+  const [gradYear, setGradYear] = useState(2023);
   const [interests, setInterests] = useState([]);
   const [multiMentees, setMultiMentees] = useState(1);
 
@@ -338,10 +331,10 @@ function MentorApplication(props) {
                     inaccessibility and stratification.
                   </Typography>
                   <Typography>
-                  The fellowship program will take place between Saturday July 9 - Saturday August 6. 
+                  The fellowship program will take place between July 10 - August 4. 
                   All mandatory meetings will occur between 1pm EST-9pm EST Monday through Friday, 
                   with a total commitment of 3 to 4 hours a week. The application deadline is 
-                  July 3, 2022 (extended). Mentors must be incoming, current, or recently graduated college 
+                  July 1. Mentors must be incoming, current, or recently graduated college 
                   students no older than 27 years old.
                   </Typography>
                 </Grid>

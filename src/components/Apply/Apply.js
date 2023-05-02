@@ -121,7 +121,7 @@ function Apply(props) {
                   Apply to be a College ARCH Fellow or Mentor!
                 </Typography>
                 <Typography className={classes.dueDate}>
-                  Fellowship applications will be due July 3, 2022 (extended)
+                  Fellowship applications will be due July 1, 2023
                 </Typography>
               </Grid>
               <Grid item>

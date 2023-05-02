@@ -58,7 +58,7 @@ function ReadyApply(props) {
           <br />
 
           <li>
-            The program begins on July 7 and runs until the week of August 7
+            The program begins on July 10 and runs until the week of August 4
           </li>
         </ul>
       </Typography>

@@ -181,8 +181,8 @@ function Landing(props) {
               underprivileged backgrounds
             </Typography>
             <Typography color='inherit' className={classes.landingText2}>
-              <b>Fellowship Applications</b>
-              {/* <b>Fellowship Applications Open Now</b> */}
+              {/* <b>Fellowship Applications</b> */}
+              <b>Fellowship Applications Open Now</b>
             </Typography>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Button
@@ -197,7 +197,7 @@ function Landing(props) {
             </Button>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Typography className={classes.dueDate}>
-              Applications will be due July 3, 2022 (extended)
+              Applications will be due July 1, 2023
             </Typography>
           </Grid>
           <Grid item xs={12} className={classes.textGrid}>
@@ -272,7 +272,7 @@ function Landing(props) {
         <Grid item xs={12} className={classes.dueDateContainer}>
           <br />
           <Typography className={classes.dueDate}>
-            Applications will be due July 3, 2022 (extended)
+            Applications will be due July 1, 2023
           </Typography>
         </Grid>
       </Grid>

@@ -24,6 +24,12 @@
 ## changes to close/open up application
 - disabled or not disabled Mentor and Fellow Apply buttons
     - lines 133 and 149 of Apply.js
+- Fellowship Applications open now
+    - line 184 and 185 of Landing.js
+- dates changing
+    - search and replace for "july"
+- class year changing
+    - search for "class year to change"
 
 ## Env vars on aws website
 AWS Amplify>All apps>college-arch>App settings:Environment variables
