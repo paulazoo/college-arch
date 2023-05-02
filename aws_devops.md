@@ -31,4 +31,4 @@ AWS Amplify>All apps>college-arch>App settings:Environment variables
 ## Image types for loading from Amplify
 AWS Amplify>All apps>college-arch>Rewrites and redirects
     - </^[^.]+$|.(?!(css|gif|ico|jpg|jpeg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>
-    - also no capitalized PNG or JPG or etc assets
+    - also no capitalized PNG or JPG or etc assets. oh but git doesn't detect renames...
