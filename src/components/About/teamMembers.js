@@ -107,13 +107,13 @@ export const programTeam = [
       "Nalani Cicely Santos, part of Stanford's Class of 2024, is one of two Program Directors. Nalani works to plan out details of the program's workshops and events as well coordinating communications with admissions officers, partners, and any other opportunities for the organization. Having participated in a similar college access program at Pomona College, she is excited to provide similar underrepresented students with resources for the college application process.",
     image: '',
   },
-  {
-    name: 'Linda Lin',
-    position: 'Program Director',
-    text:
-      "Linda Lin is part of Harvard's class of 2024. As a first-gen student, she is excited to connect underserved students with resources in the college application process. As Program Director, Linda plans program activities and events, coordinates with admissions officers and other partners, and oversees fundraising events.",
-    image: '',
-  },
+  // {
+  //   name: 'Linda Lin',
+  //   position: 'Program Director',
+  //   text:
+  //     "Linda Lin is part of Harvard's class of 2024. As a first-gen student, she is excited to connect underserved students with resources in the college application process. As Program Director, Linda plans program activities and events, coordinates with admissions officers and other partners, and oversees fundraising events.",
+  //   image: '',
+  // },
   {
     name: 'Amara Okoli',
     team: 'Program Team',
