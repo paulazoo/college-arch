@@ -560,7 +560,7 @@ function MenteeApplication(props) {
                 <Grid item xs={12}>
                   <Typography>
                     Please select up to two colleges/universities you are
-                    thinking thinking of applying to. This helps us pair you
+                    thinking of applying to. This helps us pair you
                     with an appropriate mentor.
                   </Typography>
                   <Autocomplete

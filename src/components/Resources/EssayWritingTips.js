@@ -29,7 +29,7 @@ export default function EssayWritingTips() {
     >
       <Grid item>
         <Typography variant='h4'>
-          <b>Essay Writing Tips</b>
+          <b>paula's Essay Writing Tips</b>
         </Typography>
       </Grid>
       <Grid item>
@@ -157,6 +157,7 @@ export default function EssayWritingTips() {
             <Typography>
               In general, you can always draw inspiration from ideas and
               patterns from other authors/books that you like.
+
               <strike>Like Hemingway. Seriously, you should read his stuff sometime.</strike>
             </Typography>
           </li>
@@ -170,7 +171,7 @@ export default function EssayWritingTips() {
           </li>
           <li className={classes.infoList}>
             <Typography>
-              Realize that I'm a neuro kid, not an author, and take everything I say with a nice grain of salt :) -paula zhu
+              Realize that I'm a neuro kid, not an author, and take everything I say with a nice grain of salt :) -paula
             </Typography>
           </li>
         </ul>
