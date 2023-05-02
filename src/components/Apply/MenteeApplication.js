@@ -34,6 +34,7 @@ import Navbar from '../Navbar/Navbar';
 import statesList from './statesList.js';
 import allInterests from './allInterests.js';
 import allDreamColleges from './allDreamColleges.js';
+import allImportances from './allImportances.js';
 import ApplicantGoogleLoginButton from '../LoginPage/ApplicantGoogleLoginButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -80,6 +81,7 @@ function MenteeApplication(props) {
   const [interests, setInterests] = useState([]);
   const [dreamCollege1, setDreamCollege1] = useState('');
   const [dreamCollege2, setDreamCollege2] = useState('');
+  const [importance, setImportance] = useState('');
 
   const [usBoolean, setUsBoolean] = useState(true);
 
@@ -169,6 +171,10 @@ function MenteeApplication(props) {
     setDreamCollege2(value);
   };
 
+  const selectImportance = (value) => {
+    setImportance(value);
+  };
+
   const [background, setBackground] = useState({
     first_gen: false,
     low_income: false,
@@ -194,6 +200,7 @@ function MenteeApplication(props) {
     if (
       firstName === '' ||
       lastName === '' ||
+      importance === '' ||
       (state === '' && usBoolean === true) ||
       (country === '' && usBoolean === false) ||
       eligible === false ||
@@ -245,6 +252,7 @@ function MenteeApplication(props) {
         info_share: infoShare,
         interests: interests.toString(),
         dream_colleges: `${dreamCollege1},${dreamCollege2}`,
+        importance,
         applicant_type: 'Mentee',
       });
 
@@ -336,8 +344,8 @@ function MenteeApplication(props) {
                   <Typography
                   // class year to change
                   >
-                    The fellowship program will take place between Saturday July
-                    9 - Saturday August 6. All mandatory meetings will occur
+                    The fellowship program will take place between July
+                    10 - August 4. All mandatory meetings will occur
                     between 1pm EST-9pm EST Monday through Friday, with a total
                     commitment of 3 to 4 hours a week. The application deadline
                     is July 1, 2023. College ARCH fellows must be graduating
@@ -786,6 +794,45 @@ function MenteeApplication(props) {
                     inputProps={{
                       maxLength: 1000,
                     }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    Help us get better at matching!
+                    Please rank the importance of the following characteristics 
+                    for a hypothetical mentor (from most to least important):
+                  </Typography>
+                  <Typography>
+                    1) College, 2) Academic/Career Interests, 3) Background Identity, 4) Hometown Location
+                  </Typography>
+                  <Autocomplete
+                    value={importance}
+                    onChange={(event, newValue) => {
+                      selectImportance(newValue);
+                    }}
+                    filterOptions={(options, params) => {
+                      const filtered = filter(options, params);
+
+                      const { inputValue } = params;
+                      // Suggest the creation of a new value
+                      const isExisting = options.some(
+                        (option) => inputValue === option
+                      );
+                      if (inputValue !== '' && !isExisting) {
+                        filtered.push(`${inputValue}`);
+                      }
+
+                      return filtered;
+                    }}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
+                    options={allImportances}
+                    getOptionLabel={(option) => String(option)}
+                    freeSolo
+                    renderInput={(params) => (
+                      <TextField {...params} label='Matching Importance Ranking' />
+                    )}
                   />
                 </Grid>
                 {/* <Grid item xs={12}>
