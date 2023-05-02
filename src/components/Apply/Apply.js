@@ -130,7 +130,7 @@ function Apply(props) {
                   color='primary'
                   className={classes.applyButton}
                   onClick={goToMenteeApplication}
-                  disabled
+                  // disabled
                 >
                   Fellow
                 </Button>
@@ -146,7 +146,7 @@ function Apply(props) {
                   color='primary'
                   className={classes.applyButton}
                   onClick={goToMentorApplication}
-                  disabled
+                  // disabled
                 >
                   Mentor
                 </Button>

@@ -28,7 +28,6 @@ import Apply from './components/Apply/Apply';
 import Dashboard from './components/Dashboard/Dashboard';
 import Master from './components/Master/Master';
 import Profile from './components/Profile/Profile';
-import PublicEvents from './components/PublicEvents/PublicEvents';
 import EventPage from './components/EventPage/EventPage';
 import Isabela from './components/Testing/Isabela';
 import ContactUs from './components/About/ContactUs';

@@ -1,10 +1,10 @@
-# 221010
+# 230501
 ## make sure have nvm and node
 - `nvm --version`
     - 0.39.1
 - check if `node --version`
     - v16.15.1
-- `nvm install 16.15.1`
+- if node doesn't exist error, `nvm install 16.15.1`
 
 ## building on aws amplify
 - delete node_modules and old package-lock.json
@@ -19,7 +19,11 @@
 - verify `npm ci` works this time
 - ready to push to github/deploy on aws amplify
 
-## todo:
-- point google domain
-- push updated api that communicates with aws website
-- eventually: host college-arch-api outside of heroku as well
+## changes to close/open up application
+- Mentor and Fellow Apply buttons: lines 133 and 149 of Apply.js
+- 
+
+## Env vars on aws website
+AWS Amplify>All apps>college-arch>App settings:Environment variables
+
+## Image types for loading from Amplify
