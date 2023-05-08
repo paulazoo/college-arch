@@ -290,22 +290,22 @@ function Team(props) {
         theme.palette.common.teamOne
       // )} */}
       {/* {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamTwo)} */}
-      {renderTeam(
+      {/* {renderTeam(
         graphicsMarketingTeam,
         'Graphics and Marketing Team',
         theme.palette.common.teamOne
+      )} */}
+      {renderTeam(
+        recruitmentDirectors,
+        'Recruitment Directors',
+        theme.palette.common.teamTwo
       )}
       {renderTeam(
         technicalTeam,
         'Technical Team',
-        theme.palette.common.teamTwo
-      )}
-      {renderTeam(
-        recruitmentDirectors,
-        'Recruitment Directors',
         theme.palette.common.teamOne
       )}
-      {renderTeam(alumniMembers, 'Past members and contributors', theme.palette.common.teamTwo)}
+      {renderTeam(alumniMembers, 'Past members and contributors <3', theme.palette.common.teamTwo)}
     </>
   );
 }
