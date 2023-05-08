@@ -305,7 +305,7 @@ function Team(props) {
         'Recruitment Directors',
         theme.palette.common.teamOne
       )}
-      {renderTeam(alumniMembers, 'Past College ARCH members and contributors <3', theme.palette.common.teamTwo)}
+      {renderTeam(alumniMembers, 'Past members and contributors', theme.palette.common.teamTwo)}
     </>
   );
 }
