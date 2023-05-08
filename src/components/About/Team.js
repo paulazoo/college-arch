@@ -290,11 +290,11 @@ function Team(props) {
         theme.palette.common.teamOne
       // )} */}
       {/* {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamTwo)} */}
-      {/* {renderTeam(
+      {renderTeam(
         graphicsMarketingTeam,
         'Graphics and Marketing Team',
         theme.palette.common.teamOne
-      )} */}
+      )}
       {renderTeam(
         recruitmentDirectors,
         'Recruitment Directors',
