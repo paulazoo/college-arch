@@ -1,8 +1,5 @@
 # College Arch Frontend
 
-## TODO:
-For mentees, you are accepted, rank importance of location vs interests vs background vs dream colleges (also need backend column)
-
 ## General
 
 [collegearch.org](https://www.collegearch.org) - non-profit devoted to helping FGLI students achieve their academic potential.
@@ -66,15 +63,21 @@ _ROUTE: https://www.collegearch.org/apply_
 
 ### MenteesPage
 
-_ROUTE: https://www.collegearch.org/mentees_
+_ROUTE: https://www.collegearch.org/apply/mentee_
 
-- Page for submitting a mentee application (NOT IMPLEMENTED)
+- Page for submitting a mentee application
 
 ### MentorsPage
 
-_ROUTE: https://www.collegearch.org/mentors_
+_ROUTE: https://www.collegearch.org/apply/mentor_
 
-- Page for submitting a mentor application (NOT IMPLEMENTED)
+- Page for submitting a mentor application
+
+### Donate
+
+_ROUTE: https://www.collegearch.org/donate_
+
+- Paypal donate page
 
 ### Terms
 
@@ -88,8 +91,15 @@ _ROUTE: https://www.collegearch.org/login_
 
 - Login page
 - Login with google
-- If your email is not already accepted as a mentee or mentor you can not login
+- If your email user is not already of accepted status as a mentee or mentor you can not login
 
+### Terms
+
+_ROUTE: https://www.collegearch.org/resources_
+
+- Resources page, includes 2 tabs:
+  - Links
+  - Essay Writing Tips
 
 
 ## Private Pages

@@ -23,8 +23,9 @@ import {
   recruitmentDirectors,
   programTeam,
   graphicsMarketingTeam,
-  // curriculumTeam,
+  curriculumTeam,
   technicalTeam,
+  alumniMembers,
 } from './teamMembers.js';
 
 const useStyles = makeStyles((theme) => ({
@@ -287,8 +288,8 @@ function Team(props) {
         curriculumTeam,
         'Curriculum Team',
         theme.palette.common.teamOne
-      )} */}
-      {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamTwo)}
+      // )} */}
+      {/* {renderTeam(outreachTeam, 'Outreach Team', theme.palette.common.teamTwo)} */}
       {renderTeam(
         graphicsMarketingTeam,
         'Graphics and Marketing Team',
@@ -304,6 +305,7 @@ function Team(props) {
         'Recruitment Directors',
         theme.palette.common.teamOne
       )}
+      {renderTeam(alumniMembers, 'Past College ARCH members and contributors <3', theme.palette.common.teamTwo)}
     </>
   );
 }
