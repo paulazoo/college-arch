@@ -34,6 +34,30 @@ export const recruitmentDirectors = [
       "I'm part of Pomona College's class of 2026, and I'm a potential Asian Studies / Anthropology Major. As a first-gen student that had to deal with the daunting college application process, I hope to support those who seek to pursue higher education and maximize their possibilities and opportunities.",
     image: '',
   },
+  {
+    name: 'Bianca Rodriguez',
+    position:
+      '',
+    text:
+      "University of Pennsylvania",
+    image: '',
+  },
+  {
+    name: 'Divinaa Raju',
+    position:
+      'Central Region Recruitment Director May 2021-October 2021, Program Developer November 2021-January 2033',
+    text:
+      "UW-Madison",
+    image: '',
+  },
+  {
+    name: 'Cooper Knarr',
+    position:
+      'Central Region Recruitment Director Summer 2022',
+    text:
+      "Harvard University",
+    image: '',
+  },
 ];
 
 export const programTeam = [

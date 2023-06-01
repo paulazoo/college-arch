@@ -284,14 +284,14 @@ function Team(props) {
         theme.palette.common.teamOne
       )}
       {renderTeam(
-        technicalTeam,
-        'Technical Team',
-        theme.palette.common.teamOne
-      )}
-      {renderTeam(
         recruitmentDirectors,
         'Recruitment Directors',
         theme.palette.common.teamTwo
+      )}
+      {renderTeam(
+        technicalTeam,
+        'Technical Team',
+        theme.palette.common.teamOne
       )}
       {renderTeam(programTeam, 'Program Team', theme.palette.common.teamTwo)}
       {/* {renderTeam(
