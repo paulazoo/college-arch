@@ -344,11 +344,11 @@ function MenteeApplication(props) {
                   <Typography
                   // class year to change
                   >
-                    The fellowship program will take place between July
-                    10 - August 4. All mandatory meetings will occur
+                    UPDATED DUE TO SCHEDULING CHANGES: The fellowship program will take place between July
+                    24 - August 12. All mandatory meetings will occur
                     between 1pm EST-9pm EST Monday through Friday, with a total
                     commitment of 3 to 4 hours a week. The application deadline
-                    is July 1, 2023. College ARCH fellows must be graduating
+                    is July 21, 2023. College ARCH fellows must be graduating
                     high school in the 2023-2024 academic year.
                   </Typography>
                 </Grid>

@@ -331,10 +331,10 @@ function MentorApplication(props) {
                     inaccessibility and stratification.
                   </Typography>
                   <Typography>
-                  The fellowship program will take place between July 10 - August 4. 
+                  UPDATED: The fellowship program will take place between July 10 - August 4. 
                   All mandatory meetings will occur between 1pm EST-9pm EST Monday through Friday, 
                   with a total commitment of 3 to 4 hours a week. The application deadline is 
-                  July 1. Mentors must be incoming, current, or recently graduated college 
+                  July 21. Mentors must be incoming, current, or recently graduated college 
                   students no older than 27 years old.
                   </Typography>
                 </Grid>

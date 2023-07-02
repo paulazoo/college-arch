@@ -89,7 +89,7 @@ function FellowshipGeneral(props) {
           However, we will be extremely flexible and accommodating because of
           the current circumstances.
         </p>
-        <p>DEADLINE TO SUBMIT YOUR APPLICATION: July 1 2023 @ 11:59 PM, EST</p>
+        <p>UPDATED DEADLINE TO SUBMIT YOUR APPLICATION: July 21 2023 @ 11:59 PM, EST</p>
         <p>FOLLOW US ON INSTAGRAM @collegearch TO RECEIVE UPDATES!</p>
         <br />
       </Typography>

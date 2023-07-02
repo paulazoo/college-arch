@@ -197,7 +197,7 @@ function Landing(props) {
             </Button>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Typography className={classes.dueDate}>
-              Applications will be due July 1, 2023
+              UPDATED DUE TO SCHEDULING CHANGES: Applications will be due July 21, 2023
             </Typography>
           </Grid>
           <Grid item xs={12} className={classes.textGrid}>
@@ -272,7 +272,7 @@ function Landing(props) {
         <Grid item xs={12} className={classes.dueDateContainer}>
           <br />
           <Typography className={classes.dueDate}>
-            Applications will be due July 1, 2023
+            UPDATED DUE TO SCHEDULING CHANGES: Applications will be due July 21, 2023
           </Typography>
         </Grid>
       </Grid>
