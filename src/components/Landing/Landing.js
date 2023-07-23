@@ -181,8 +181,8 @@ function Landing(props) {
               underprivileged backgrounds
             </Typography>
             <Typography color='inherit' className={classes.landingText2}>
-              {/* <b>Fellowship Applications</b> */}
-              <b>Fellowship Applications Open Now</b>
+              <b>Fellowship Applications</b>
+              {/* <b>Fellowship Applications Open Now</b> */}
             </Typography>
             <Grid item xs={0} md={12} className={classes.textGrid} />
             <Button
@@ -190,7 +190,7 @@ function Landing(props) {
               variant='contained'
               className={classes.applyButton}
               onClick={handleApply}
-              // disabled
+              disabled
               // style={{ backgroundColor: 'gray' }}
             >
               APPLY NOW
@@ -264,7 +264,7 @@ function Landing(props) {
             color='secondary'
             className={classes.applyButton}
             onClick={handleApply}
-            // disabled
+            disabled
           >
             APPLY NOW
           </Button>

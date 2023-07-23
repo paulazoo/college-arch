@@ -26,6 +26,7 @@
     - lines 133 and 149 of Apply.js
 - Fellowship Applications open now
     - line 184 and 185 of Landing.js
+    - line 267 of Landing.js
 - dates changing
     - search and replace for "july"
 - class year changing
